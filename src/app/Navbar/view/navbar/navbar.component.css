@@ -1,0 +1,36 @@
+.logo-set-div {
+  width: 228px;
+  height: 70px;
+}
+
+ul li a {
+  padding-inline-start: 30px;
+}
+
+.btn-div-crl {
+  width: 89px;
+  height: 32.17px;
+  border-radius: 10px;
+  border: none;
+  color: #374f59;
+  background: #a5e8d3;
+}
+
+.btn-div-crl-register {
+  width: 89px;
+  height: 32.17px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background: #374f59;
+}
+.Home-div{
+  margin-inline-start: 6pc;
+  color: #6d9277 !important;
+}
+@media only screen and (max-width: 786px) {
+  .Home-div{
+    margin-inline-start: 0px;
+
+  }
+}

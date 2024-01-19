@@ -1,0 +1,403 @@
+/* .main {
+    border: 2px solid red;
+    max-width: 1440px;
+} */
+
+.text-h3-class {
+    margin-top: 80px;
+    color: #374f59;
+}
+
+.second-text-p {
+    color: #6d9277;
+    margin-top: 45px;
+}
+
+.input-text {
+    height: 40px;
+    border: none;
+    box-shadow: 17px 6px 17px -9px rgba(163, 163, 163, 1);
+}
+
+.search .btn {
+    background-color: #374F59;
+    color: #fff;
+    width: 110px;
+    height: 40px;
+    right: 25px;
+}
+
+/* .location{
+    margin-inline-start: -81px !important;
+    position: relative;
+    align-items: center;
+    display: flex;
+} */
+.input-group-div {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    left: 19px;
+}
+.search-icon{
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 17px;
+    gap: 8px;
+    margin-inline-start: 8px;
+}
+.demo-input {
+    width: 350px !important;
+    border: 1px solid black;
+}
+
+
+@media only screen and (max-width: 1024px) {
+ 
+}
+
+/* card css */
+
+.card {
+    border-radius: 7px;
+    background: #fff;
+    -webkit-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.counter {
+    margin: 50px 0;
+    background-color: #f1f4f9;
+    padding: 30px 0;
+    border: none;
+}
+
+.card-div-box {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 7px;
+    background: #6d9277;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.set-div-box {
+    display: flex;
+    padding-top: 2px;
+    padding-inline-start: 20px;
+}
+
+/* Categories div */
+
+.Categories-div-bg {
+    width: 209px;
+    height: 208px;
+    background-color: #a5e8d3;
+    border-radius: 50%;
+}
+
+.Categories-ring {
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 209px;
+    height: 208px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #fff;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.Categories-text {
+    /* display: flex;
+    justify-content: center; */
+    align-items: center;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+/* Job Feed div */
+
+.JobFeed {
+    margin: 50px 0;
+    background-color: #f1f4f9;
+    padding: 30px 0;
+    border: none;
+}
+
+.jobfeed-card {
+    background-color: #f0f3f8;
+    border: none;
+    border-radius: 7px;
+}
+
+.btn-jobfeed {
+    background-color: #374f59;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+}
+
+.job-text-div {
+    color: black;
+    font-size: 16px;
+}
+
+.job-text-p {
+    font-size: 13px;
+    color: #676565;
+}
+
+ul li {
+    color: #374f59;
+}
+
+/* Top Companies  div */
+
+.btnForeign {
+    background-color: #374f59;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+/* Jobs based on your profile */
+
+.job-profile-div {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.seeall {
+    text-align: end;
+}
+
+@media only screen and (max-width: 425px) {
+    .seeall {
+        text-align: center !important;
+        background: #F1F4F9;
+        padding: 10px 0px;
+        border-radius: 7px;
+    }
+}
+
+/* PopularStartup */
+
+.PopularStartup {
+    margin: 50px 0;
+    background-color: #f1f4f9;
+    padding: 30px 0;
+    border: none;
+}
+
+.PopularStartup-box {
+    background-color: #374f59;
+    height: 344px;
+    /* margin: 50px 0px; */
+    border-radius: 15px;
+}
+
+.PopularStartup-te {
+    color: #374f59;
+    margin: 30px 0px;
+}
+
+.PopularStartup-div {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.popular-div-second {
+    padding: 50px;
+}
+
+.popular-div-text {
+    margin: 20px 0px;
+}
+
+.popular-img-first {
+    margin-top: 17px;
+    position: relative;
+    left: 84px;
+}
+
+.popular-img-second {
+    margin-top: -67px;
+    position: absolute;
+}
+
+.popular-img {
+    margin-inline-start: 11pc;
+}
+
+.dot-second-div {
+    margin-top: -70px;
+    position: relative;
+    left: 23pc;
+
+}
+
+
+@media only screen and (max-width: 1030px) {
+    .dot-second-div {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .popular-img {
+        margin-inline-start: 0px;
+    }
+
+    .PopularStartup-box {
+        height: 40pc;
+    }
+
+    .dot-second-div {
+        display: block;
+    }
+
+    .popular-main-div {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 999px) {
+    .PopularStartup-box {
+        height: 40pc;
+    }
+    .popular-img-first {
+        margin-top: -93px;
+    }
+    .popular-main-div {
+        padding-top: 25px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .PopularStartup-box {
+        height: 50pc;
+    }
+    
+}
+
+@media only screen and (max-width: 427px) {
+    .popular-img {
+        display: none;
+    }
+
+    .PopularStartup-box {
+        height: 55pc;
+    }
+
+    .dot-second-div {
+        display: none;
+    }
+
+    .popular-main-div {
+        padding-top: 0px;
+    }
+
+    .popular-img-first {
+        margin-top: -93px;
+
+    }
+}
+
+.popular-main-div {
+    padding-top: 50px;
+}
+
+/* TopCompanies */
+.viewjob-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #6D9277;
+    margin-top: 13px;
+}
+
+.view-all-com-div {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+
+.view-all-com-div button {
+    width: 441px;
+    height: 45px;
+    border: none;
+    border-radius: 40px;
+    background-color: #A5E8D3;
+    color: #374F59;
+    -webkit-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* PeopleThinks */
+
+.PeopleThinks {
+    margin: 50px 0;
+    background-color: #f1f4f9;
+    padding: 30px 0px 50px 0px;
+    border: none;
+}
+
+.card-line {
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+.icon-div ul {
+    display: flex !important;
+    gap: 7px;
+}
+
+.icon-div ul li {
+    list-style: none;
+    color: rgb(219, 222, 33);
+}
+
+.what-is-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: -20px;
+}
+
+.card-text {
+    margin-top: 25px;
+}
+
+.img-tag-div {
+
+    width: 100px !important;
+}
+
+.img-set-card {
+    position: relative;
+    z-index: 1;
+
+    top: 50px;
+}

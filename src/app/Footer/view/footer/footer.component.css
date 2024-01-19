@@ -1,0 +1,30 @@
+.footer-div{
+    background-color: #374F59;
+}
+.div-footer-last{
+    padding: 45px 0px;
+}
+.footer-icon{
+    display: flex;
+    gap: 20px;
+}
+.fb-icon{
+    width: 29px;
+    height: 27px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.Company-div{
+    margin-top: 38px;
+    margin-bottom: 25px;
+    color: #A5E8D3;
+}
+.item-div{
+    margin: 20px 0px;
+    color: #fff;
+}
