@@ -7,12 +7,14 @@ import { NavbarComponent } from './Navbar/view/navbar/navbar.component';
 import { HomeComponent } from './Home/view/home/home.component';
 import { CarouselModule} from 'ngx-owl-carousel-o';
 import { FooterComponent } from './Footer/view/footer/footer.component';
+import { JobDetailsComponent } from './JobDetails/view/job-details/job-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    JobDetailsComponent
   ],
   imports: [
     BrowserModule,

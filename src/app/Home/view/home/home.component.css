@@ -7,7 +7,9 @@
     margin-top: 80px;
     color: #374f59;
 }
-
+.JobFeed a{
+    text-decoration: none;
+}
 .second-text-p {
     color: #6d9277;
     margin-top: 45px;
