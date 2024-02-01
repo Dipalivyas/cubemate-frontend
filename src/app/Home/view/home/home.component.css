@@ -20,13 +20,29 @@
     border: none;
     box-shadow: 17px 6px 17px -9px rgba(163, 163, 163, 1);
 }
-
-.search .btn {
-    background-color: #374F59;
+.seaech-icon{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.location-icon{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.sera-btn{
+    background-color: rgba(55, 79, 89, 1);
+    border-radius: 8px;
+}
+.sera-btn .btn{
     color: #fff;
-    width: 110px;
-    height: 40px;
-    right: 25px;
+}
+.serach{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 54px;
 }
 
 /* .location{

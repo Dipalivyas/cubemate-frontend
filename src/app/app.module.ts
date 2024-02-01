@@ -1,5 +1,8 @@
-import { NgModule } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { NgModule }      from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,18 +11,23 @@ import { HomeComponent } from './Home/view/home/home.component';
 import { CarouselModule} from 'ngx-owl-carousel-o';
 import { FooterComponent } from './Footer/view/footer/footer.component';
 import { JobDetailsComponent } from './JobDetails/view/job-details/job-details.component';
+import { LoginComponent } from './Login/view/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    JobDetailsComponent
+    JobDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
