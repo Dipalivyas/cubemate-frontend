@@ -1,7 +1,7 @@
 export class User {
     token!:           string;
     userID!:          number;
-    userEmail!:       string;
+    email!:       string;
     password!:        string;
-   
+    userType!:string;
 }

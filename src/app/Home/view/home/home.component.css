@@ -73,8 +73,17 @@
 }
 
 
-@media only screen and (max-width: 1024px) {
- 
+@media  (max-width: 1024px) {
+    .serach{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 90px;
+    }
+    .sera-btn{
+        margin-top: 8px;
+    }
 }
 
 /* card css */
@@ -109,6 +118,7 @@
     padding-top: 2px;
     padding-inline-start: 20px;
 }
+
 
 /* Categories div */
 
@@ -294,6 +304,14 @@ ul li {
 
     .popular-main-div {
         padding-top: 0px;
+    }
+    .serach{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between; 
+        height: 90px;
+    
     }
 }
 

@@ -2,17 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private baseurl = 'your-base-url'; // Replace with your actual base URL
+  baseurl = environment.baseurl
 
   constructor(private http: HttpClient) {}
 
-  senddeatils(user: User) {
-    return this.http.post(this.baseurl + "Auth/Login" ,user)
-  }
+  login(data:User){
+    return this.http.post(this.baseurl + "Auth/Login",data);
+   }
 }

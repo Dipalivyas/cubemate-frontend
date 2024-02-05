@@ -11,27 +11,27 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user = new User();
+  errorMessage: string = '';
 
   constructor(private service: LoginService, private route: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   OnLogin() {
-    this.service.senddeatils(this.user).subscribe(
+    this.service.login(this.user).subscribe(
       (resp: any) => {
         if (resp.status !== true) {
-          alert('Requested phone number does not exist. Please sign up.');
+          this.errorMessage = resp.message; // Adjust this based on the actual response structure
         } else {
           sessionStorage.setItem('token', resp.data.token);
-          sessionStorage.setItem('userEmail', resp.data.userEmail);
+          sessionStorage.setItem('firstName', resp.data.firstName);
+          console.log('Login successful:', resp);
           this.route.navigate(['/home']);
-          console.log(resp.data);
         }
       },
       (error: any) => {
-        console.error(error);  // Log the error to the console for debugging
-        alert('Error occurred during login. Check console for details.');
+        console.error(error);
+        this.errorMessage = 'An error occurred while processing the login.';
       }
     );
   }
