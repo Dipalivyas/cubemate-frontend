@@ -1,39 +1,55 @@
-<!-- <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="row w-100 m-0"> -->
-            <div class=" login content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
-                <div class="card col-lg-4 mx-auto">
-                    <div class="card-body px-5 py-5">
-                        <h3 class="card-title text-left mb-3 text-dark">Login</h3>
-                        <form LoginForm="ngForm" name="LoginForm">
-                            <div class="form-group">
-                                <label class="text-dark">Email</label>
-                                <input type="text" class="form-control" name="email"  [(ngModel)]="user.email" email="ngModel">
-            
-                                <!-- <div *ngIf="email.errors && (email.dirty || email.touched)" style="font-size: smaller;">
-                                    <div *ngIf="email.errors['required']">
-                                        <span style="color:  rgb(254, 144, 144);;">Please Enter Your Mail Id ..</span>
-                                    </div>
-                                </div> -->
-                            </div>
-                            <div class="form-group">
-                                <label class="text-dark">Password</label>
-                                <input type="password" class="form-control" name="password"   #password="ngModel"  [(ngModel)]="user.password" >
-                                <!-- <div *ngIf="password.errors && (password.dirty || password.touched)" style="font-size: smaller;">
-                                    <div *ngIf="password.errors['required']">
-                                        <span style="color: rgb(254, 144, 144);">Please Enter Your Password ..</span>
-                                    </div>
-                                </div> -->
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-block enter-btn text-dark" (click)="OnLogin()"
-                                    >Login</button>
-                            </div>
-                        </form>
-                        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
-                            {{ errorMessage }}
-                          </div>
-                          
+<div class="logi">
+<div class="container-fluid">
+        <div class="row">
+            <!-- <div class="logo">
+                <img src="../../../../assets/img/footer-logo.png" alt="" class="img-fluid">
+            </div> -->
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <div class="login-img">
+                    <img src="../../../../assets/img/login.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <div class=" login full-page-wrapper auth login-bg">
+                    <div class="card">
+                        <div class="card-body px-5 py-5">
+                            <h3 class="card-title text-left mb-3 text-white">Login</h3>
+                            <h6 class="text-white">Empowering Careers,Building Fatures.</h6>
+                            <form LoginForm="ngForm" name="LoginForm">
+                                <div class="form-group mb-3">
+                                    <label class="text-white">Email</label>
+                                    <input type="text" class="form-control" name="email"  [(ngModel)]="user.email" email="ngModel">
+                
+                                    <!-- <div *ngIf="email.errors && (email.dirty || email.touched)" style="font-size: smaller;">
+                                        <div *ngIf="email.errors['required']">
+                                            <span style="color:  rgb(254, 144, 144);;">Please Enter Your Mail Id ..</span>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="form-group">
+                                    <label class="text-white">Password</label>
+                                    <input type="password" class="form-control" name="password"   #password="ngModel"  [(ngModel)]="user.password" >
+                                    <!-- <div *ngIf="password.errors && (password.dirty || password.touched)" style="font-size: smaller;">
+                                        <div *ngIf="password.errors['required']">
+                                            <span style="color: rgb(254, 144, 144);">Please Enter Your Password ..</span>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="login-btn text-center my-3">
+                                    <button type="submit" class="btn btn-block enter-btn text-dark" (click)="OnLogin()"
+                                        >Login</button>
+                                </div>
+                            </form>
+                            <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                                {{ errorMessage }}
+                              </div>
+                              
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+
