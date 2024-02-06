@@ -6,7 +6,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  isClicked: boolean = false;
   customOptions3: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -32,5 +32,13 @@ export class HomeComponent {
       }
     },
     nav: false
+  }
+
+
+
+  scrollToTop() {
+    this.isClicked = true;
+    console.log('Scrolling to top');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

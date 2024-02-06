@@ -13,28 +13,29 @@
           consectetur adipiscing elit.
         </p>
 
-      <div class="card">
-        <div class="serach ps-3">
-          <div class="seaech-icon">
-            <i class="bi bi-search"></i>
-            <div class="search-text">
-              <input type="text" name="" id="" placeholder="Search" class="border-0">
-            </div>
-          </div>
-          <div class="location">
-            <div class="location-icon">
-              <i class="bi bi-geo-alt"></i>
-              <div class="location-text">
-                <input type="text" placeholder="Location" class="border-0">
+        <div class="card">
+          <div class="serach ps-3">
+            <div class="seaech-icon">
+              <i class="bi bi-search"></i>
+              <div class="search-text">
+                <input type="text" name id placeholder="Search"
+                  class="border-0">
               </div>
             </div>
+            <div class="location">
+              <div class="location-icon">
+                <i class="bi bi-geo-alt"></i>
+                <div class="location-text">
+                  <input type="text" placeholder="Location" class="border-0">
+                </div>
+              </div>
+            </div>
+            <div class="sera-btn py-2 px-3">
+              <button class="btn">Search</button>
+            </div>
+
           </div>
-          <div class="sera-btn py-2 px-3">
-            <button class="btn">Search</button>
-          </div>
-          
         </div>
-      </div>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12">
@@ -174,9 +175,12 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-12">
             <div class="card my-3">
-              <a href="" routerLink="/jobDetails">
+              <a href routerLink="/jobDetails"
+                (click)="scrollToTop()"
+                [ngClass]="{ clicked: isClicked }">
                 <div class="card-body">
-                  <h6 class="job-text-div">Senior Manual Tester(QA) Required</h6>
+                  <h6 class="job-text-div">Senior Manual Tester(QA)
+                    Required</h6>
                   <p class="job-text-p">
                     Khushi Ponton Private Limited Surat,Gujrat
                   </p>
@@ -373,7 +377,8 @@
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="card my-3">
-                <img src="../../../../assets/img/Companies-2.png" class="card-img-top" alt="..."
+                <img src="../../../../assets/img/Companies-2.png"
+                  class="card-img-top" alt="..."
                   style="height: 191px" />
                 <div class="card-body">
                   <h5 class="card-title">Fosroc Chemicals</h5>
@@ -389,7 +394,8 @@
                             </button> -->
                   <div style="display: flex; gap: 5px; margin-top: 13px">
                     <div>
-                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                      <img src="../../../../assets/img/location.png"
+                        class="img-fluid" alt />
                     </div>
                     <div>Jamnager,Ahemdabad...</div>
                   </div>
@@ -399,7 +405,8 @@
 
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="card my-3">
-                <img src="../../../../assets/img/Companies-3.png" class="card-img-top" alt="..."
+                <img src="../../../../assets/img/Companies-3.png"
+                  class="card-img-top" alt="..."
                   style="height: 191px" />
                 <div class="card-body">
                   <h5 class="card-title">Visa Counsellor</h5>
@@ -417,7 +424,8 @@
                             </button> -->
                   <div style="display: flex; gap: 5px; margin-top: 13px">
                     <div>
-                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                      <img src="../../../../assets/img/location.png"
+                        class="img-fluid" alt />
                     </div>
                     <div>Jamnager,Ahemdabad...</div>
                   </div>
@@ -427,7 +435,8 @@
 
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="card my-2">
-                <img src="../../../../assets/img/Companies-4.jpg" class="card-img-top" alt="..."
+                <img src="../../../../assets/img/Companies-4.jpg"
+                  class="card-img-top" alt="..."
                   style="height: 191px" />
                 <div class="card-body">
                   <h5 class="card-title">Visa Counsellor</h5>
@@ -445,7 +454,8 @@
                             </button> -->
                   <div style="display: flex; gap: 5px; margin-top: 13px">
                     <div>
-                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                      <img src="../../../../assets/img/location.png"
+                        class="img-fluid" alt />
                     </div>
                     <div>Jamnager,Ahemdabad...</div>
                   </div>
@@ -455,7 +465,8 @@
 
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="card my-3">
-                <img src="../../../../assets/img/Companies-5.png" class="card-img-top" alt="..."
+                <img src="../../../../assets/img/Companies-5.png"
+                  class="card-img-top" alt="..."
                   style="height: 191px" />
                 <div class="card-body">
                   <h5 class="card-title">Visa Counsellor</h5>
@@ -473,7 +484,8 @@
                             </button> -->
                   <div style="display: flex; gap: 5px; margin-top: 13px">
                     <div>
-                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                      <img src="../../../../assets/img/location.png"
+                        class="img-fluid" alt />
                     </div>
                     <div>Jamnager,Ahemdabad...</div>
                   </div>
@@ -517,13 +529,15 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
               <div class="popular-main-div">
                 <div class="popular-img">
-                  <img src="../../../../assets/img/dot-2.png" class="img-fluid" alt />
+                  <img src="../../../../assets/img/dot-2.png" class="img-fluid"
+                    alt />
                 </div>
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="popular-img-first">
-                        <img src="../../../../assets/img/im.png" class="img-fluid" alt />
+                        <img src="../../../../assets/img/im.png"
+                          class="img-fluid" alt />
                       </div>
                       <div class="dot-second-div">
                         <img src="../../../../assets/img/dont-1.png" alt />
@@ -531,7 +545,8 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="popular-img-second">
-                        <img src="../../../../assets/img/im (1).png" class="img-fluid" alt />
+                        <img src="../../../../assets/img/im (1).png"
+                          class="img-fluid" alt />
                       </div>
                     </div>
                   </div>
@@ -746,7 +761,8 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card my-3">
-            <img src="../../../../assets/img/Companies-2.png" class="card-img-top" alt="..." style="height: 191px" />
+            <img src="../../../../assets/img/Companies-2.png"
+              class="card-img-top" alt="..." style="height: 191px" />
             <div class="card-body">
               <h5 class="card-title">Fosroc Chemicals</h5>
 
@@ -764,7 +780,8 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card my-3">
-            <img src="../../../../assets/img/Companies-3.png" class="card-img-top" alt="..." style="height: 191px" />
+            <img src="../../../../assets/img/Companies-3.png"
+              class="card-img-top" alt="..." style="height: 191px" />
             <div class="card-body">
               <h5 class="card-title">Visa Counsellor</h5>
 
@@ -785,7 +802,8 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card my-3">
-            <img src="../../../../assets/img/Companies-4.jpg" class="card-img-top" alt="..." style="height: 191px" />
+            <img src="../../../../assets/img/Companies-4.jpg"
+              class="card-img-top" alt="..." style="height: 191px" />
             <div class="card-body">
               <h5 class="card-title">Visa Counsellor</h5>
 
@@ -806,7 +824,8 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card my-3">
-            <img src="../../../../assets/img/Companies-5.png" class="card-img-top" alt="..." style="height: 191px" />
+            <img src="../../../../assets/img/Companies-5.png"
+              class="card-img-top" alt="..." style="height: 191px" />
             <div class="card-body">
               <h5 class="card-title">Visa Counsellor</h5>
 
@@ -847,7 +866,8 @@
           <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="img-set-card">
-                <img src="../../../../assets/img/profilepic-1.png" class="img-fluid img-tag-div" alt="..." />
+                <img src="../../../../assets/img/profilepic-1.png"
+                  class="img-fluid img-tag-div" alt="..." />
               </div>
               <div class="card">
                 <div class="card-body">
@@ -890,7 +910,8 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="img-set-card">
-                <img src="../../../../assets/img/profilepic-2.png" class="img-fluid img-tag-div" alt="..." />
+                <img src="../../../../assets/img/profilepic-2.png"
+                  class="img-fluid img-tag-div" alt="..." />
               </div>
               <div class="card">
                 <div class="card-body">
@@ -933,7 +954,8 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="img-set-card">
-                <img src="../../../../assets/img/profilepic-3.png" class="img-fluid img-tag-div" alt="..." />
+                <img src="../../../../assets/img/profilepic-3.png"
+                  class="img-fluid img-tag-div" alt="..." />
               </div>
               <div class="card">
                 <div class="card-body">
