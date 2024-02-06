@@ -6,6 +6,8 @@ import { FooterComponent } from './Footer/view/footer/footer.component';
 import { JobDetailsComponent } from './JobDetails/view/job-details/job-details.component';
 import { LoginComponent } from './Login/view/login/login.component';
 import { AppComponent } from './app.component';
+import { SignupComponent } from './signup/view/signup/signup.component';
+import { AuthGuard } from './Common/auth.guard';
 
 const routes: Routes = [
   {
@@ -22,23 +24,32 @@ const routes: Routes = [
 
   {
     path:"navbar",
-    component:NavbarComponent
+    component:NavbarComponent,
+    // canActivate:[AuthGuard]
   },
   {
     path:"home",
-    component:HomeComponent
+    component:HomeComponent,
+    // canActivate:[AuthGuard]
   },
   {
     path:"footer",
-    component:FooterComponent
+    component:FooterComponent,
+    // canActivate:[AuthGuard]
   },
   {
     path:"jobDetails",
-    component:JobDetailsComponent
+    component:JobDetailsComponent,
+    // canActivate:[AuthGuard]
   },
   {
     path:"login",
     component:LoginComponent
+  },
+  {
+    path:"signup",
+    component:SignupComponent,
+    // canActivate:[AuthGuard]
   }
 ];
 

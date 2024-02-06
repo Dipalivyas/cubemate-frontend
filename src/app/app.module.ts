@@ -12,6 +12,7 @@ import { CarouselModule} from 'ngx-owl-carousel-o';
 import { FooterComponent } from './Footer/view/footer/footer.component';
 import { JobDetailsComponent } from './JobDetails/view/job-details/job-details.component';
 import { LoginComponent } from './Login/view/login/login.component';
+import { SignupComponent } from './signup/view/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { LoginComponent } from './Login/view/login/login.component';
     HomeComponent,
     FooterComponent,
     JobDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
