@@ -3,47 +3,38 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <h2 class="text-h3-class">
-          <b>Looking For A Better Opportunity? Join Us And Make Things Happen
-          </b>
-        </h2>
-        <p class="second-text-p">
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id es Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit.
-        </p>
-
-        <div class="card">
-          <div class="serach ps-3">
-            <div class="seaech-icon">
-              <i class="bi bi-search"></i>
-              <div class="search-text">
-                <input type="text" name id placeholder="Search"
-                  class="border-0">
-              </div>
-            </div>
-            <div class="location">
-              <div class="location-icon">
-                <i class="bi bi-geo-alt"></i>
-                <div class="location-text">
-                  <input type="text" placeholder="Location" class="border-0">
-                </div>
-              </div>
-            </div>
-            <div class="sera-btn py-2 px-3">
-              <button class="btn">Search</button>
-            </div>
-
+        <div class="main-body">
+          <h2 class="text-h3-class">
+            <b>Looking For A Better Opportunity?<br>
+              Join Us And Make Things Happen</b>
+          </h2>
+          <p class="second-text-p">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id es Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. officia deserunt mollit anim id es
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div class="ExploreNow-btn">
+            <button type="button" class="btn">Explore Now</button>
           </div>
         </div>
+
+
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <img src="/assets/img/vector.png" alt class="img-fluid" />
+        <div class="main-img">
+          <img src="/assets/img/sitted-man.png" alt class="img-fluid" />
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+<div class="hexagon">
+  <div class="hexagon-1"><img src="../../../../assets/img/hexagon.png" alt=""></div>
+  <div class="hexagon-2"><img src="../../../../assets/img/hexagon.png" alt=""></div>
+</div>
 
 <section class="counter">
   <div class="container">
@@ -112,7 +103,7 @@
   </div>
 </section>
 
-<section class="Categories">
+<!-- <section class="Categories">
   <div class="container">
     <div style="display: flex; justify-content: center; margin-bottom: 30px">
       <h4 style="color: #6d9277">Categories</h4>
@@ -163,187 +154,286 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="JobFeed">
   <div class="container">
-    <div style="display: flex; justify-content: center; margin-bottom: 30px">
-      <h4 style="color: #374f59">Job Feed</h4>
-    </div>
-    <div style="padding: 30px">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card my-3">
-              <a href routerLink="/jobDetails"
-                (click)="scrollToTop()"
-                [ngClass]="{ clicked: isClicked }">
-                <div class="card-body">
-                  <h6 class="job-text-div">Senior Manual Tester(QA)
-                    Required</h6>
-                  <p class="job-text-p">
-                    Khushi Ponton Private Limited Surat,Gujrat
-                  </p>
-                  <div class="jobfeed-card">
-                    <ul>
-                      <li>From ₹50,000 a month</li>
-                      <li>Full-time</li>
-                      <li>Day Shift</li>
-                      <li>5 day working</li>
-                    </ul>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="title text-center">
+          <h4 style="color: #374f59">Job Feed</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card my-3">
+          <a href routerLink="/jobDetails" (click)="scrollToTop()" [ngClass]="{ clicked: isClicked }">
+            <div class="card-body">
+              <div>
+                <button class="btn-jobfeed">Apply Now</button>
+              </div>
+              <h6 class="job-text-div">Senior Manual Tester(QA)
+                Required</h6>
+
+              <div class="jobfeed-card">
+                <ul>
+                  <li><span>From ₹50,000 a month</span></li>
+                  <li><span>Day Shift</span></li>
+                  <li><span>Full-time</span></li>
+                  <li><span>5 day working</span></li>
+                </ul>
+              </div>
+              <div class="job-text">
+                <div class="job-texts">
+                  <h3>Receptionist</h3>
+                  <div class="job-texts-p">
+                    <div>
+                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                    </div>
+                    <div>Jamnager,Ahemdabad...</div>
                   </div>
+                </div>
+              </div>
+              <div class="job-img">
+                <img src="../../../../assets/img/Ellipse 355.png" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card my-3">
+          <div class="card-body">
+            <div>
+              <button class="btn-jobfeed">Apply Now</button>
+            </div>
+            <h6 class="job-text-div">Senior Manual Tester(QA)
+              Required</h6>
+
+            <div class="jobfeed-card">
+              <ul>
+                <li><span>From ₹50,000 a month</span></li>
+                <li><span>Day Shift</span></li>
+                <li><span>Full-time</span></li>
+                <li><span>5 day working</span></li>
+              </ul>
+            </div>
+            <div class="job-text">
+              <div class="job-texts">
+                <h3>Receptionist</h3>
+                <div class="job-texts-p">
                   <div>
-                    <button class="btn-jobfeed">Apply Now</button>
+                    <img src="../../../../assets/img/location.png" class="img-fluid" alt />
                   </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card my-3">
-              <div class="card-body">
-                <h6 class="job-text-div">Senior Manual Tester(QA) Required</h6>
-                <p class="job-text-p">
-                  Khushi Ponton Private Limited Surat,Gujrat
-                </p>
-                <div class="jobfeed-card">
-                  <ul>
-                    <li>From ₹50,000 a month</li>
-                    <li>Full-time</li>
-                    <li>Day Shift</li>
-                    <li>5 day working</li>
-                  </ul>
-                </div>
-                <div>
-                  <button class="btn-jobfeed">Apply Now</button>
+                  <div>Jamnager,Ahemdabad...</div>
                 </div>
               </div>
             </div>
+            <div class="job-img">
+              <img src="../../../../assets/img/Ellipse 355.png" alt="">
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card my-3">
-              <div class="card-body">
-                <h6 class="job-text-div">Senior Manual Tester(QA) Required</h6>
-                <p class="job-text-p">
-                  Khushi Ponton Private Limited Surat,Gujrat
-                </p>
-                <div class="jobfeed-card">
-                  <ul>
-                    <li>From ₹50,000 a month</li>
-                    <li>Full-time</li>
-                    <li>Day Shift</li>
-                    <li>5 day working</li>
-                  </ul>
-                </div>
-                <div>
-                  <button class="btn-jobfeed">Apply Now</button>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card my-3">
+          <div class="card-body">
+            <div>
+              <button class="btn-jobfeed">Apply Now</button>
+            </div>
+            <h6 class="job-text-div">Senior Manual Tester(QA)
+              Required</h6>
+
+            <div class="jobfeed-card">
+              <ul>
+                <li><span>From ₹50,000 a month</span></li>
+                <li><span>Day Shift</span></li>
+                <li><span>Full-time</span></li>
+                <li><span>5 day working</span></li>
+              </ul>
+            </div>
+            <div class="job-text">
+              <div class="job-texts">
+                <h3>Receptionist</h3>
+                <div class="job-texts-p">
+                  <div>
+                    <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                  </div>
+                  <div>Jamnager,Ahemdabad...</div>
                 </div>
               </div>
             </div>
+            <div class="job-img">
+              <img src="../../../../assets/img/Ellipse 355.png" alt="">
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card my-3">
-              <div class="card-body">
-                <h6 class="job-text-div">Senior Manual Tester(QA) Required</h6>
-                <p class="job-text-p">
-                  Khushi Ponton Private Limited Surat,Gujrat
-                </p>
-                <div class="jobfeed-card">
-                  <ul>
-                    <li>From ₹50,000 a month</li>
-                    <li>Full-time</li>
-                    <li>Day Shift</li>
-                    <li>5 day working</li>
-                  </ul>
-                </div>
-                <div>
-                  <button class="btn-jobfeed">Apply Now</button>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card my-3">
+          <div class="card-body">
+            <div>
+              <button class="btn-jobfeed">Apply Now</button>
+            </div>
+            <h6 class="job-text-div">Senior Manual Tester(QA)
+              Required</h6>
+
+            <div class="jobfeed-card">
+              <ul>
+                <li><span>From ₹50,000 a month</span></li>
+                <li><span>Day Shift</span></li>
+                <li><span>Full-time</span></li>
+                <li><span>5 day working</span></li>
+              </ul>
+            </div>
+            <div class="job-text">
+              <div class="job-texts">
+                <h3>Receptionist</h3>
+                <div class="job-texts-p">
+                  <div>
+                    <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                  </div>
+                  <div>Jamnager,Ahemdabad...</div>
                 </div>
               </div>
             </div>
+            <div class="job-img">
+              <img src="../../../../assets/img/Ellipse 355.png" alt="">
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card my-3">
-              <div class="card-body">
-                <h6 class="job-text-div">Senior Manual Tester(QA) Required</h6>
-                <p class="job-text-p">
-                  Khushi Ponton Private Limited Surat,Gujrat
-                </p>
-                <div class="jobfeed-card">
-                  <ul>
-                    <li>From ₹50,000 a month</li>
-                    <li>Full-time</li>
-                    <li>Day Shift</li>
-                    <li>5 day working</li>
-                  </ul>
-                </div>
-                <div>
-                  <button class="btn-jobfeed">Apply Now</button>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card my-3">
+          <div class="card-body">
+            <div>
+              <button class="btn-jobfeed">Apply Now</button>
+            </div>
+            <h6 class="job-text-div">Senior Manual Tester(QA)
+              Required</h6>
+
+            <div class="jobfeed-card">
+              <ul>
+                <li><span>From ₹50,000 a month</span></li>
+                <li><span>Day Shift</span></li>
+                <li><span>Full-time</span></li>
+                <li><span>5 day working</span></li>
+              </ul>
+            </div>
+            <div class="job-text">
+              <div class="job-texts">
+                <h3>Receptionist</h3>
+                <div class="job-texts-p">
+                  <div>
+                    <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                  </div>
+                  <div>Jamnager,Ahemdabad...</div>
                 </div>
               </div>
             </div>
+            <div class="job-img">
+              <img src="../../../../assets/img/Ellipse 355.png" alt="">
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card my-3">
-              <div class="card-body">
-                <h6 class="job-text-div">Senior Manual Tester(QA) Required</h6>
-                <p class="job-text-p">
-                  Khushi Ponton Private Limited Surat,Gujrat
-                </p>
-                <div class="jobfeed-card">
-                  <ul>
-                    <li>From ₹50,000 a month</li>
-                    <li>Full-time</li>
-                    <li>Day Shift</li>
-                    <li>5 day working</li>
-                  </ul>
-                </div>
-                <div>
-                  <button class="btn-jobfeed">Apply Now</button>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card my-3">
+          <div class="card-body">
+            <div>
+              <button class="btn-jobfeed">Apply Now</button>
+            </div>
+            <h6 class="job-text-div">Senior Manual Tester(QA)
+              Required</h6>
+
+            <div class="jobfeed-card">
+              <ul>
+                <li><span>From ₹50,000 a month</span></li>
+                <li><span>Day Shift</span></li>
+                <li><span>Full-time</span></li>
+                <li><span>5 day working</span></li>
+              </ul>
+            </div>
+            <div class="job-text">
+              <div class="job-texts">
+                <h3>Receptionist</h3>
+                <div class="job-texts-p">
+                  <div>
+                    <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                  </div>
+                  <div>Jamnager,Ahemdabad...</div>
                 </div>
               </div>
             </div>
+            <div class="job-img">
+              <img src="../../../../assets/img/Ellipse 355.png" alt="">
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card my-3">
-              <div class="card-body">
-                <h6 class="job-text-div">Senior Manual Tester(QA) Required</h6>
-                <p class="job-text-p">
-                  Khushi Ponton Private Limited Surat,Gujrat
-                </p>
-                <div class="jobfeed-card">
-                  <ul>
-                    <li>From ₹50,000 a month</li>
-                    <li>Full-time</li>
-                    <li>Day Shift</li>
-                    <li>5 day working</li>
-                  </ul>
-                </div>
-                <div>
-                  <button class="btn-jobfeed">Apply Now</button>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card my-3">
+          <div class="card-body">
+            <div>
+              <button class="btn-jobfeed">Apply Now</button>
+            </div>
+            <h6 class="job-text-div">Senior Manual Tester(QA)
+              Required</h6>
+
+            <div class="jobfeed-card">
+              <ul>
+                <li><span>From ₹50,000 a month</span></li>
+                <li><span>Day Shift</span></li>
+                <li><span>Full-time</span></li>
+                <li><span>5 day working</span></li>
+              </ul>
+            </div>
+            <div class="job-text">
+              <div class="job-texts">
+                <h3>Receptionist</h3>
+                <div class="job-texts-p">
+                  <div>
+                    <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                  </div>
+                  <div>Jamnager,Ahemdabad...</div>
                 </div>
               </div>
             </div>
+            <div class="job-img">
+              <img src="../../../../assets/img/Ellipse 355.png" alt="">
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card my-3">
-              <div class="card-body">
-                <h6 class="job-text-div">Senior Manual Tester(QA) Required</h6>
-                <p class="job-text-p">
-                  Khushi Ponton Private Limited Surat,Gujrat
-                </p>
-                <div class="jobfeed-card">
-                  <ul>
-                    <li>From ₹50,000 a month</li>
-                    <li>Full-time</li>
-                    <li>Day Shift</li>
-                    <li>5 day working</li>
-                  </ul>
-                </div>
-                <div>
-                  <button class="btn-jobfeed">Apply Now</button>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card my-3">
+          <div class="card-body">
+            <div>
+              <button class="btn-jobfeed">Apply Now</button>
+            </div>
+            <h6 class="job-text-div">Senior Manual Tester(QA)
+              Required</h6>
+
+            <div class="jobfeed-card">
+              <ul>
+                <li><span>From ₹50,000 a month</span></li>
+                <li><span>Day Shift</span></li>
+                <li><span>Full-time</span></li>
+                <li><span>5 day working</span></li>
+              </ul>
+            </div>
+            <div class="job-text">
+              <div class="job-texts">
+                <h3>Receptionist</h3>
+                <div class="job-texts-p">
+                  <div>
+                    <img src="../../../../assets/img/location.png" class="img-fluid" alt />
+                  </div>
+                  <div>Jamnager,Ahemdabad...</div>
                 </div>
               </div>
+            </div>
+            <div class="job-img">
+              <img src="../../../../assets/img/Ellipse 355.png" alt="">
             </div>
           </div>
         </div>
@@ -354,31 +444,27 @@
 
 <section class="Jobsbasedonyourprofile">
   <div class="module-slider">
-    <div class="container">
-      <div class="row">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <h4 style="color: #6d9277">Jobs based on your profile</h4>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-              <div class="seeall">
-                <h6>Seeall</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <owl-carousel-o [options]="customOptions3">
       <ng-template carouselSlide>
         <div class="container">
           <div class="row">
+            <div class="col-lg-12">
+              <div class="row jb-title">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="jb-title-text">
+                    <h4>Jobs based on your profile</h4>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="seeall">
+                    <h6>Seeall</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="card my-3">
-                <img src="../../../../assets/img/Companies-2.png"
-                  class="card-img-top" alt="..."
+                <img src="../../../../assets/img/Companies-2.png" class="card-img-top" alt="..."
                   style="height: 191px" />
                 <div class="card-body">
                   <h5 class="card-title">Fosroc Chemicals</h5>
@@ -389,13 +475,9 @@
                     </div>
                     <div>3.5</div>
                   </div>
-                  <!-- <button class="btnForeign">
-                                Foreign MNC
-                            </button> -->
                   <div style="display: flex; gap: 5px; margin-top: 13px">
                     <div>
-                      <img src="../../../../assets/img/location.png"
-                        class="img-fluid" alt />
+                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
                     </div>
                     <div>Jamnager,Ahemdabad...</div>
                   </div>
@@ -405,8 +487,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="card my-3">
-                <img src="../../../../assets/img/Companies-3.png"
-                  class="card-img-top" alt="..."
+                <img src="../../../../assets/img/Companies-3.png" class="card-img-top" alt="..."
                   style="height: 191px" />
                 <div class="card-body">
                   <h5 class="card-title">Visa Counsellor</h5>
@@ -424,8 +505,7 @@
                             </button> -->
                   <div style="display: flex; gap: 5px; margin-top: 13px">
                     <div>
-                      <img src="../../../../assets/img/location.png"
-                        class="img-fluid" alt />
+                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
                     </div>
                     <div>Jamnager,Ahemdabad...</div>
                   </div>
@@ -435,8 +515,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="card my-2">
-                <img src="../../../../assets/img/Companies-4.jpg"
-                  class="card-img-top" alt="..."
+                <img src="../../../../assets/img/Companies-4.jpg" class="card-img-top" alt="..."
                   style="height: 191px" />
                 <div class="card-body">
                   <h5 class="card-title">Visa Counsellor</h5>
@@ -454,8 +533,7 @@
                             </button> -->
                   <div style="display: flex; gap: 5px; margin-top: 13px">
                     <div>
-                      <img src="../../../../assets/img/location.png"
-                        class="img-fluid" alt />
+                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
                     </div>
                     <div>Jamnager,Ahemdabad...</div>
                   </div>
@@ -465,8 +543,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-12">
               <div class="card my-3">
-                <img src="../../../../assets/img/Companies-5.png"
-                  class="card-img-top" alt="..."
+                <img src="../../../../assets/img/Companies-5.png" class="card-img-top" alt="..."
                   style="height: 191px" />
                 <div class="card-body">
                   <h5 class="card-title">Visa Counsellor</h5>
@@ -484,8 +561,7 @@
                             </button> -->
                   <div style="display: flex; gap: 5px; margin-top: 13px">
                     <div>
-                      <img src="../../../../assets/img/location.png"
-                        class="img-fluid" alt />
+                      <img src="../../../../assets/img/location.png" class="img-fluid" alt />
                     </div>
                     <div>Jamnager,Ahemdabad...</div>
                   </div>
@@ -529,15 +605,13 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
               <div class="popular-main-div">
                 <div class="popular-img">
-                  <img src="../../../../assets/img/dot-2.png" class="img-fluid"
-                    alt />
+                  <img src="../../../../assets/img/dot-2.png" class="img-fluid" alt />
                 </div>
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="popular-img-first">
-                        <img src="../../../../assets/img/im.png"
-                          class="img-fluid" alt />
+                        <img src="../../../../assets/img/im.png" class="img-fluid" alt />
                       </div>
                       <div class="dot-second-div">
                         <img src="../../../../assets/img/dont-1.png" alt />
@@ -545,8 +619,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <div class="popular-img-second">
-                        <img src="../../../../assets/img/im (1).png"
-                          class="img-fluid" alt />
+                        <img src="../../../../assets/img/im (1).png" class="img-fluid" alt />
                       </div>
                     </div>
                   </div>
@@ -761,8 +834,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card my-3">
-            <img src="../../../../assets/img/Companies-2.png"
-              class="card-img-top" alt="..." style="height: 191px" />
+            <img src="../../../../assets/img/Companies-2.png" class="card-img-top" alt="..." style="height: 191px" />
             <div class="card-body">
               <h5 class="card-title">Fosroc Chemicals</h5>
 
@@ -780,8 +852,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card my-3">
-            <img src="../../../../assets/img/Companies-3.png"
-              class="card-img-top" alt="..." style="height: 191px" />
+            <img src="../../../../assets/img/Companies-3.png" class="card-img-top" alt="..." style="height: 191px" />
             <div class="card-body">
               <h5 class="card-title">Visa Counsellor</h5>
 
@@ -802,8 +873,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card my-3">
-            <img src="../../../../assets/img/Companies-4.jpg"
-              class="card-img-top" alt="..." style="height: 191px" />
+            <img src="../../../../assets/img/Companies-4.jpg" class="card-img-top" alt="..." style="height: 191px" />
             <div class="card-body">
               <h5 class="card-title">Visa Counsellor</h5>
 
@@ -824,8 +894,7 @@
 
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="card my-3">
-            <img src="../../../../assets/img/Companies-5.png"
-              class="card-img-top" alt="..." style="height: 191px" />
+            <img src="../../../../assets/img/Companies-5.png" class="card-img-top" alt="..." style="height: 191px" />
             <div class="card-body">
               <h5 class="card-title">Visa Counsellor</h5>
 
@@ -866,8 +935,7 @@
           <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="img-set-card">
-                <img src="../../../../assets/img/profilepic-1.png"
-                  class="img-fluid img-tag-div" alt="..." />
+                <img src="../../../../assets/img/profilepic-1.png" class="img-fluid img-tag-div" alt="..." />
               </div>
               <div class="card">
                 <div class="card-body">
@@ -910,8 +978,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="img-set-card">
-                <img src="../../../../assets/img/profilepic-2.png"
-                  class="img-fluid img-tag-div" alt="..." />
+                <img src="../../../../assets/img/profilepic-2.png" class="img-fluid img-tag-div" alt="..." />
               </div>
               <div class="card">
                 <div class="card-body">
@@ -954,8 +1021,7 @@
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="img-set-card">
-                <img src="../../../../assets/img/profilepic-3.png"
-                  class="img-fluid img-tag-div" alt="..." />
+                <img src="../../../../assets/img/profilepic-3.png" class="img-fluid img-tag-div" alt="..." />
               </div>
               <div class="card">
                 <div class="card-body">
@@ -1002,4 +1068,6 @@
     </owl-carousel-o>
   </div>
 </section>
+
+
 <app-footer></app-footer>

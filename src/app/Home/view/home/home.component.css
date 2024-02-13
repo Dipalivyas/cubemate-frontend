@@ -3,16 +3,77 @@
     max-width: 1440px;
 } */
 
-.text-h3-class {
-    margin-top: 80px;
-    color: #374f59;
+
+.ExploreNow-btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid;
+    border-radius: 34.24px;
+    Width: 226px;
+    Height: 42.8px;
+    background-color: #374F5B;
 }
-.JobFeed a{
+
+.ExploreNow-btn button {
+    color: #fff;
+    font-size: 20.55px;
+    font-weight: 600;
+    line-height: 25.31px;
+
+}
+
+.JobFeed a {
     text-decoration: none;
 }
+
+.main-body {
+    margin-top: 100px;
+}
+
+.text-h3-class {
+    color: #374F59;
+    width: 670px;
+    height: 112px;
+    font-Weight: 600;
+    font-Size: 43.12px;
+    Line-height: 55.58px;
+    margin-top: 45px;
+}
+
 .second-text-p {
     color: #6d9277;
+    width: 553px;
+    height: 125px;
+    font-Weight: 400;
+    font-Size: 20px;
+    Line-height: 24.64px;
     margin-top: 45px;
+}
+
+.main {
+    background-image: url(../../../../assets/img/carve.png);
+    background-repeat: no-repeat;
+    height: 870px;
+}
+
+.main-img {
+    width: 504px;
+    height: 495px;
+    margin-left: 42px;
+}
+
+.hexagon-1 {
+    position: absolute;
+    top: 635px;
+    left: -85px;
+}
+
+.hexagon-2 {
+    position: absolute;
+    top: 755px;
+    right: 60px;
 }
 
 .input-text {
@@ -20,24 +81,29 @@
     border: none;
     box-shadow: 17px 6px 17px -9px rgba(163, 163, 163, 1);
 }
-.seaech-icon{
+
+.seaech-icon {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
-.location-icon{
+
+.location-icon {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
-.sera-btn{
+
+.sera-btn {
     background-color: rgba(55, 79, 89, 1);
     border-radius: 8px;
 }
-.sera-btn .btn{
+
+.sera-btn .btn {
     color: #fff;
 }
-.serach{
+
+.serach {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -59,7 +125,8 @@
     width: 100%;
     left: 19px;
 }
-.search-icon{
+
+.search-icon {
     display: flex;
     align-items: center;
     position: relative;
@@ -67,21 +134,23 @@
     gap: 8px;
     margin-inline-start: 8px;
 }
+
 .demo-input {
     width: 350px !important;
     border: 1px solid black;
 }
 
 
-@media  (max-width: 1024px) {
-    .serach{
+@media (max-width: 1024px) {
+    .serach {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         height: 90px;
     }
-    .sera-btn{
+
+    .sera-btn {
         margin-top: 8px;
     }
 }
@@ -89,15 +158,13 @@
 /* card css */
 
 .card {
-    border-radius: 7px;
+    border-radius: 20px;
     background: #fff;
-    -webkit-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
+
 }
 
 .counter {
-    margin: 50px 0;
+    margin-top: 50px;
     background-color: #f1f4f9;
     padding: 30px 0;
     border: none;
@@ -155,41 +222,80 @@
 /* Job Feed div */
 
 .JobFeed {
-    margin: 50px 0;
     background-color: #f1f4f9;
     padding: 30px 0;
     border: none;
 }
 
-.jobfeed-card {
-    background-color: #f0f3f8;
-    border: none;
-    border-radius: 7px;
+.card-body {
+    padding: 0 0 0 0;
 }
+
+
 
 .btn-jobfeed {
     background-color: #374f59;
     border: none;
-    border-radius: 7px;
+    border-radius: 30px;
     color: white;
     text-align: center;
-    width: 100%;
+    width: 174.63px;
     padding: 8px;
+    margin: 16px 0 0 16px;
+
 }
 
 .job-text-div {
     color: black;
-    font-size: 16px;
+    font-size: 15.64px;
+    font-weight: 600;
+    line-height: 19.27px;
+    margin: 8px 0 8px 16px;
+
 }
 
-.job-text-p {
-    font-size: 13px;
-    color: #676565;
+.job-text {
+    background-color: #F5F5F5;
+    height: 112.94px;
+    width: 259px;
+    border: 0px solid;
+    border-radius: 20px;
+    margin-top: 35px;
+}
+
+.job-texts {
+    margin-left: 22px;
+    padding-top: 40px;
+}
+
+.job-texts h3 {
+    color: #374F68;
+    font-size: 20.85px;
+    font-weight: 600;
+    line-height: 25.69px;
+}
+
+.job-texts-p {
+    font-size: 15.64px;
+    color: #374F68;
+    width: 180px;
+    height: 25px;
+    display: flex;
+}
+
+.job-img {
+    position: absolute;
+    top: 178px;
 }
 
 ul li {
     color: #374f59;
 }
+
+ul li span {
+    color: #374f59;
+}
+
 
 /* Top Companies  div */
 
@@ -205,13 +311,23 @@ ul li {
 }
 
 /* Jobs based on your profile */
-
+.Jobsbasedonyourprofile{
+    background-color: #FAFAFA;
+}
 .job-profile-div {
     display: flex;
     justify-content: space-between;
     padding-bottom: 40px;
 }
-
+.jb-title{
+    margin-top: 55px;
+    margin-bottom: 15px;
+}
+.jb-title-text h4{
+    color: #374F59;
+    font-size: 34.24px;
+    font-weight: 600;
+}
 .seeall {
     text-align: end;
 }
@@ -228,7 +344,7 @@ ul li {
 /* PopularStartup */
 
 .PopularStartup {
-    margin: 50px 0;
+    /* margin: 50px 0; */
     background-color: #f1f4f9;
     padding: 30px 0;
     border: none;
@@ -305,13 +421,14 @@ ul li {
     .popular-main-div {
         padding-top: 0px;
     }
-    .serach{
+
+    .serach {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between; 
+        justify-content: space-between;
         height: 90px;
-    
+
     }
 }
 
@@ -319,18 +436,21 @@ ul li {
     .PopularStartup-box {
         height: 40pc;
     }
+
     .popular-img-first {
         margin-top: -93px;
     }
+
     .popular-main-div {
         padding-top: 25px;
     }
 }
+
 @media only screen and (max-width: 768px) {
     .PopularStartup-box {
         height: 50pc;
     }
-    
+
 }
 
 @media only screen and (max-width: 427px) {

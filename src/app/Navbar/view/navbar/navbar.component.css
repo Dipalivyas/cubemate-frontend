@@ -4,32 +4,38 @@
 }
 
 ul li a {
-  padding-inline-start: 30px;
+  padding-inline-start: 40px;
+  font-weight: 600;
+  font-size: 17px;
 }
 
 .btn-div-crl {
   width: 89px;
   height: 32.17px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
   color: #374f59;
   background: #a5e8d3;
 }
 
 .btn-div-crl-register {
-  width: 89px;
+  width: 100px;
   height: 32.17px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
   color: #fff;
   background: #374f59;
 }
-.Home-div{
+
+.Home-div {
   margin-inline-start: 6pc;
   color: #6d9277 !important;
 }
+.BG {
+  background-color: rgb(165 232 211 / 20%);
+}
 @media only screen and (max-width: 786px) {
-  .Home-div{
+  .Home-div {
     margin-inline-start: 0px;
 
   }
