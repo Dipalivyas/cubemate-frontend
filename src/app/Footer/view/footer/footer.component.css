@@ -28,3 +28,94 @@
     margin: 20px 0px;
     color: #fff;
 }
+.call h5{
+    color: rgba(165, 232, 211, 1);
+    font-size: 15px;
+}
+.logo{
+    position: relative;
+}
+.logo::after{
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(157, 157, 157, 1);
+    top: 49%;
+    width: 100%;
+    left: 63%;
+}
+.logo::before{
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(157, 157, 157, 1);
+    top: 49%;
+    width: 100%;
+    right: 63%;
+}
+.fb{
+    background-color: #ffff;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
+.fb i{
+    line-height: 30px;
+}
+.twit{
+    background-color: #ffff;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin: 0 10px 0 0px;
+}
+.twit i{
+    line-height: 30px;
+}
+.you{
+    background-color: #ffff;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.you i{
+    line-height: 30px;
+}
+
+
+
+/* media query start */
+
+@media only screen and (max-width: 769px){
+    .logo::after{
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(157, 157, 157, 1);
+      top: 49%;
+      width: 42%;
+      left: 63%;
+    }
+  }
+
+  @media only screen and (max-width: 426px){
+    .logo::after{
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(157, 157, 157, 1);
+      top: 49%;
+      width: 33%;
+      left: 69%;
+    }
+    .logo::before{
+        content: '';
+        position: absolute;
+        border: 1px solid rgba(157, 157, 157, 1);
+        top: 49%;
+        width: 33%;
+        right: 69%;
+    }
+  }
+
+  /* media query end */

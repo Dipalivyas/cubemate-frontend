@@ -1,239 +1,266 @@
-.top-job-details {
-  /* background: #9D9D9D; */
-  border: none;
-  border-radius: 10px;
-  -webkit-box-shadow: 11px 16px 34px -15px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 11px 16px 34px -15px rgba(0, 0, 0, 0.75);
-  box-shadow: 11px 16px 34px -15px rgba(0, 0, 0, 0.75);
-  margin: 0px 0px 5pc 0px;
-  background: #ffffff;
+.compnay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.job-title {
-  color: #374f59;
-  padding: 40px 0px 25px 0px;
+.compnies{
+  display: none;
 }
-
-.job-details-div-text {
-  color: #6d9277;
-}
-
-.company-img-div {
-  text-align: end;
-  margin-top: -40px;
-  padding: 0px 0px 40px 0px;
-}
-.pay-btn i{
-  color: #374f59;
-}
-.pay-btn h5{
-  color: #6d9277;
-}
-.pay-amount h5{
-  background-color: #374f59;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 8px;
-}
-.shift i{
-  color: #6d9277;
-}
-.shift h5{
-  color: #6d9277;
-}
-.evening h5{
-  background-color: #374f59;
-  border-radius: 8px;
-  color: #fff;
-}
-.day h5{
-  background-color: #374f59;
-  border-radius: 8px;
-  color: #fff;
-}
-.design {
-  background-color: #A5E8D3;
-  color: #374F59;
-  border-radius: 10px;
-  text-align: center;
-  padding: 6px 0;
-  margin: 5px 0;
-}
-
-.skill-title h5{
-  color: #6d9277;
-}
-.call{
-  background-color: #374F59;
-  padding: 5px 15px;
-  text-align: center;
-  margin: 0 9px;
-  border-radius: 10px;
-}
-.call .btn{
- 
-  color: #fff;
-}
-.apply{
-  background-color: #A5E8D3;
-  padding: 5px 15px;
-  text-align: center;
-  margin: 9px 9px;
-  border-radius: 10px;
-}
-.apply .btn{
-  color: #374F59;
-  font-weight: 700;
-}
-.card{
-  box-shadow: 0px 0px 13px -3px rgba(0,0,0,0.75);
-  padding: 10px 15px;
-}
-.benifit h4{
-  color: #6d9277;
-  font-weight: 700;
-}
-.jobs-img img{
-  width: 60px;
-  height: 60px;
-}
-.jobss{
+.job-back{
+  background-color: rgba(217, 217, 217, 0.5);
+  height: 312px;
+  width: 87%;
+  margin: 15px auto;
+  border-radius: 48px;
   position: relative;
 }
-.bookmark-icon {
+.job-details{
   position: absolute;
-  right: 0;
-  top: 0;
-  padding: 5px 5px;
+    top: 41%;
+    bottom: 0;
+    left: 44%;
+    right: 0;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    border-radius: 50px;
 }
-.job-location i{
-  color: #6d9277;
+.job-details .card{
+  border-radius: 50px;
+  padding: 15px 0;
 }
-.day-shifts{
-  background-color: #A5E8D3;
-  color: #374F59;
-  text-align: center;
-  border-radius: 10px;
-  padding: 0px 5px;
+.compnay{
+  padding: 10px 20px;
 }
-.day-shifts h6{
-  line-height: 32px;
+.compnay-location{
+  position: absolute;
+  bottom: 0;
+  left: 5%;
 }
-.rating i{
+.rating{
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+}
+.rating-title i{
   color: yellow;
 }
-.smilar-job h5{
-  color: #6D9277;
+.location-icon h5{
+  color: rgba(55, 79, 89, 1);
+}
+.location-icon i{
+  color: rgba(55, 79, 89, 1);
+}
+
+
+
+/**************************************************** job-details :start *********************************************************/
+.job-detail{
+  margin: 50px 0;
+}
+.job-detail .card{
+  background-color: rgba(250, 250, 250, 1);
+  border: 0;
+}
+.job-title h2{
+  color: rgba(55, 79, 89, 1);
   font-weight: 700;
 }
-.companys-logos h5{
-  color: #6D9277;
-}
-.text_wraps h5{
-  color: #6D9277;
-  font-weight: 500;
-}
-.job-detsss{
-  height: 500px;
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 20%;
-  }
-  &::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: rgb(92, 90, 90);
-    height: 80px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #6D9277;
-  }
-}
-.website{
-  background-color: #374f59;
-  padding: 3px 15px;
-  line-height: 30px;
-  border-radius: 10px;
-}
-.web-name h5{
-  line-height: 30px;
-  color: #fff;
-}
-.web-name .btn{
-  color: #fff;
-}
-.web-icon img{
-  width: 20px;
-  height: 20px;
-}
-.apply-btn{
+ .apply-btn{
+  background-color: rgba(55, 79, 89, 1);
+  padding: 20px 0;
   text-align: center;
-  background-color: #A5E8D3;
-  padding: 5px 0;
-  border-radius: 10px;
+  border-radius: 18px;
+}
+.job-salary h5{
+  color: rgba(55, 79, 89, 1);
+}
+.salary-month h5{
+  color:rgba(55, 79, 89, 1);
 }
 .apply-btn .btn{
-   color: #374F59;
-   font-weight: 800;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
 }
-.companyss{
-  height: 500px;
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 20%;
-  }
-  &::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: rgb(92, 90, 90);
-    height: 80px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background:black;
-  }
+
+/**************************************************** job-details :End *********************************************************/
+
+/************************************************ about start ************************************************/
+.about{
+  margin: 50px 0;
 }
-.rev{
-  height: 500px;
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 20%;
-  }
-  &::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: rgb(92, 90, 90);
-    height: 80px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background:black;
-  }
+.about-title h3{
+  color: rgba(55, 79, 89, 1);
 }
-.comp-revi i{
+
+/************************************************ about end ************************************************/
+
+
+
+
+/************************************************ Overview Start ************************************************/
+.overview-title h3{
+  color: rgba(55, 79, 89, 1);
+}
+/************************************************ overview end ************************************************/
+
+/************************************************ Benifits start ************************************************/
+.benifits{
+  margin: 50px 0;
+}
+.benifits-title h3{
+  color: rgba(55, 79, 89, 1);
+}
+.benifits-list ul li{
+  color: rgba(109, 146, 119, 1);
+} 
+/************************************************ Benifits end ************************************************/
+
+
+/************************************************ Overview start ************************************************/
+.overview{
+  margin: 50px 0;
+}
+.overview-title h3{
+  color: rgba(55, 79, 89, 1);
+}
+.ratings h3{
+  font-size: 34px;
+  color: rgba(55, 79, 89, 1);
+}
+.rating-icon i{
   color: yellow;
-  font-size: 30px;
 }
-.comp-revi h4{
-  color: #374F59;
-  font-size: 32px;
-  font-weight: 700;
+.rating-icon h5{
+  color: rgba(55, 79, 89, 1);
 }
-.user-name i{
+.star i{
   color: yellow;
 }
-.nav-pills .nav-link.active{
-  background-color: #A5E8D3;
-  color: #374F59;
+.Jobsbasedonyourprofile .card{
+  border: 0;
+  box-shadow: 0px 0px 25px -1px rgba(0,0,0,0.10);
 }
-.nav-pills .nav-link{
-  color: #374F59;
+
+/************************************************ Overview End ************************************************/
+
+
+/************************************************ Smilar job start ************************************************/
+.smilar-title h3{
+  color: rgba(55, 79, 89, 1);
 }
+.similar-img img{
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+.job-name h5{
+  color: rgba(55, 79, 89, 1);
+}
+.job-tech{
+  color: rgba(109, 146, 119, 1);
+}
+.str-icon i{
+  color: yellow;
+}
+.job-rat h6{
+  color: rgba(109, 146, 119, 1);
+}
+.location-name h5{
+  color: rgba(108, 105, 105, 1);
+}
+.view-job{
+  background-color: rgba(55, 79, 89, 1);
+}
+.view-job{
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.similarjob .card-body{
+  padding: 0 0 0 0 ;
+}
+/************************************************ Smilar job End ************************************************/
+
+
+
+/* media query start */
+@media only screen and (max-width: 769px){
+  .job-back{
+    background-color: rgba(217, 217, 217, 0.5);
+    height: 469px;
+    width: 87%;
+    margin: 15px auto;
+    border-radius: 48px;
+    position: relative;
+  }
+  .job-details{
+    position: absolute;
+    top: 36%;
+    bottom: 0;
+    left: 44%;
+    right: 0;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    border-radius: 50px;
+  }
+  .compnay{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .compnies{
+    display: none;
+  }
+
+}
+
+
+@media only screen and (max-width: 426px){
+  .job-details{
+    position: absolute;
+    top: 26%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    transform: translate(-50%,-50%);
+    width: 108%;
+    border-radius: 50px;
+  }
+  .compnay-details{
+    margin: 70px 0;
+  }
+  .job-back{
+    background-color: rgba(217, 217, 217, 0.5);
+    height: 486px;
+    width: 87%;
+    margin: 15px auto;
+    border-radius: 48px;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 376px){
+  .job-back{
+    background-color: rgba(217, 217, 217, 0.5);
+    height: 544px;
+    width: 87%;
+    margin: 15px auto;
+    border-radius: 48px;
+    position: relative;
+  }
+  .compnies{
+    position: absolute;
+    bottom: 0;
+    left: 47%;
+    transform: translateX(-50%);
+  }
+  .compnay-location{
+    display: none;
+  }
+  .rating{
+    display: none;
+  }
+}
+/* media query End */
