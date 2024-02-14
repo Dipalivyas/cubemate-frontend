@@ -1,18 +1,13 @@
-/* .main {
-    border: 2px solid red;
-    max-width: 1440px;
-} */
-
+/* main section Start */
+.main-body {
+    margin-top: 100px;
+}
 
 .ExploreNow-btn {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     border: 0px solid;
     border-radius: 34.24px;
     Width: 226px;
-    Height: 42.8px;
     background-color: #374F5B;
 }
 
@@ -22,14 +17,6 @@
     font-weight: 600;
     line-height: 25.31px;
 
-}
-
-.JobFeed a {
-    text-decoration: none;
-}
-
-.main-body {
-    margin-top: 100px;
 }
 
 .text-h3-class {
@@ -76,97 +63,24 @@
     right: 60px;
 }
 
-.input-text {
-    height: 40px;
-    border: none;
-    box-shadow: 17px 6px 17px -9px rgba(163, 163, 163, 1);
-}
+@media (max-width: 1024px) {}
 
-.seaech-icon {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.location-icon {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.sera-btn {
-    background-color: rgba(55, 79, 89, 1);
-    border-radius: 8px;
-}
-
-.sera-btn .btn {
-    color: #fff;
-}
-
-.serach {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    height: 54px;
-}
-
-/* .location{
-    margin-inline-start: -81px !important;
-    position: relative;
-    align-items: center;
-    display: flex;
-} */
-.input-group-div {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    width: 100%;
-    left: 19px;
-}
-
-.search-icon {
-    display: flex;
-    align-items: center;
-    position: relative;
-    right: 17px;
-    gap: 8px;
-    margin-inline-start: 8px;
-}
-
-.demo-input {
-    width: 350px !important;
-    border: 1px solid black;
-}
+/* main section End */
 
 
-@media (max-width: 1024px) {
-    .serach {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        height: 90px;
-    }
-
-    .sera-btn {
-        margin-top: 8px;
-    }
-}
-
-/* card css */
+/* counter section Start */
 
 .card {
-    border-radius: 20px;
+    border: 0px solid;
+    border-radius: 7px;
     background: #fff;
-
+    box-shadow: 0px 4px 12px #9D9D9D;
 }
 
 .counter {
     margin-top: 50px;
-    background-color: #f1f4f9;
-    padding: 30px 0;
+    background-color: #FAFAFA;
+    padding: 50px 0;
     border: none;
 }
 
@@ -175,19 +89,43 @@
     height: 70px;
     border: none;
     border-radius: 7px;
-    background: #6d9277;
+    background: #A5E8D3;
     text-align: center;
     padding-top: 20px;
 }
 
 .set-div-box {
     display: flex;
-    padding-top: 2px;
+    align-items: center;
     padding-inline-start: 20px;
+    width: 287px;
+    height: 117px;
 }
 
+.cc-detail {
+    margin-left: 18px;
+    margin-top: 16px;
+}
 
-/* Categories div */
+.cc-detail h5 {
+    margin-bottom: 4px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.64px;
+    color: #374F59;
+}
+
+.cc-detail p {
+    margin: 0 0;
+    color: #6D9277;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.64px;
+}
+
+/* counter section End */
+
+/* Categories section Start */
 
 .Categories-div-bg {
     width: 209px;
@@ -219,19 +157,29 @@
     padding: 20px 0px;
 }
 
-/* Job Feed div */
+/* Categories section End */
 
+
+/* Job Feed section Start */
 .JobFeed {
-    background-color: #f1f4f9;
+    background-color: #fff;
     padding: 30px 0;
     border: none;
+}
+
+.JobFeed a {
+    text-decoration: none;
 }
 
 .card-body {
     padding: 0 0 0 0;
 }
 
-
+.JobFeed .card {
+    border: 1px solid #E5E5E5;
+    border-radius: 20px;
+    box-shadow: 0 0 0 !important;
+}
 
 .btn-jobfeed {
     background-color: #374f59;
@@ -296,40 +244,87 @@ ul li span {
     color: #374f59;
 }
 
+/* Job Feed section End */
 
-/* Top Companies  div */
-
-.btnForeign {
-    background-color: #374f59;
-    border: none;
-    border-radius: 7px;
-    color: white;
-    text-align: center;
-    width: 100%;
-    padding: 8px;
-    margin-top: 10px;
-}
-
-/* Jobs based on your profile */
-.Jobsbasedonyourprofile{
+/* Jobs based on your profile section Start*/
+.Jobsbasedonyourprofile {
     background-color: #FAFAFA;
+    padding-bottom: 50px;
+
 }
+
 .job-profile-div {
     display: flex;
     justify-content: space-between;
     padding-bottom: 40px;
 }
-.jb-title{
+
+.jb-title {
     margin-top: 55px;
     margin-bottom: 15px;
 }
-.jb-title-text h4{
+
+.jb-title-text h4 {
     color: #374F59;
     font-size: 34.24px;
     font-weight: 600;
 }
+
 .seeall {
     text-align: end;
+}
+
+.Jobsbasedonyourprofile .card {
+    border: 0px solid;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 12px #c7c6c6;
+}
+
+.Jobsbasedonyourprofile .card-body {
+    padding: 16px 16px 0 16px;
+}
+
+.jb-body-text h5 {
+    color: #374F59;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29.57px;
+}
+
+.jb-body-text p {
+    color: #676565;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29.57px;
+}
+
+.jb-card-img {
+    width: 100px;
+    height: 100px;
+}
+
+.jb-rating {
+    display: flex;
+}
+
+.jb-rating-img {
+    width: 25px;
+    height: 25px;
+}
+
+.jb-rating p,
+.jb-loc p {
+    margin-left: 7px;
+}
+
+.jb-loc {
+    display: flex;
+}
+
+.jb-loc-img {
+    width: 25px;
+    height: 25px;
 }
 
 @media only screen and (max-width: 425px) {
@@ -341,25 +336,48 @@ ul li span {
     }
 }
 
-/* PopularStartup */
+/* Jobs based on your profile section End */
+
+/* Top Companies section Start */
+.btnForeign {
+    background-color: #374f59;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+/* Top Companies section End */
+
+/* PopularStartup section Start  */
 
 .PopularStartup {
     /* margin: 50px 0; */
-    background-color: #f1f4f9;
+    background-color: #fff;
     padding: 30px 0;
     border: none;
 }
 
 .PopularStartup-box {
-    background-color: #374f59;
-    height: 344px;
-    /* margin: 50px 0px; */
+    background-image: url(../../../../assets/img/pus-bg-img.png);
+    height: 350px;
     border-radius: 15px;
+    position: relative;
 }
 
-.PopularStartup-te {
+.PopularStartup-title {
     color: #374f59;
-    margin: 30px 0px;
+    margin: 35px 0px;
+    text-align: center;
+}
+
+.PopularStartup-title h4 {
+    font-size: 34.24px;
+    font-weight: 600;
+    line-height: 42.18px;
 }
 
 .PopularStartup-div {
@@ -368,12 +386,42 @@ ul li span {
     padding-bottom: 40px;
 }
 
-.popular-div-second {
-    padding: 50px;
+.psu-img img {
+    margin-top: 60px;
 }
 
-.popular-div-text {
-    margin: 20px 0px;
+.psu-img-2 img {
+    position: absolute;
+    top: -34px;
+    left: 370px;
+}
+
+.psu-img-3 img {
+    position: absolute;
+    top: -70px;
+    left: -66px;
+}
+
+.popular-div-second {
+    padding-top: 50px;
+    padding-left: 30px;
+    color: #374F59;
+}
+
+.popular-div-second h2 {
+    font-size: 34.24px;
+    font-weight: 600;
+    line-height: 42.18px;
+    width: 403px;
+}
+
+.popular-div-second p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.64px;
+    width: 524px;
+    color: #6D9277;
+    padding-top: 20px;
 }
 
 .popular-img-first {
@@ -396,6 +444,13 @@ ul li span {
     position: relative;
     left: 23pc;
 
+}
+
+.PopularStartup .card {
+    border: 0px solid;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 12px #c7c6c6;
 }
 
 
@@ -480,22 +535,108 @@ ul li span {
     padding-top: 50px;
 }
 
-/* TopCompanies */
-.viewjob-div {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: #6D9277;
-    margin-top: 13px;
+/* PopularStartup section End  */
+
+/* Top Companies section Start */
+.TopCompanies{
+    background-color: #FAFAFA;
+    padding-bottom: 60px;
 }
 
-.view-all-com-div {
-    padding: 50px;
-    display: flex;
-    justify-content: center;
+.TopCompanies-title {
     text-align: center;
-    align-items: center;
+    color: #455A64;
+    margin: 50px 0;
+}
 
+.TopCompanies-title h4 {
+    font-size: 34.24px;
+    font-weight: 600;
+    line-height: 42.18px;
+}
+
+.TopCompanies .card {
+    position: relative;
+    height: 264px;
+}
+
+.TopCompanies .card-body {
+    padding-top: 100px;
+}
+.tc-card{
+    margin-top: 75px;
+
+}
+.tc-detail {
+    text-align: center;
+}
+
+.tc-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.64px;
+    color: #374F59;
+}
+
+.tc-rating {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 14px;
+}
+
+.tc-rating p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.64px;
+    padding-left: 7px;
+
+}
+.tc-btn-view-all{
+    text-align: center;
+}
+.tc-btn-view-all button{
+    width: 441px;
+    height: 45px;
+    border: 0px solid;
+    border-radius: 40px;
+    box-shadow: 0px 2px 12px rgba(157, 157, 157, 0.3);
+    background-color: #6D9277;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25.1px;
+    margin-top: 50px;
+
+}
+
+.tc-main-img img {
+    width: 151px;
+    height: 151px;
+    position: absolute;
+    border-radius: 50%;
+    top: -80px;
+    left: 52px;
+}
+
+.tc-btn-1 button {
+    width: 230px;
+    height: 41px;
+    border-radius: 7px;
+    background-color: #374F6B;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.59px;
+}
+
+.tc-btn-2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22.18px;
+    color: #6D9277;
+    padding-top: 13px;
 }
 
 .view-all-com-div button {
@@ -510,10 +651,11 @@ ul li span {
     box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
-/* PeopleThinks */
+/* Top Companies section End */
+
+/* People Thinks section Start */
 
 .PeopleThinks {
-    margin: 50px 0;
     background-color: #f1f4f9;
     padding: 30px 0px 50px 0px;
     border: none;
@@ -541,11 +683,39 @@ ul li span {
     margin-top: 15px;
     margin-bottom: -20px;
 }
-
+.pt-text{
+    margin-top: 40px;
+    width: 347px;
+    height: 75px;
+    color: #6D9277;
+    margin-bottom: 12px;
+}
+.pt-text p{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.64px;
+}
 .card-text {
     margin-top: 25px;
 }
+.pt-prs-detl{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.pt-name-loc {
+    margin-top: 12px;
+ }
+.pt-name-loc p{
+   color: #6D9277;
+}
 
+
+.PeopleThinks .card-body{
+    padding: 16px;
+
+}
 .img-tag-div {
 
     width: 100px !important;
@@ -557,3 +727,5 @@ ul li span {
 
     top: 50px;
 }
+
+/* People Thinks section End */
