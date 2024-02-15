@@ -59,92 +59,256 @@
 }
 
 @media (max-width: 375px) {
-    .text-h3-class { width: 310px; font-Size: 19px; Line-height: 32px; margin: 0px auto;  margin-top: 30px; }
+    .text-h3-class {
+        width: 310px;
+        font-Size: 19px;
+        Line-height: 32px;
+        margin: 0px auto;
+        margin-top: 30px;
+    }
 
-    .second-text-p {font-Size: 15px; Line-height: 17.64px; width: 300px; margin: 21px auto;}
+    .second-text-p {
+        font-Size: 15px;
+        Line-height: 17.64px;
+        width: 300px;
+        margin: 21px auto;
+    }
 
-    .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 170px; }
+    .ExploreNow-btn {
+        text-align: center;
+        border: 0px solid;
+        border-radius: 34.24px;
+        Width: 170px;
+    }
 
-    .ExploreNow-btn button { font-size: 15.55px; font-weight: 400; line-height: 22.31px; margin: 0 auto;}
+    .ExploreNow-btn button {
+        font-size: 15.55px;
+        font-weight: 400;
+        line-height: 22.31px;
+        margin: 0 auto;
+    }
 
-    .main-img { width: 300px; margin: 0px auto; }
+    .main-img {
+        width: 300px;
+        margin: 0px auto;
+    }
 }
+
 @media (max-width: 425px) {
-    .main {background-image: none; background-color: rgb(165 232 211 / 20%); height: 690px; }
-    
-    .main-body { margin-top: 0px; }
-    
-    .hexagon-1,.hexagon-2 { display: none; }
+    .main {
+        background-image: none;
+        background-color: rgb(165 232 211 / 20%);
+        height: 690px;
+    }
 
-    .text-h3-class { width: 350px; font-Size: 23px; Line-height: 32px; margin: 0px auto; margin-top: 30px; }
+    .main-body {
+        margin-top: 0px;
+    }
 
-    .second-text-p {font-Size: 16px; Line-height: 17.64px; width: 350px; margin: 21px auto;}
+    .hexagon-1,
+    .hexagon-2 {
+        display: none;
+    }
 
-    .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 170px; margin: 0 auto;}
+    .text-h3-class {
+        width: 350px;
+        font-Size: 23px;
+        Line-height: 32px;
+        margin: 0px auto;
+        margin-top: 30px;
+    }
 
-    .ExploreNow-btn button { font-size: 15.55px; font-weight: 400; line-height: 22.31px; }
+    .second-text-p {
+        font-Size: 16px;
+        Line-height: 17.64px;
+        width: 350px;
+        margin: 21px auto;
+    }
 
-    .main-img { width: 300px; margin: 0px auto; }
+    .ExploreNow-btn {
+        text-align: center;
+        border: 0px solid;
+        border-radius: 34.24px;
+        Width: 170px;
+        margin: 0 auto;
+    }
+
+    .ExploreNow-btn button {
+        font-size: 15.55px;
+        font-weight: 400;
+        line-height: 22.31px;
+    }
+
+    .main-img {
+        width: 300px;
+        margin: 0px auto;
+    }
 }
 
 @media (max-width: 768px) {
-    .main {height: 660px;   background-image: url(../../../../assets/img/carve.png); background-repeat: no-repeat; background-size: 768px 390px;}
+    .main {
+        height: 660px;
+        background-image: url(../../../../assets/img/carve.png);
+        background-repeat: no-repeat;
+        background-size: 768px 390px;
+    }
 
-    .main-body { margin-top: 0px; }
-   
-    .hexagon-1 { position: absolute; top: 420px; left: -85px; }
-    
-    .hexagon-2 { position: absolute; top: 482px; right: 60px; }
+    .main-body {
+        margin-top: 0px;
+    }
 
-    .text-h3-class { width: 350px; font-Size: 23px; Line-height: 32px; margin: 0px auto; margin-top: 30px; }
+    .hexagon-1 {
+        position: absolute;
+        top: 420px;
+        left: -85px;
+    }
 
-    .second-text-p {font-Size: 16px; Line-height: 17.64px; width: 350px; margin: 21px auto;}
+    .hexagon-2 {
+        position: absolute;
+        top: 482px;
+        right: 60px;
+    }
 
-    .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 170px; margin: 0 auto;}
+    .text-h3-class {
+        width: 350px;
+        font-Size: 23px;
+        Line-height: 32px;
+        margin: 0px auto;
+        margin-top: 30px;
+    }
 
-    .ExploreNow-btn button { font-size: 15.55px; font-weight: 400; line-height: 22.31px; }
+    .second-text-p {
+        font-Size: 16px;
+        Line-height: 17.64px;
+        width: 350px;
+        margin: 21px auto;
+    }
 
-    .main-img { position: absolute; top: -30px; }
+    .ExploreNow-btn {
+        text-align: center;
+        border: 0px solid;
+        border-radius: 34.24px;
+        Width: 170px;
+        margin: 0 auto;
+    }
+
+    .ExploreNow-btn button {
+        font-size: 15.55px;
+        font-weight: 400;
+        line-height: 22.31px;
+    }
+
+    .main-img {
+        position: absolute;
+        top: -30px;
+    }
 }
 
 @media (max-width: 1024px) {
-    .main {height: 660px;   background-image: url(../../../../assets/img/carve.png); background-repeat: no-repeat; background-size: 1024px 390px;}
+    .main {
+        height: 660px;
+        background-image: url(../../../../assets/img/carve.png);
+        background-repeat: no-repeat;
+        background-size: 1024px 390px;
+    }
 
-    .main-body { margin-top: 0px; }
+    .main-body {
+        margin-top: 0px;
+    }
 
-    .hexagon-1 { position: absolute; top: 420px; left: -85px; }
-    
-    .hexagon-2 { position: absolute; top: 482px; right: 60px; }
+    .hexagon-1 {
+        position: absolute;
+        top: 420px;
+        left: -85px;
+    }
 
-    .text-h3-class { width: 530px; font-Size: 32px; Line-height: 32px; margin: 0px auto; margin-top: 30px; }
+    .hexagon-2 {
+        position: absolute;
+        top: 482px;
+        right: 60px;
+    }
 
-    .second-text-p {font-Size: 18px; Line-height: 17.64px; width: 540px; margin: 21px auto;}
+    .text-h3-class {
+        width: 530px;
+        font-Size: 32px;
+        Line-height: 32px;
+        margin: 0px auto;
+        margin-top: 30px;
+    }
 
-    .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 170px; margin: 0 auto;}
+    .second-text-p {
+        font-Size: 18px;
+        Line-height: 17.64px;
+        width: 540px;
+        margin: 21px auto;
+    }
 
-    .ExploreNow-btn button { font-size: 15.55px; font-weight: 400; line-height: 22.31px; }
+    .ExploreNow-btn {
+        text-align: center;
+        border: 0px solid;
+        border-radius: 34.24px;
+        Width: 170px;
+        margin: 0 auto;
+    }
 
-    .main-img { position: absolute; top: -65px; right: 0px;}
+    .ExploreNow-btn button {
+        font-size: 15.55px;
+        font-weight: 400;
+        line-height: 22.31px;
+    }
+
+    .main-img {
+        position: absolute;
+        top: -65px;
+        right: 0px;
+    }
 }
+
 @media (max-width: 1440px) {
-    .main {height: 660px;   background-image: url(../../../../assets/img/carve.png); background-repeat: no-repeat; background-size: 1440px 482px;}
+    .main {
+        height: 660px;
+        background-image: url(../../../../assets/img/carve.png);
+        background-repeat: no-repeat;
+        background-size: 1440px 482px;
+    }
 
-    .main-body { margin-top: 0px; }
+    .main-body {
+        margin-top: 0px;
+    }
 
-    .hexagon-1 { position: absolute; top: 420px; left: -85px; }
-    
-    .hexagon-2 { position: absolute; top: 482px; right: 60px; }
-/* 
+    .hexagon-1 {
+        position: absolute;
+        top: 420px;
+        left: -85px;
+    }
+
+    .hexagon-2 {
+        position: absolute;
+        top: 482px;
+        right: 60px;
+    }
+
+    /* 
     .text-h3-class { width: 600px; font-Size: 39px; Line-height: 32px; margin: 0px auto; margin-top: 30px; } */
 
-    .second-text-p { font-Size: 22px; Line-height: 20.64px; width: 595px; margin: 37px auto;}
+    .second-text-p {
+        font-Size: 22px;
+        Line-height: 20.64px;
+        width: 595px;
+        margin: 37px auto;
+    }
 
     /* .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 200px; margin: 0 auto;}
 
     .ExploreNow-btn button { font-size: 19.55px; font-weight: 400; line-height: 22.31px; } */
 
-    .main-img { position: absolute; top: -72px; right: 100px; }
+    .main-img {
+        position: absolute;
+        top: -72px;
+        right: 100px;
+    }
 }
+
 /* main section End */
 
 
@@ -154,7 +318,7 @@
     border: 0px solid;
     border-radius: 7px;
     background: #fff;
-    box-shadow:0px 4px 12px rgba(157, 157, 157, 0.25);
+    box-shadow: 0px 4px 12px rgba(157, 157, 157, 0.25);
 }
 
 .counter {
@@ -322,6 +486,7 @@ ul li {
 ul li span {
     color: #374f59;
 }
+
 /* 
 @media  (max-width: 320px) {
     .pf-card-div{
@@ -732,6 +897,7 @@ ul li span {
 .tc-btn-1 button {
     width: 230px;
     height: 41px;
+    border: 0px solid;
     border-radius: 7px;
     background-color: #374F6B;
     color: #FFFFFF;
@@ -842,6 +1008,10 @@ ul li span {
     z-index: 1;
 
     top: 50px;
+}
+
+.pt-card {
+    margin: 0px 80px;
 }
 
 /* People Thinks section End */
