@@ -28,15 +28,29 @@ ul li a {
 }
 
 .Home-div {
-  margin-inline-start: 6pc;
   color: #6d9277 !important;
 }
+
 .BG {
   background-color: rgb(165 232 211 / 20%);
 }
-@media only screen and (max-width: 786px) {
-  .Home-div {
-    margin-inline-start: 0px;
 
+@media (max-width: 320px) {
+
+
+  .logo-set-div {
+    height: 70px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav-w-img {
+    width: 64%;
+  }
+
+  .logo-set-div {
+    height: 70px;
   }
 }
