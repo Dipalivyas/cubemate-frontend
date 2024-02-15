@@ -25,17 +25,15 @@ export class HomeComponent {
         items: 1
       },
       760: {
-        items: 1
+        items: 2
       },
       1000: {
-        items: 6
+        items: 3
       }
     },
     nav: false
   }
-
-
-
+  
   scrollToTop() {
     this.isClicked = true;
     console.log('Scrolling to top');

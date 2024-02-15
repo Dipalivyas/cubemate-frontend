@@ -21,8 +21,6 @@
 
 .text-h3-class {
     color: #374F59;
-    width: 670px;
-    height: 112px;
     font-Weight: 600;
     font-Size: 43.12px;
     Line-height: 55.58px;
@@ -31,12 +29,10 @@
 
 .second-text-p {
     color: #6d9277;
-    width: 553px;
-    height: 125px;
     font-Weight: 400;
     font-Size: 20px;
     Line-height: 24.64px;
-    margin-top: 45px;
+    margin: 24px 0px;
 }
 
 .main {
@@ -46,9 +42,8 @@
 }
 
 .main-img {
-    width: 504px;
-    height: 495px;
-    margin-left: 42px;
+    margin-top: 50px;
+
 }
 
 .hexagon-1 {
@@ -63,22 +58,106 @@
     right: 60px;
 }
 
-@media (max-width: 1024px) {}
+@media (max-width: 375px) {
+    .text-h3-class { width: 310px; font-Size: 19px; Line-height: 32px; margin: 0px auto;  margin-top: 30px; }
 
+    .second-text-p {font-Size: 15px; Line-height: 17.64px; width: 300px; margin: 21px auto;}
+
+    .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 170px; }
+
+    .ExploreNow-btn button { font-size: 15.55px; font-weight: 400; line-height: 22.31px; margin: 0 auto;}
+
+    .main-img { width: 300px; margin: 0px auto; }
+}
+@media (max-width: 425px) {
+    .main {background-image: none; background-color: rgb(165 232 211 / 20%); height: 690px; }
+    
+    .main-body { margin-top: 0px; }
+    
+    .hexagon-1,.hexagon-2 { display: none; }
+
+    .text-h3-class { width: 350px; font-Size: 23px; Line-height: 32px; margin: 0px auto; margin-top: 30px; }
+
+    .second-text-p {font-Size: 16px; Line-height: 17.64px; width: 350px; margin: 21px auto;}
+
+    .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 170px; margin: 0 auto;}
+
+    .ExploreNow-btn button { font-size: 15.55px; font-weight: 400; line-height: 22.31px; }
+
+    .main-img { width: 300px; margin: 0px auto; }
+}
+
+@media (max-width: 768px) {
+    .main {height: 660px;   background-image: url(../../../../assets/img/carve.png); background-repeat: no-repeat; background-size: 768px 390px;}
+
+    .main-body { margin-top: 0px; }
+   
+    .hexagon-1 { position: absolute; top: 420px; left: -85px; }
+    
+    .hexagon-2 { position: absolute; top: 482px; right: 60px; }
+
+    .text-h3-class { width: 350px; font-Size: 23px; Line-height: 32px; margin: 0px auto; margin-top: 30px; }
+
+    .second-text-p {font-Size: 16px; Line-height: 17.64px; width: 350px; margin: 21px auto;}
+
+    .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 170px; margin: 0 auto;}
+
+    .ExploreNow-btn button { font-size: 15.55px; font-weight: 400; line-height: 22.31px; }
+
+    .main-img { position: absolute; top: -30px; }
+}
+
+@media (max-width: 1024px) {
+    .main {height: 660px;   background-image: url(../../../../assets/img/carve.png); background-repeat: no-repeat; background-size: 1024px 390px;}
+
+    .main-body { margin-top: 0px; }
+
+    .hexagon-1 { position: absolute; top: 420px; left: -85px; }
+    
+    .hexagon-2 { position: absolute; top: 482px; right: 60px; }
+
+    .text-h3-class { width: 530px; font-Size: 32px; Line-height: 32px; margin: 0px auto; margin-top: 30px; }
+
+    .second-text-p {font-Size: 18px; Line-height: 17.64px; width: 540px; margin: 21px auto;}
+
+    .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 170px; margin: 0 auto;}
+
+    .ExploreNow-btn button { font-size: 15.55px; font-weight: 400; line-height: 22.31px; }
+
+    .main-img { position: absolute; top: -65px; right: 0px;}
+}
+@media (max-width: 1440px) {
+    .main {height: 660px;   background-image: url(../../../../assets/img/carve.png); background-repeat: no-repeat; background-size: 1440px 482px;}
+
+    .main-body { margin-top: 0px; }
+
+    .hexagon-1 { position: absolute; top: 420px; left: -85px; }
+    
+    .hexagon-2 { position: absolute; top: 482px; right: 60px; }
+/* 
+    .text-h3-class { width: 600px; font-Size: 39px; Line-height: 32px; margin: 0px auto; margin-top: 30px; } */
+
+    .second-text-p { font-Size: 22px; Line-height: 20.64px; width: 595px; margin: 37px auto;}
+
+    /* .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 200px; margin: 0 auto;}
+
+    .ExploreNow-btn button { font-size: 19.55px; font-weight: 400; line-height: 22.31px; } */
+
+    .main-img { position: absolute; top: -72px; right: 100px; }
+}
 /* main section End */
 
 
 /* counter section Start */
 
-.card {
+.counter .card {
     border: 0px solid;
     border-radius: 7px;
     background: #fff;
-    box-shadow: 0px 4px 12px #9D9D9D;
+    box-shadow:0px 4px 12px rgba(157, 157, 157, 0.25);
 }
 
 .counter {
-    margin-top: 50px;
     background-color: #FAFAFA;
     padding: 50px 0;
     border: none;
@@ -243,7 +322,28 @@ ul li {
 ul li span {
     color: #374f59;
 }
+/* 
+@media  (max-width: 320px) {
+    .pf-card-div{
+        padding: 0px 18px !important;
+    }
+}
 
+@media  (max-width: 375px) {
+    .pf-card-div{
+        padding: 0px 45px;
+    }
+}
+@media  (max-width: 425px) {
+    .pf-card-div{
+        padding: 0px 45px;
+    }
+}
+@media  (max-width: 768px) {
+    .pf-card-div{
+        padding: 0px 45px;
+    }
+} */
 /* Job Feed section End */
 
 /* Jobs based on your profile section Start*/
@@ -535,10 +635,15 @@ ul li span {
     padding-top: 50px;
 }
 
+.psu-card-div {
+    padding: 20px 120px;
+
+}
+
 /* PopularStartup section End  */
 
 /* Top Companies section Start */
-.TopCompanies{
+.TopCompanies {
     background-color: #FAFAFA;
     padding-bottom: 60px;
 }
@@ -563,10 +668,12 @@ ul li span {
 .TopCompanies .card-body {
     padding-top: 100px;
 }
-.tc-card{
+
+.tc-card {
     margin-top: 75px;
 
 }
+
 .tc-detail {
     text-align: center;
 }
@@ -593,10 +700,12 @@ ul li span {
     padding-left: 7px;
 
 }
-.tc-btn-view-all{
+
+.tc-btn-view-all {
     text-align: center;
 }
-.tc-btn-view-all button{
+
+.tc-btn-view-all button {
     width: 441px;
     height: 45px;
     border: 0px solid;
@@ -683,39 +792,46 @@ ul li span {
     margin-top: 15px;
     margin-bottom: -20px;
 }
-.pt-text{
+
+.pt-text {
     margin-top: 40px;
     width: 347px;
     height: 75px;
     color: #6D9277;
     margin-bottom: 12px;
 }
-.pt-text p{
+
+.pt-text p {
     font-size: 20px;
     font-weight: 400;
     line-height: 24.64px;
 }
+
 .card-text {
     margin-top: 25px;
 }
-.pt-prs-detl{
+
+.pt-prs-detl {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
+
 .pt-name-loc {
     margin-top: 12px;
- }
-.pt-name-loc p{
-   color: #6D9277;
+}
+
+.pt-name-loc p {
+    color: #6D9277;
 }
 
 
-.PeopleThinks .card-body{
+.PeopleThinks .card-body {
     padding: 16px;
 
 }
+
 .img-tag-div {
 
     width: 100px !important;
