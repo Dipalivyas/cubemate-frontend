@@ -1,0 +1,51 @@
+.main{
+    background-color: rgba(240, 244, 241, 1);
+    overflow-X: hidden;
+    padding-bottom: 50px;
+}
+.title h1{
+    color: rgba(55, 79, 89, 1);
+}
+.apply .card{
+    padding: 30px 50px;
+}
+.progress-bar{
+    background-color: rgba(55, 79, 89, 1) !important;
+}
+.progress-title h3{
+    color: rgba(109, 146, 119, 1);
+    text-align: end;
+}
+.company{
+    box-shadow: 1px 1px 5px 0px rgba(117,116,117,1);
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+.company-logo img{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+.compnay-name h4{
+    color: rgba(55, 79, 89, 1);
+    font-weight: 700;
+}
+.compnay-name h5{
+    color: rgba(109, 146, 119, 1);
+}
+.media{
+    box-shadow: 1px 1px 5px 0px rgba(117,116,117,1);
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+.media h5{
+    line-height: 32px;
+}
+.conti-btn .btn{
+    color: #fff;
+    background-color: rgba(55, 79, 89, 1);
+    width: 415px;
+    border-radius: 40px;
+    font-size: 24px;
+    font-weight: 700;
+}

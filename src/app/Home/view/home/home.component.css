@@ -1,1017 +1,243 @@
-/* main section Start */
-.main-body {
-    margin-top: 100px;
-}
-
-.ExploreNow-btn {
-    text-align: center;
-    border: 0px solid;
-    border-radius: 34.24px;
-    Width: 226px;
-    background-color: #374F5B;
-}
-
-.ExploreNow-btn button {
-    color: #fff;
-    font-size: 20.55px;
-    font-weight: 600;
-    line-height: 25.31px;
-
-}
-
-.text-h3-class {
-    color: #374F59;
-    font-Weight: 600;
-    font-Size: 43.12px;
-    Line-height: 55.58px;
-    margin-top: 45px;
-}
-
-.second-text-p {
-    color: #6d9277;
-    font-Weight: 400;
-    font-Size: 20px;
-    Line-height: 24.64px;
-    margin: 24px 0px;
-}
-
-.main {
+.main{
     background-image: url(../../../../assets/img/carve.png);
-    background-repeat: no-repeat;
-    height: 870px;
+    background-size: cover;
+    height: 800px;
+    position: relative;
 }
-
-.main-img {
-    margin-top: 50px;
-
-}
-
-.hexagon-1 {
-    position: absolute;
-    top: 635px;
-    left: -85px;
-}
-
-.hexagon-2 {
-    position: absolute;
-    top: 755px;
-    right: 60px;
-}
-
-@media (max-width: 375px) {
-    .text-h3-class {
-        width: 310px;
-        font-Size: 19px;
-        Line-height: 32px;
-        margin: 0px auto;
-        margin-top: 30px;
-    }
-
-    .second-text-p {
-        font-Size: 15px;
-        Line-height: 17.64px;
-        width: 300px;
-        margin: 21px auto;
-    }
-
-    .ExploreNow-btn {
-        text-align: center;
-        border: 0px solid;
-        border-radius: 34.24px;
-        Width: 170px;
-    }
-
-    .ExploreNow-btn button {
-        font-size: 15.55px;
-        font-weight: 400;
-        line-height: 22.31px;
-        margin: 0 auto;
-    }
-
-    .main-img {
-        width: 300px;
-        margin: 0px auto;
-    }
-}
-
-@media (max-width: 425px) {
-    .main {
-        background-image: none;
-        background-color: rgb(165 232 211 / 20%);
-        height: 690px;
-    }
-
-    .main-body {
-        margin-top: 0px;
-    }
-
-    .hexagon-1,
-    .hexagon-2 {
-        display: none;
-    }
-
-    .text-h3-class {
-        width: 350px;
-        font-Size: 23px;
-        Line-height: 32px;
-        margin: 0px auto;
-        margin-top: 30px;
-    }
-
-    .second-text-p {
-        font-Size: 16px;
-        Line-height: 17.64px;
-        width: 350px;
-        margin: 21px auto;
-    }
-
-    .ExploreNow-btn {
-        text-align: center;
-        border: 0px solid;
-        border-radius: 34.24px;
-        Width: 170px;
-        margin: 0 auto;
-    }
-
-    .ExploreNow-btn button {
-        font-size: 15.55px;
-        font-weight: 400;
-        line-height: 22.31px;
-    }
-
-    .main-img {
-        width: 300px;
-        margin: 0px auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .main {
-        height: 660px;
-        background-image: url(../../../../assets/img/carve.png);
-        background-repeat: no-repeat;
-        background-size: 768px 390px;
-    }
-
-    .main-body {
-        margin-top: 0px;
-    }
-
-    .hexagon-1 {
-        position: absolute;
-        top: 420px;
-        left: -85px;
-    }
-
-    .hexagon-2 {
-        position: absolute;
-        top: 482px;
-        right: 60px;
-    }
-
-    .text-h3-class {
-        width: 350px;
-        font-Size: 23px;
-        Line-height: 32px;
-        margin: 0px auto;
-        margin-top: 30px;
-    }
-
-    .second-text-p {
-        font-Size: 16px;
-        Line-height: 17.64px;
-        width: 350px;
-        margin: 21px auto;
-    }
-
-    .ExploreNow-btn {
-        text-align: center;
-        border: 0px solid;
-        border-radius: 34.24px;
-        Width: 170px;
-        margin: 0 auto;
-    }
-
-    .ExploreNow-btn button {
-        font-size: 15.55px;
-        font-weight: 400;
-        line-height: 22.31px;
-    }
-
-    .main-img {
-        position: absolute;
-        top: -30px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .main {
-        height: 660px;
-        background-image: url(../../../../assets/img/carve.png);
-        background-repeat: no-repeat;
-        background-size: 1024px 390px;
-    }
-
-    .main-body {
-        margin-top: 0px;
-    }
-
-    .hexagon-1 {
-        position: absolute;
-        top: 420px;
-        left: -85px;
-    }
-
-    .hexagon-2 {
-        position: absolute;
-        top: 482px;
-        right: 60px;
-    }
-
-    .text-h3-class {
-        width: 530px;
-        font-Size: 32px;
-        Line-height: 32px;
-        margin: 0px auto;
-        margin-top: 30px;
-    }
-
-    .second-text-p {
-        font-Size: 18px;
-        Line-height: 17.64px;
-        width: 540px;
-        margin: 21px auto;
-    }
-
-    .ExploreNow-btn {
-        text-align: center;
-        border: 0px solid;
-        border-radius: 34.24px;
-        Width: 170px;
-        margin: 0 auto;
-    }
-
-    .ExploreNow-btn button {
-        font-size: 15.55px;
-        font-weight: 400;
-        line-height: 22.31px;
-    }
-
-    .main-img {
-        position: absolute;
-        top: -65px;
-        right: 0px;
-    }
-}
-
-@media (max-width: 1440px) {
-    .main {
-        height: 660px;
-        background-image: url(../../../../assets/img/carve.png);
-        background-repeat: no-repeat;
-        background-size: 1440px 482px;
-    }
-
-    .main-body {
-        margin-top: 0px;
-    }
-
-    .hexagon-1 {
-        position: absolute;
-        top: 420px;
-        left: -85px;
-    }
-
-    .hexagon-2 {
-        position: absolute;
-        top: 482px;
-        right: 60px;
-    }
-
-    /* 
-    .text-h3-class { width: 600px; font-Size: 39px; Line-height: 32px; margin: 0px auto; margin-top: 30px; } */
-
-    .second-text-p {
-        font-Size: 22px;
-        Line-height: 20.64px;
-        width: 595px;
-        margin: 37px auto;
-    }
-
-    /* .ExploreNow-btn { text-align: center; border: 0px solid; border-radius: 34.24px; Width: 200px; margin: 0 auto;}
-
-    .ExploreNow-btn button { font-size: 19.55px; font-weight: 400; line-height: 22.31px; } */
-
-    .main-img {
-        position: absolute;
-        top: -72px;
-        right: 100px;
-    }
-}
-
-/* main section End */
-
-
-/* counter section Start */
-
-.counter .card {
-    border: 0px solid;
-    border-radius: 7px;
-    background: #fff;
-    box-shadow: 0px 4px 12px rgba(157, 157, 157, 0.25);
-}
-
-.counter {
-    background-color: #FAFAFA;
-    padding: 50px 0;
-    border: none;
-}
-
-.card-div-box {
-    width: 70px;
-    height: 70px;
-    border: none;
-    border-radius: 7px;
-    background: #A5E8D3;
-    text-align: center;
-    padding-top: 20px;
-}
-
-.set-div-box {
-    display: flex;
-    align-items: center;
-    padding-inline-start: 20px;
-    width: 287px;
-    height: 117px;
-}
-
-.cc-detail {
-    margin-left: 18px;
-    margin-top: 16px;
-}
-
-.cc-detail h5 {
-    margin-bottom: 4px;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24.64px;
-    color: #374F59;
-}
-
-.cc-detail p {
-    margin: 0 0;
-    color: #6D9277;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24.64px;
-}
-
-/* counter section End */
-
-/* Categories section Start */
-
-.Categories-div-bg {
-    width: 209px;
-    height: 208px;
-    background-color: #a5e8d3;
-    border-radius: 50%;
-}
-
-.Categories-ring {
-    position: absolute;
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 209px;
-    height: 208px;
-    margin-left: 10px;
-    margin-top: 10px;
-    background-color: #fff;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.Categories-text {
-    /* display: flex;
-    justify-content: center; */
-    align-items: center;
-    text-align: center;
-    padding: 20px 0px;
-}
-
-/* Categories section End */
-
-
-/* Job Feed section Start */
-.JobFeed {
-    background-color: #fff;
-    padding: 30px 0;
-    border: none;
-}
-
-.JobFeed a {
+a{
     text-decoration: none;
 }
-
-.card-body {
-    padding: 0 0 0 0;
+.main-title{
+    margin: 15% 0 0 0 ;
 }
-
-.JobFeed .card {
-    border: 1px solid #E5E5E5;
-    border-radius: 20px;
-    box-shadow: 0 0 0 !important;
+.main-title h1{
+    color: rgba(55, 79, 89, 1);
+    font-size: 42px;
 }
-
-.btn-jobfeed {
-    background-color: #374f59;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    text-align: center;
-    width: 174.63px;
-    padding: 8px;
-    margin: 16px 0 0 16px;
-
-}
-
-.job-text-div {
-    color: black;
-    font-size: 15.64px;
-    font-weight: 600;
-    line-height: 19.27px;
-    margin: 8px 0 8px 16px;
-
-}
-
-.job-text {
-    background-color: #F5F5F5;
-    height: 112.94px;
-    width: 259px;
-    border: 0px solid;
-    border-radius: 20px;
-    margin-top: 35px;
-}
-
-.job-texts {
-    margin-left: 22px;
-    padding-top: 40px;
-}
-
-.job-texts h3 {
-    color: #374F68;
-    font-size: 20.85px;
-    font-weight: 600;
-    line-height: 25.69px;
-}
-
-.job-texts-p {
-    font-size: 15.64px;
-    color: #374F68;
-    width: 180px;
-    height: 25px;
-    display: flex;
-}
-
-.job-img {
-    position: absolute;
-    top: 178px;
-}
-
-ul li {
-    color: #374f59;
-}
-
-ul li span {
-    color: #374f59;
-}
-
-/* 
-@media  (max-width: 320px) {
-    .pf-card-div{
-        padding: 0px 18px !important;
-    }
-}
-
-@media  (max-width: 375px) {
-    .pf-card-div{
-        padding: 0px 45px;
-    }
-}
-@media  (max-width: 425px) {
-    .pf-card-div{
-        padding: 0px 45px;
-    }
-}
-@media  (max-width: 768px) {
-    .pf-card-div{
-        padding: 0px 45px;
-    }
-} */
-/* Job Feed section End */
-
-/* Jobs based on your profile section Start*/
-.Jobsbasedonyourprofile {
-    background-color: #FAFAFA;
-    padding-bottom: 50px;
-
-}
-
-.job-profile-div {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 40px;
-}
-
-.jb-title {
-    margin-top: 55px;
-    margin-bottom: 15px;
-}
-
-.jb-title-text h4 {
-    color: #374F59;
-    font-size: 34.24px;
-    font-weight: 600;
-}
-
-.seeall {
-    text-align: end;
-}
-
-.Jobsbasedonyourprofile .card {
-    border: 0px solid;
-    border-radius: 20px;
-    background: #fff;
-    box-shadow: 0px 0px 12px #c7c6c6;
-}
-
-.Jobsbasedonyourprofile .card-body {
-    padding: 16px 16px 0 16px;
-}
-
-.jb-body-text h5 {
-    color: #374F59;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 29.57px;
-}
-
-.jb-body-text p {
-    color: #676565;
+.main-desc p{
+    color: rgba(109, 146, 119, 1);
     font-size: 18px;
-    font-weight: 400;
-    line-height: 29.57px;
+    line-height: 32px;
+}
+.main-btn .btn{
+    background-color: rgba(38, 50, 56, 1);
+    color: #fff;
+    border-radius: 20px;
+}
+.fancy-img img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.fancy1-img img{
+    position: absolute;
+    bottom: 0;
+    left: -75px;
 }
 
-.jb-card-img {
+
+/* counter start */
+.counter{
+    background-color: rgba(250, 250, 250, 1);
+    padding: 60px 0;
+    margin: 80px 0;
+}
+.counter .card{
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+.job-img{
+    background-color: rgba(165, 232, 211, 1);
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 10px 0 0 0 ;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.45);
+}
+/* counter End */
+
+/* job fedd start */
+.title{
+    color: rgba(69, 90, 100, 1);
+    font-weight: 700;
+}
+.apply-btn .btn{
+    background-color: rgba(55, 79, 89, 1);
+    color: #fff;
+}
+.job .card{
+    border-radius: 30px;
+}
+.job-location .card{
+    background-color: rgba(245, 245, 245, 1);
+    padding: 20px 30px;
+}
+.job-location{
+    position: relative;
+    margin-top: 50px;
+}
+.jobs-img img{
+    position: absolute;
+    top: -17px;
+    left: 15px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+.job-location{
+  
+}
+
+/* job fedd End */
+
+ /* Jobs based on your profile start */
+ .profile{
+    margin: 70px 0;
+    background-color: rgba(250, 250, 250, 1);
+    padding: 50px 0;
+ }
+ .profile-img img{
     width: 100px;
     height: 100px;
-}
+    border-radius: 10px;
+ } 
+ .Jobsbasedonyourprofile .card{
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+ }
+ .profile-star i{
+    color: yellow;
+ }
+ /* Jobs based on your profile End */
 
-.jb-rating {
-    display: flex;
-}
 
-.jb-rating-img {
-    width: 25px;
-    height: 25px;
-}
 
-.jb-rating p,
-.jb-loc p {
-    margin-left: 7px;
-}
-
-.jb-loc {
-    display: flex;
-}
-
-.jb-loc-img {
-    width: 25px;
-    height: 25px;
-}
-
-@media only screen and (max-width: 425px) {
-    .seeall {
-        text-align: center !important;
-        background: #F1F4F9;
-        padding: 10px 0px;
-        border-radius: 7px;
-    }
-}
-
-/* Jobs based on your profile section End */
-
-/* Top Companies section Start */
-.btnForeign {
-    background-color: #374f59;
-    border: none;
-    border-radius: 7px;
-    color: white;
-    text-align: center;
-    width: 100%;
-    padding: 8px;
-    margin-top: 10px;
-}
-
-/* Top Companies section End */
-
-/* PopularStartup section Start  */
-
-.PopularStartup {
-    /* margin: 50px 0; */
-    background-color: #fff;
-    padding: 30px 0;
-    border: none;
-}
-
-.PopularStartup-box {
+ /* Get Hired by Popular Startup start */
+ .popular-bg{
     background-image: url(../../../../assets/img/pus-bg-img.png);
-    height: 350px;
-    border-radius: 15px;
+    background-size: cover;
+    padding: 50px 0;
     position: relative;
-}
-
-.PopularStartup-title {
-    color: #374f59;
-    margin: 35px 0px;
-    text-align: center;
-}
-
-.PopularStartup-title h4 {
-    font-size: 34.24px;
-    font-weight: 600;
-    line-height: 42.18px;
-}
-
-.PopularStartup-div {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 40px;
-}
-
-.psu-img img {
-    margin-top: 60px;
-}
-
-.psu-img-2 img {
-    position: absolute;
-    top: -34px;
-    left: 370px;
-}
-
-.psu-img-3 img {
-    position: absolute;
-    top: -70px;
-    left: -66px;
-}
-
-.popular-div-second {
-    padding-top: 50px;
-    padding-left: 30px;
-    color: #374F59;
-}
-
-.popular-div-second h2 {
-    font-size: 34.24px;
-    font-weight: 600;
-    line-height: 42.18px;
-    width: 403px;
-}
-
-.popular-div-second p {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24.64px;
-    width: 524px;
-    color: #6D9277;
-    padding-top: 20px;
-}
-
-.popular-img-first {
-    margin-top: 17px;
-    position: relative;
-    left: 84px;
-}
-
-.popular-img-second {
-    margin-top: -67px;
-    position: absolute;
-}
-
-.popular-img {
-    margin-inline-start: 11pc;
-}
-
-.dot-second-div {
-    margin-top: -70px;
-    position: relative;
-    left: 23pc;
-
-}
-
-.PopularStartup .card {
-    border: 0px solid;
-    border-radius: 20px;
-    background: #fff;
-    box-shadow: 0px 0px 12px #c7c6c6;
-}
-
-
-@media only screen and (max-width: 1030px) {
-    .dot-second-div {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 769px) {
-    .popular-img {
-        margin-inline-start: 0px;
-    }
-
-    .PopularStartup-box {
-        height: 40pc;
-    }
-
-    .dot-second-div {
-        display: block;
-    }
-
-    .popular-main-div {
-        padding-top: 0px;
-    }
-
-    .serach {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        height: 90px;
-
-    }
-}
-
-@media only screen and (max-width: 999px) {
-    .PopularStartup-box {
-        height: 40pc;
-    }
-
-    .popular-img-first {
-        margin-top: -93px;
-    }
-
-    .popular-main-div {
-        padding-top: 25px;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .PopularStartup-box {
-        height: 50pc;
-    }
-
-}
-
-@media only screen and (max-width: 427px) {
-    .popular-img {
-        display: none;
-    }
-
-    .PopularStartup-box {
-        height: 55pc;
-    }
-
-    .dot-second-div {
-        display: none;
-    }
-
-    .popular-main-div {
-        padding-top: 0px;
-    }
-
-    .popular-img-first {
-        margin-top: -93px;
-
-    }
-}
-
-.popular-main-div {
-    padding-top: 50px;
-}
-
-.psu-card-div {
-    padding: 20px 120px;
-
-}
-
-/* PopularStartup section End  */
-
-/* Top Companies section Start */
-.TopCompanies {
-    background-color: #FAFAFA;
-    padding-bottom: 60px;
-}
-
-.TopCompanies-title {
-    text-align: center;
-    color: #455A64;
-    margin: 50px 0;
-}
-
-.TopCompanies-title h4 {
-    font-size: 34.24px;
-    font-weight: 600;
-    line-height: 42.18px;
-}
-
-.TopCompanies .card {
-    position: relative;
-    height: 264px;
-}
-
-.TopCompanies .card-body {
-    padding-top: 100px;
-}
-
-.tc-card {
-    margin-top: 75px;
-
-}
-
-.tc-detail {
-    text-align: center;
-}
-
-.tc-title {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 24.64px;
-    color: #374F59;
-}
-
-.tc-rating {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 14px;
-}
-
-.tc-rating p {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 24.64px;
-    padding-left: 7px;
-
-}
-
-.tc-btn-view-all {
-    text-align: center;
-}
-
-.tc-btn-view-all button {
-    width: 441px;
-    height: 45px;
-    border: 0px solid;
-    border-radius: 40px;
-    box-shadow: 0px 2px 12px rgba(157, 157, 157, 0.3);
-    background-color: #6D9277;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 25.1px;
+ }
+ .popular-title h4{
+    color: rgba(55, 79, 89, 1);
+    font-size: 28px;
+    line-height: 32px;
+ }
+ .popular-title{
     margin-top: 50px;
+ }
 
-}
-
-.tc-main-img img {
-    width: 151px;
-    height: 151px;
+ .popular-beg img{
     position: absolute;
-    border-radius: 50%;
-    top: -80px;
-    left: 52px;
-}
+    top: 14%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+ }
+ .poular-search img{
+    position: absolute;
+    top: 14%;
+    left: 33%;
+    transform: translate(-50%,-50%);
+ }
+ .Popular .card{
+    border-radius: 30px;
+ }
+ .apply-btn .btn{
+    border-radius: 30px;
+ }
 
-.tc-btn-1 button {
-    width: 230px;
-    height: 41px;
-    border: 0px solid;
-    border-radius: 7px;
-    background-color: #374F6B;
-    color: #FFFFFF;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 22.59px;
-}
+ /* Get Hired by Popular Startup end */
 
-.tc-btn-2 {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 22.18px;
-    color: #6D9277;
-    padding-top: 13px;
-}
-
-.view-all-com-div button {
-    width: 441px;
-    height: 45px;
-    border: none;
-    border-radius: 40px;
-    background-color: #A5E8D3;
-    color: #374F59;
-    -webkit-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-/* Top Companies section End */
-
-/* People Thinks section Start */
-
-.PeopleThinks {
-    background-color: #f1f4f9;
-    padding: 30px 0px 50px 0px;
-    border: none;
-}
-
-.card-line {
-    width: 100%;
-    background-color: black;
-    height: 1px;
-}
-
-.icon-div ul {
-    display: flex !important;
-    gap: 7px;
-}
-
-.icon-div ul li {
-    list-style: none;
-    color: rgb(219, 222, 33);
-}
-
-.what-is-div {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    margin-bottom: -20px;
-}
-
-.pt-text {
-    margin-top: 40px;
-    width: 347px;
-    height: 75px;
-    color: #6D9277;
-    margin-bottom: 12px;
-}
-
-.pt-text p {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24.64px;
-}
-
-.card-text {
-    margin-top: 25px;
-}
-
-.pt-prs-detl {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.pt-name-loc {
-    margin-top: 12px;
-}
-
-.pt-name-loc p {
-    color: #6D9277;
-}
-
-
-.PeopleThinks .card-body {
-    padding: 16px;
-
-}
-
-.img-tag-div {
-
-    width: 100px !important;
-}
-
-.img-set-card {
+ /* top compins start */
+ .top-comp{
+    background-color: rgba(250, 250, 250, 1);
+    margin: 70px 0;
+    padding: 50px 0;
+ }
+ .top-comp .card{
+    margin: 25% 0;
+    padding: 25% 0 0 0
+ }
+ .topss{
     position: relative;
-    z-index: 1;
-
-    top: 50px;
+ }
+.companys-logo img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -2%;
+    left: 49%;
+    transform: translate(-50%,-50%);
 }
-
-.pt-card {
-    margin: 0px 80px;
+.top-btn .btn{
+    background-color: rgba(55, 79, 89, 1);
+    color: #fff;
 }
+.view-btn .btn{
+    color: rgba(109, 146, 119, 1);
+    font-weight: 800;
+}
+.tops-comp h5{
+    color: rgba(55, 79, 89, 1);
+}
+.top-comp-star i{
+    color: yellow;
+}
+.view-all .btn{
+    background-color: rgba(109, 146, 119, 1);
+    color: #fff;
+}
+ /* top compins End */
 
-/* People Thinks section End */
+
+ /* medai query start */
+
+ @media only screen and (max-width: 769px){
+    .main{
+        background-image: none;
+        background-size: cover;
+        height: 800px;
+        position: relative;
+        width: 101%;
+        background-color: rgb(165 232 211 / 20%)!important;
+    }
+    .fancy-img{
+        display: none;
+    }
+    .fancy1-img{
+        display: none;
+    }
+ }
+
+ @media only screen and (max-width: 426px){
+    .main{
+        background-image: none;
+        background-size: cover;
+        height: 800px;
+        position: relative;
+        width: 101%;
+        background-color: rgb(165 232 211 / 20%)!important;
+    }
+    .main-title h1{
+        font-size: 28px;
+    }
+    .main-desc p{
+        font-size: 18px;
+    }
+    .poular-search img{
+        position: absolute;
+        top: 7%;
+        left: 85%;
+        transform: translate(-50%,-50%);
+        width: 99px;
+    }
+    .popular-beg img{
+        position: absolute;
+        top: 8%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+    }
+ }
+ /* medai query end */

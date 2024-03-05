@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../service/login.service';
 import { User } from '../../model/user';
 import { Router } from '@angular/router';
+import * as CryptoJs from 'crypto-js';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   OnLogin() {
+    
     this.service.login(this.user).subscribe(
       (resp: any) => {
         if (resp.status !== true) {

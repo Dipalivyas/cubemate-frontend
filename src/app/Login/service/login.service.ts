@@ -14,6 +14,10 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(data:User){
-    return this.http.post(this.baseurl + "Auth/Login",data);
+    return this.http.post(this.baseurl + "Web/WebLogin",data);
+   }
+
+   encryptpassowrd(text:string):Observable<any>{
+    return this.http.post(this.baseurl + "Auth/EncryptData?PlainText=",text);
    }
 }

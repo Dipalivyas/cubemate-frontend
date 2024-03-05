@@ -6,4 +6,8 @@ export const environment = {
 
     baseurl:"http://49.12.69.171:9999/",
     imgurl:"http://49.12.69.171:9999"
+
+
+    // baseurl:"https://uat.cubemate.in/",
+    // imgurl:"https://uat.cubemate.in"
 };

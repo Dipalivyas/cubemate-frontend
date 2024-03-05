@@ -1,6 +1,6 @@
 
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { NgModule }      from '@angular/core';
 
@@ -13,6 +13,10 @@ import { FooterComponent } from './Footer/view/footer/footer.component';
 import { JobDetailsComponent } from './JobDetails/view/job-details/job-details.component';
 import { LoginComponent } from './Login/view/login/login.component';
 import { SignupComponent } from './signup/view/signup/signup.component';
+import { JobapplyComponent } from './jobApply/view/jobapply/jobapply.component';
+import { SuccessComponent } from './Success/view/success/success.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InterceptorTokenService } from './Common/interceptor-token.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,9 @@ import { SignupComponent } from './signup/view/signup/signup.component';
     FooterComponent,
     JobDetailsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    JobapplyComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +35,12 @@ import { SignupComponent } from './signup/view/signup/signup.component';
     CarouselModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide:HTTP_INTERCEPTORS,useClass:InterceptorTokenService,multi:true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

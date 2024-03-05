@@ -8,6 +8,8 @@ import { LoginComponent } from './Login/view/login/login.component';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/view/signup/signup.component';
 import { AuthGuard } from './Common/auth.guard';
+import { JobapplyComponent } from './jobApply/view/jobapply/jobapply.component';
+import { SuccessComponent } from './Success/view/success/success.component';
 
 const routes: Routes = [
   {
@@ -25,22 +27,22 @@ const routes: Routes = [
   {
     path:"navbar",
     component:NavbarComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard]
   },
   {
     path:"home",
     component:HomeComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard]
   },
   {
     path:"footer",
     component:FooterComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard]
   },
   {
     path:"jobDetails",
     component:JobDetailsComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard]
   },
   {
     path:"login",
@@ -49,7 +51,17 @@ const routes: Routes = [
   {
     path:"signup",
     component:SignupComponent,
-    // canActivate:[AuthGuard]
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"jobapply",
+    component:JobapplyComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"success",
+    component:SuccessComponent,
+    canActivate:[AuthGuard]
   }
 ];
 

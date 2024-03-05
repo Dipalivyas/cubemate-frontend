@@ -19,21 +19,10 @@
                                 <div class="form-group mb-3">
                                     <label class="text-white">Email</label>
                                     <input type="text" class="form-control" name="email"  [(ngModel)]="user.email" email="ngModel">
-                
-                                    <!-- <div *ngIf="email.errors && (email.dirty || email.touched)" style="font-size: smaller;">
-                                        <div *ngIf="email.errors['required']">
-                                            <span style="color:  rgb(254, 144, 144);;">Please Enter Your Mail Id ..</span>
-                                        </div>
-                                    </div> -->
                                 </div>
                                 <div class="form-group">
                                     <label class="text-white">Password</label>
                                     <input type="password" class="form-control" name="password"   #password="ngModel"  [(ngModel)]="user.password" >
-                                    <!-- <div *ngIf="password.errors && (password.dirty || password.touched)" style="font-size: smaller;">
-                                        <div *ngIf="password.errors['required']">
-                                            <span style="color: rgb(254, 144, 144);">Please Enter Your Password ..</span>
-                                        </div>
-                                    </div> -->
                                 </div>
                                 <div class="login-btn text-center my-3">
                                     <button type="submit" class="btn btn-block enter-btn text-dark" (click)="OnLogin()"
