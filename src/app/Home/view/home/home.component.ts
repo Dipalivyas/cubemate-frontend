@@ -11,11 +11,19 @@ export class HomeComponent implements OnInit {
 
   imgurl = environment.imgurl;
   jobs:any;
-  company:any
+  company:any;
+  counter:any
+  workingtype:string[] = [];
+  shifttype:string[] = [];
+  jobpost:string[] = [];
+
 
 
   ngOnInit(): void {
     this.getdata();
+    this.workingtype = ['FullTime','PartTime','Freelance'];
+    this.shifttype = ['DayTime' , 'NightTime'];
+    this.jobpost = ['Active' , 'InActive' ,'Blocked']
   }
 
   constructor(private service:HomeService){}
@@ -25,10 +33,10 @@ export class HomeComponent implements OnInit {
       (resp:any) => {
         this.jobs = resp.data.jobPostData;
         this.company = resp.data.companyProfileData
+        this.counter = resp.data;
       },
       (error: any) => {
         console.error('Error fetching data:', error);
-        // Handle the error appropriately, e.g., display an error message to the user
       }
     )
   }
@@ -68,6 +76,51 @@ export class HomeComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+
+
+  mapstatustotext(status:number):string{
+    switch(status){
+      case 0:
+        return 'FullTime';
+      case 1:
+          return 'PartTime';
+      case 2:
+          return 'Freelancer';
+      default:
+          return 'Unknown';
+
+    }
+  }
+
+  MapStatusText(status:number):string{
+    switch(status){
+      case 0:
+        return 'DayTime';
+      case 1:
+        return 'NightTime';
+      default:
+        return 'Unknown';
+    }
+  }
+
+  Mapsstatustext(status:number):string{
+    switch(status){
+      case 0:
+        return 'Active';
+      case 1:
+        return 'InActive';
+      case 2:
+        return 'Blocked';
+      default:
+        return 'Unknown';
+    }
+  }
+
+
+
+
+
+ 
 
 
 

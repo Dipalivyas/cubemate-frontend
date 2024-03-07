@@ -40,7 +40,7 @@ const routes: Routes = [
     canActivate:[AuthGuard]
   },
   {
-    path:"jobDetails",
+    path:"jobDetails/:id",
     component:JobDetailsComponent,
     canActivate:[AuthGuard]
   },

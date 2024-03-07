@@ -4,54 +4,26 @@
 <section class="compnay-details">
   <div class="container">
     <div class="row">
+      <ng-container *ngIf="details">
       <div class="col-lg-12 col-md-12 col-sm-6">
         <div class="job-back">
           <div class="compnay-location">
             <div class="location-icon d-flex flex-wrap aligm-items-center">
               <i class="bi bi-geo-alt"></i>
-              <h5>Berline,Germany</h5>
+              <h5>{{details.companyAddress}}</h5>
             </div>
           </div>
-          <div class="rating">
-            <div class="rating-title d-flex flex-wrap aligm-items-center">
-              <h5 class="pe-2">Rating:</h5>
-              <i class="bi bi-star-fill"></i>
-              <h5 class="px-2">3.5</h5>
-            </div>
-          </div>
-
-
-          <div class="compnies">
-            <div class="location-icon d-flex flex-wrap aligm-items-center">
-              <i class="bi bi-geo-alt"></i>
-              <h5>Berline,Germany</h5>
-            </div>
-            <div class="rating-title d-flex flex-wrap aligm-items-center">
-              <h5 class="pe-2">Rating:</h5>
-              <i class="bi bi-star-fill"></i>
-              <h5 class="px-2">3.5</h5>
-            </div>
-          </div>
-
 
           <div class="job-details">
             <div class="col-lg-12">
               <div class="card">
                 <div class="compnay">
-                  <div class="logo text-center">
-                    <img src="../../../../assets/img/job-2.png" alt="">
-                    <div class="name">
-                      <h5>NH Group</h5>
-                    </div>
+                  <div class="logo me-3">
+                    <img src="{{imgurl + details.companyLogo}}" alt="" class="img-fluid">
                   </div>
                   <div class="compnay-desc">
-                    <h2>Graphic Designer</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, eaque voluptatum deleniti, vero
-                      placeat
-                      doloribus perspiciatis similique vel eum ad corrupti quaerat dolorem delectus inventore esse
-                      accusantium ex veritatis sit aspernatur perferendis voluptates, ducimus ea. Repellat ratione eos
-                      cum
-                      illo fugiat odio minima mollitia inventore impedit facere non, totam ipsam.</p>
+                    <h2>{{details.jobPostTitle}}</h2>
+                    <p>{{details.jobDescription}}</p>
                   </div>
 
                 </div>
@@ -61,6 +33,7 @@
           </div>
         </div>
       </div>
+    </ng-container>
     </div>
   </div>
 </section>
@@ -78,48 +51,48 @@
       </div>
       <div class="col">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" *ngIf="details">
             <div class="job-salary">
               <h5>Salary:</h5>
             </div>
             <div class="salary-month">
-              <h5>0k-60k/Month</h5>
+              <h5>₹{{details.jobSalaryStart | formatNumber}} - ₹{{details.jobSalaryEnd | formatNumber}}</h5>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" *ngIf="details">
             <div class="job-salary">
-              <h5>Skills:</h5>
+              <h5>Working Type:</h5>
             </div>
             <div class="salary-month">
-              <h5>Motion Graphics</h5>
+              <h5>{{ mapstatustotext(details.workingType) }}</h5>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" *ngIf="details">
             <div class="job-salary">
-              <h5>Job Type:</h5>
+              <h5>Shift Type:</h5>
             </div>
             <div class="salary-month">
-              <h5>Full Time / Part Time</h5>
+              <h5>{{MapStatusText (details.shiftType) }}</h5>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body" *ngIf="details">
             <div class="job-salary">
-              <h5>Experience:</h5>
+              <h5>Days Of Work:</h5>
             </div>
             <div class="salary-month">
-              <h5>2 Years</h5>
+              <h5>{{details.daysOfWork}}</h5>
             </div>
           </div>
         </div>
@@ -166,15 +139,13 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="overview-title">
-          <h3>Overview:</h3>
+          <h3>Benifits:</h3>
         </div>
+        <ng-container *ngFor="let d of benifits">
         <div class="overview-des">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae soluta dolor accusantium nemo aperiam,
-            aspernatur doloremque ullam nisi a magnam nihil optio, molestias, asperiores eaque ratione quia culpa ut
-            repudiandae tenetur voluptatum. Dicta architecto, deleniti delectus molestias, consectetur tempore beatae
-            sapiente voluptatibus doloribus libero ipsa? Laborum eveniet sequi sint earum, vero neque repudiandae velit,
-            ad magnam debitis porro dolore possimus.</p>
+         <li>{{d.jobPostBenifit}}</li>
         </div>
+      </ng-container>
       </div>
     </div>
   </div>
@@ -182,31 +153,29 @@
 <!----------------------------------------------------- overview end ------------------------------------------------>
 
 
-<!----------------------------------------------------- Benifits Start ------------------------------------------------>
+<!----------------------------------------------------- Skills Start ------------------------------------------------>
 <section class="benifits">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="benifits-title">
-          <h3>Benifits:</h3>
+          <h3>Skills:</h3>
         </div>
       </div>
+      <ng-container *ngFor="let d of skills">
       <div class="col-lg-12">
         <div class="benifits-list">
           <ul>
-            <li>Different Type Of Job opportunities</li>
-            <li>Stable Work Hours</li>
-            <li>Potential To Work Remotely.</li>
-            <li>Sense Of Accomplishment</li>
-            <li>InCome And benifits</li>
+            <li>{{d.skillTag}}</li>
           </ul>
         </div>
       </div>
+    </ng-container>
     </div>
   </div>
 </section>
 
-<!----------------------------------------------------- Benifits End ------------------------------------------------>
+<!----------------------------------------------------- Skills End ------------------------------------------------>
 
 
 <!----------------------------------------------------- Overview Start ------------------------------------------------>
@@ -355,36 +324,25 @@
       <section class="similarjob">
         <div class="module-slider">
           <owl-carousel-o [options]="customOptions3">
-            <ng-template carouselSlide>
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card my-3 pt-3">
+            <ng-template carouselSlide *ngFor="let d of job">
+                    <div class="card my-3 pt-3 mx-3 py-3">
                       <div class="similar-img  px-3 d-flex flex-wrap align-items-center justify-content-between">
-                        <img src="../../../../assets/img/similarjob.jpg" class="img-fluid" alt="...">
-                        <h5>Full Time</h5>
+                        <img src="{{imgurl + d.companyLogo}}" class="img-fluid" alt="...">
+                        <h5>{{mapstatustotext (d.workingType)}}</h5>
                       </div>
                       <div class="card-body mt-3">
                         <div class="job-name ps-3">
-                          <h5>Lead Ui Designer</h5>
+                          <h5>{{d.jobPostTitle}}</h5>
                         </div>
                         <div class="job-tech ps-3">
-                          <h6>Fox Tech Technology</h6>
+                          <h6>{{d.companyName}}</h6>
                         </div>
-                       <div class="job-rating d-flex flex-wrap aligm-item-center ps-3">
-                        <div class="str-icon">
-                          <i class="bi bi-star-fill"></i>
-                        </div>
-                        <div class="job-rat">
-                          <h6>3.5</h6>
-                        </div>
-                       </div>
-                       <div class="job-location d-flex flex-wrap aligm-item-center ps-3">
+                       <div class="job-location d-flex flex-wrap align-item-center ps-3">
                         <div class="location-icon">
                           <i class="bi bi-geo-alt"></i>
                         </div>
                         <div class="location-name">
-                          <h6>Jamnagar,Ahemdabad</h6>
+                          <h6>{{d.companyAddress | slice: 0:40}}</h6>
                         </div>
                        </div>
                        <div class="view-job text-center">
@@ -393,117 +351,6 @@
 
                       </div>
                     </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card my-3 pt-3">
-                      <div class="similar-img  px-3 d-flex flex-wrap align-items-center justify-content-between">
-                        <img src="../../../../assets/img/similarjob.jpg" class="img-fluid" alt="...">
-                        <h5>Full Time</h5>
-                      </div>
-                      <div class="card-body mt-3">
-                        <div class="job-name ps-3">
-                          <h5>Lead Ui Designer</h5>
-                        </div>
-                        <div class="job-tech ps-3">
-                          <h6>Fox Tech Technology</h6>
-                        </div>
-                       <div class="job-rating d-flex flex-wrap aligm-item-center ps-3">
-                        <div class="str-icon">
-                          <i class="bi bi-star-fill"></i>
-                        </div>
-                        <div class="job-rat">
-                          <h6>3.5</h6>
-                        </div>
-                       </div>
-                       <div class="job-location d-flex flex-wrap aligm-item-center ps-3">
-                        <div class="location-icon">
-                          <i class="bi bi-geo-alt"></i>
-                        </div>
-                        <div class="location-name">
-                          <h6>Jamnagar,Ahemdabad</h6>
-                        </div>
-                       </div>
-                       <div class="view-job text-center">
-                        <button class="btn text-white">View Job</button>
-                       </div>
-
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card my-3 pt-3">
-                      <div class="similar-img  px-3 d-flex flex-wrap align-items-center justify-content-between">
-                        <img src="../../../../assets/img/similarjob.jpg" class="img-fluid" alt="...">
-                        <h5>Full Time</h5>
-                      </div>
-                      <div class="card-body mt-3">
-                        <div class="job-name ps-3">
-                          <h5>Lead Ui Designer</h5>
-                        </div>
-                        <div class="job-tech ps-3">
-                          <h6>Fox Tech Technology</h6>
-                        </div>
-                       <div class="job-rating d-flex flex-wrap aligm-item-center ps-3">
-                        <div class="str-icon">
-                          <i class="bi bi-star-fill"></i>
-                        </div>
-                        <div class="job-rat">
-                          <h6>3.5</h6>
-                        </div>
-                       </div>
-                       <div class="job-location d-flex flex-wrap aligm-item-center ps-3">
-                        <div class="location-icon">
-                          <i class="bi bi-geo-alt"></i>
-                        </div>
-                        <div class="location-name">
-                          <h6>Jamnagar,Ahemdabad</h6>
-                        </div>
-                       </div>
-                       <div class="view-job text-center">
-                        <button class="btn text-white">View Job</button>
-                       </div>
-
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card my-3 pt-3">
-                      <div class="similar-img  px-3 d-flex flex-wrap align-items-center justify-content-between">
-                        <img src="../../../../assets/img/similarjob.jpg" class="img-fluid" alt="...">
-                        <h5>Full Time</h5>
-                      </div>
-                      <div class="card-body mt-3">
-                        <div class="job-name ps-3">
-                          <h5>Lead Ui Designer</h5>
-                        </div>
-                        <div class="job-tech ps-3">
-                          <h6>Fox Tech Technology</h6>
-                        </div>
-                       <div class="job-rating d-flex flex-wrap aligm-item-center ps-3">
-                        <div class="str-icon">
-                          <i class="bi bi-star-fill"></i>
-                        </div>
-                        <div class="job-rat">
-                          <h6>3.5</h6>
-                        </div>
-                       </div>
-                       <div class="job-location d-flex flex-wrap aligm-item-center ps-3">
-                        <div class="location-icon">
-                          <i class="bi bi-geo-alt"></i>
-                        </div>
-                        <div class="location-name">
-                          <h6>Jamnagar,Ahemdabad</h6>
-                        </div>
-                       </div>
-                       <div class="view-job text-center">
-                        <button class="btn text-white">View Job</button>
-                       </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </ng-template>
           </owl-carousel-o>
         </div>

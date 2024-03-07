@@ -41,6 +41,7 @@
 <section class="counter">
   <div class="container">
     <div class="row">
+      <ng-container *ngIf="counter">
       <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="card p-3 border-0">
           <div class="counter-img d-flex flex-wrap align-items-center">
@@ -48,12 +49,14 @@
               <img src="../../../../assets/img/Mask group.png" alt="">
             </div>
             <div class="job-number ps-3">
-              <h5>10</h5>
-              <h5>Live Jobs</h5>
+              <h5>{{counter.jobcount}}</h5>
+              <h5>Jobs</h5>
             </div>
           </div>
         </div>
       </div>
+    </ng-container>
+    <ng-container *ngIf="counter">
       <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="card p-3 border-0">
           <div class="counter-img d-flex flex-wrap align-items-center">
@@ -61,12 +64,15 @@
               <img src="../../../../assets/img/Mask group.png" alt="">
             </div>
             <div class="job-number ps-3">
-              <h5>10</h5>
-              <h5>Live Jobs</h5>
+              <h5>{{counter.companycount}}</h5>
+              <h5>Companies</h5>
             </div>
           </div>
         </div>
       </div>
+    </ng-container>
+     
+    <ng-container *ngIf="counter">
       <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="card p-3 border-0">
           <div class="counter-img d-flex flex-wrap align-items-center">
@@ -74,12 +80,15 @@
               <img src="../../../../assets/img/Mask group.png" alt="">
             </div>
             <div class="job-number ps-3">
-              <h5>10</h5>
-              <h5>Live Jobs</h5>
+              <h5>{{counter.usercount}}</h5>
+              <h5>Users</h5>
             </div>
           </div>
         </div>
       </div>
+    </ng-container>
+     
+    <ng-container *ngIf="counter">
       <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="card p-3 border-0">
           <div class="counter-img d-flex flex-wrap align-items-center">
@@ -87,12 +96,16 @@
               <img src="../../../../assets/img/Mask group.png" alt="">
             </div>
             <div class="job-number ps-3">
-              <h5>10</h5>
+              <h5>{{counter.livejobcount}}</h5>
               <h5>Live Jobs</h5>
             </div>
           </div>
         </div>
       </div>
+    </ng-container>
+     
+     
+  
     </div>
   </div>
 </section>
@@ -108,11 +121,12 @@
           <h2>Job Fedd</h2>
         </div>
       </div>
-      <ng-container *ngFor="let d of jobs">
+      <ng-container *ngFor="let d of jobs;let i = index">
+        <ng-container *ngIf="i==0">
       <div class="col-lg-3 col-md-6 cool-sm-12">
         <div class="card my-3">
           <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5"><a class="text-white" routerLink="/jobDetails">Apply Now</a></button>
+            <button class="btn px-5"><a class="text-white" routerLink="/jobDetails/{{d.jobPostID}}" (click)="scrollToTop()">Apply Now</a></button>
           </div>
           <div class="job-name ps-3">
             <h6>{{d.jobPostTitle}}</h6>
@@ -120,8 +134,8 @@
           <div class="job-cont ps-3">
             <ul>
               <li>₹{{d.jobSalaryStart}} - ₹{{d.jobSalaryEnd}}/Month </li>
-              <li>{{d.workingType}} </li>
-              <li>{{d.shiftType}} </li>
+              <li>{{ mapstatustotext(d.workingType) }} </li>
+              <li>{{MapStatusText (d.shiftType) }} </li>
               <li>{{d.daysOfWork}} Day Working </li>
             </ul>
           </div>
@@ -140,6 +154,112 @@
           </div>
         </div>
       </div>
+      </ng-container>
+
+
+      <ng-container *ngIf="i==1">
+        <div class="col-lg-3 col-md-6 cool-sm-12">
+          <div class="card my-3">
+            <div class="apply-btn ps-3 py-3">
+              <button class="btn px-5"><a class="text-white" routerLink="/jobDetails/{{d.jobPostID}}" (click)="scrollToTop()">Apply Now</a></button>
+            </div>
+            <div class="job-name ps-3">
+              <h6>{{d.jobPostTitle}}</h6>
+            </div>
+            <div class="job-cont ps-3">
+              <ul>
+                <li>₹{{d.jobSalaryStart}} - ₹{{d.jobSalaryEnd}}/Month </li>
+                <li>{{ mapstatustotext(d.workingType) }} </li>
+                <li>{{MapStatusText (d.shiftType) }} </li>
+                <li>{{d.daysOfWork}} Day Working </li>
+              </ul>
+            </div>
+            <div class="job-location">
+              <div class="card border-0">
+                <div class="name-loc mt-2">
+                  <h5>{{d.companyName}}</h5>
+                </div>
+                <div class="location-icon">
+                  <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                </div>
+              </div>
+              <div class="jobs-img">
+                <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="i==2">
+          <div class="col-lg-3 col-md-6 cool-sm-12">
+            <div class="card my-3">
+              <div class="apply-btn ps-3 py-3">
+                <button class="btn px-5"><a class="text-white" routerLink="/jobDetails/{{d.jobPostID}}" (click)="scrollToTop()">Apply Now</a></button>
+              </div>
+              <div class="job-name ps-3">
+                <h6>{{d.jobPostTitle}}</h6>
+              </div>
+              <div class="job-cont ps-3">
+                <ul>
+                  <li>₹{{d.jobSalaryStart}} - ₹{{d.jobSalaryEnd}}/Month </li>
+                  <li>{{ mapstatustotext(d.workingType) }} </li>
+                  <li>{{MapStatusText (d.shiftType) }} </li>
+                  <li>{{d.daysOfWork}} Day Working </li>
+                </ul>
+              </div>
+              <div class="job-location">
+                <div class="card border-0">
+                  <div class="name-loc mt-2">
+                    <h5>{{d.companyName}}</h5>
+                  </div>
+                  <div class="location-icon">
+                    <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                  </div>
+                </div>
+                <div class="jobs-img">
+                  <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+          </ng-container>
+
+
+          <ng-container *ngIf="i==3">
+            <div class="col-lg-3 col-md-6 cool-sm-12">
+              <div class="card my-3">
+                <div class="apply-btn ps-3 py-3">
+                  <button class="btn px-5"><a class="text-white" routerLink="/jobDetails/{{d.jobPostID}}" (click)="scrollToTop()">Apply Now</a></button>
+                </div>
+                <div class="job-name ps-3">
+                  <h6>{{d.jobPostTitle}}</h6>
+                </div>
+                <div class="job-cont ps-3">
+                  <ul>
+                    <li>₹{{d.jobSalaryStart}} - ₹{{d.jobSalaryEnd}}/Month </li>
+                    <li>{{ mapstatustotext(d.workingType) }} </li>
+                    <li>{{MapStatusText (d.shiftType) }} </li>
+                    <li>{{d.daysOfWork}} Day Working </li>
+                  </ul>
+                </div>
+                <div class="job-location">
+                  <div class="card border-0">
+                    <div class="name-loc mt-2">
+                      <h5>{{d.companyName}}</h5>
+                    </div>
+                    <div class="location-icon">
+                      <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                    </div>
+                  </div>
+                  <div class="jobs-img">
+                    <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </ng-container>
     </ng-container>
     </div>
   </div>
@@ -295,254 +415,146 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-md-6 cool-sm-12">
-        <div class="card  my-3">
-          <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5">Apply Now</button>
-          </div>
-          <div class="job-name ps-3">
-            <h6>Senior Manual Tester(QA) Required</h6>
-          </div>
-          <div class="job-cont ps-3">
-            <ul>
-              <li>₹30,000-₹40,000/Month </li>
-              <li>Day Shift </li>
-              <li>Full Time </li>
-              <li>5 Day Working </li>
-            </ul>
-          </div>
-          <div class="job-location">
-            <div class="card border-0">
-              <div class="name-loc mt-2">
-                <h5>Receptionist</h5>
-              </div>
-              <div class="location-icon">
-                <h6><i class="bi bi-geo-alt"></i>Jamnager,Ahemdabad...</h6>
-              </div>
-            </div>
-            <div class="jobs-img">
-              <img src="../../../../assets/img/jobs-fedd.png" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 cool-sm-12">
-        <div class="card  my-3">
-          <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5">Apply Now</button>
-          </div>
-          <div class="job-name ps-3">
-            <h6>Senior Manual Tester(QA) Required</h6>
-          </div>
-          <div class="job-cont ps-3">
-            <ul>
-              <li>₹30,000-₹40,000/Month </li>
-              <li>Day Shift </li>
-              <li>Full Time </li>
-              <li>5 Day Working </li>
-            </ul>
-          </div>
-          <div class="job-location">
-            <div class="card border-0">
-              <div class="name-loc mt-2">
-                <h5>Receptionist</h5>
-              </div>
-              <div class="location-icon">
-                <h6><i class="bi bi-geo-alt"></i>Jamnager,Ahemdabad...</h6>
-              </div>
-            </div>
-            <div class="jobs-img">
-              <img src="../../../../assets/img/jobs-fedd.png" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 cool-sm-12">
-        <div class="card  my-3">
-          <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5">Apply Now</button>
-          </div>
-          <div class="job-name ps-3">
-            <h6>Senior Manual Tester(QA) Required</h6>
-          </div>
-          <div class="job-cont ps-3">
-            <ul>
-              <li>₹30,000-₹40,000/Month </li>
-              <li>Day Shift </li>
-              <li>Full Time </li>
-              <li>5 Day Working </li>
-            </ul>
-          </div>
-          <div class="job-location">
-            <div class="card border-0">
-              <div class="name-loc mt-2">
-                <h5>Receptionist</h5>
-              </div>
-              <div class="location-icon">
-                <h6><i class="bi bi-geo-alt"></i>Jamnager,Ahemdabad...</h6>
-              </div>
-            </div>
-            <div class="jobs-img">
-              <img src="../../../../assets/img/jobs-fedd.png" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 cool-sm-12">
-        <div class="card  my-3">
-          <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5">Apply Now</button>
-          </div>
-          <div class="job-name ps-3">
-            <h6>Senior Manual Tester(QA) Required</h6>
-          </div>
-          <div class="job-cont ps-3">
-            <ul>
-              <li>₹30,000-₹40,000/Month </li>
-              <li>Day Shift </li>
-              <li>Full Time </li>
-              <li>5 Day Working </li>
-            </ul>
-          </div>
-          <div class="job-location">
-            <div class="card border-0">
-              <div class="name-loc mt-2">
-                <h5>Receptionist</h5>
-              </div>
-              <div class="location-icon">
-                <h6><i class="bi bi-geo-alt"></i>Jamnager,Ahemdabad...</h6>
-              </div>
-            </div>
-            <div class="jobs-img">
-              <img src="../../../../assets/img/jobs-fedd.png" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 cool-sm-12">
-        <div class="card  my-3">
-          <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5">Apply Now</button>
-          </div>
-          <div class="job-name ps-3">
-            <h6>Senior Manual Tester(QA) Required</h6>
-          </div>
-          <div class="job-cont ps-3">
-            <ul>
-              <li>₹30,000-₹40,000/Month </li>
-              <li>Day Shift </li>
-              <li>Full Time </li>
-              <li>5 Day Working </li>
-            </ul>
-          </div>
-          <div class="job-location">
-            <div class="card border-0">
-              <div class="name-loc mt-2">
-                <h5>Receptionist</h5>
-              </div>
-              <div class="location-icon">
-                <h6><i class="bi bi-geo-alt"></i>Jamnager,Ahemdabad...</h6>
-              </div>
-            </div>
-            <div class="jobs-img">
-              <img src="../../../../assets/img/jobs-fedd.png" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 cool-sm-12">
-        <div class="card  my-3">
-          <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5">Apply Now</button>
-          </div>
-          <div class="job-name ps-3">
-            <h6>Senior Manual Tester(QA) Required</h6>
-          </div>
-          <div class="job-cont ps-3">
-            <ul>
-              <li>₹30,000-₹40,000/Month </li>
-              <li>Day Shift </li>
-              <li>Full Time </li>
-              <li>5 Day Working </li>
-            </ul>
-          </div>
-          <div class="job-location">
-            <div class="card border-0">
-              <div class="name-loc mt-2">
-                <h5>Receptionist</h5>
-              </div>
-              <div class="location-icon">
-                <h6><i class="bi bi-geo-alt"></i>Jamnager,Ahemdabad...</h6>
-              </div>
-            </div>
-            <div class="jobs-img">
-              <img src="../../../../assets/img/jobs-fedd.png" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 cool-sm-12">
-        <div class="card  my-3">
-          <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5">Apply Now</button>
-          </div>
-          <div class="job-name ps-3">
-            <h6>Senior Manual Tester(QA) Required</h6>
-          </div>
-          <div class="job-cont ps-3">
-            <ul>
-              <li>₹30,000-₹40,000/Month </li>
-              <li>Day Shift </li>
-              <li>Full Time </li>
-              <li>5 Day Working </li>
-            </ul>
-          </div>
-          <div class="job-location">
-            <div class="card border-0">
-              <div class="name-loc mt-2">
-                <h5>Receptionist</h5>
-              </div>
-              <div class="location-icon">
-                <h6><i class="bi bi-geo-alt"></i>Jamnager,Ahemdabad...</h6>
-              </div>
-            </div>
-            <div class="jobs-img">
-              <img src="../../../../assets/img/jobs-fedd.png" alt="" class="img-fluid">
-            </div>
-          </div>
-        </div>
-      </div>
+      <ng-container *ngFor="let d of jobs;let i = index">
+        <ng-container *ngIf="i==4">
       <div class="col-lg-3 col-md-6 cool-sm-12">
         <div class="card my-3">
           <div class="apply-btn ps-3 py-3">
-            <button class="btn px-5">Apply Now</button>
+            <button class="btn px-5"><a class="text-white" routerLink="/jobDetails/{{d.jobPostID}}" (click)="scrollToTop()">Apply Now</a></button>
           </div>
           <div class="job-name ps-3">
-            <h6>Senior Manual Tester(QA) Required</h6>
+            <h6>{{d.jobPostTitle}}</h6>
           </div>
           <div class="job-cont ps-3">
             <ul>
-              <li>₹30,000-₹40,000/Month </li>
-              <li>Day Shift </li>
-              <li>Full Time </li>
-              <li>5 Day Working </li>
+              <li>₹{{d.jobSalaryStart}} - ₹{{d.jobSalaryEnd}}/Month </li>
+              <li>{{ mapstatustotext(d.workingType) }} </li>
+              <li>{{MapStatusText (d.shiftType) }} </li>
+              <li>{{d.daysOfWork}} Day Working </li>
             </ul>
           </div>
           <div class="job-location">
             <div class="card border-0">
               <div class="name-loc mt-2">
-                <h5>Receptionist</h5>
+                <h5>{{d.companyName}}</h5>
               </div>
               <div class="location-icon">
-                <h6><i class="bi bi-geo-alt"></i>Jamnager,Ahemdabad...</h6>
+                <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
               </div>
             </div>
             <div class="jobs-img">
-              <img src="../../../../assets/img/jobs-fedd.png" alt="" class="img-fluid">
+              <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
             </div>
           </div>
         </div>
       </div>
+      </ng-container>
+
+
+      <ng-container *ngIf="i==5">
+        <div class="col-lg-3 col-md-6 cool-sm-12">
+          <div class="card my-3">
+            <div class="apply-btn ps-3 py-3">
+              <button class="btn px-5"><a class="text-white" routerLink="/jobDetails/{{d.jobPostID}}" (click)="scrollToTop()">Apply Now</a></button>
+            </div>
+            <div class="job-name ps-3">
+              <h6>{{d.jobPostTitle}}</h6>
+            </div>
+            <div class="job-cont ps-3">
+              <ul>
+                <li>₹{{d.jobSalaryStart}} - ₹{{d.jobSalaryEnd}}/Month </li>
+                <li>{{ mapstatustotext(d.workingType) }} </li>
+                <li>{{MapStatusText (d.shiftType) }}</li>
+                <li>{{d.daysOfWork}} Day Working </li>
+              </ul>
+            </div>
+            <div class="job-location">
+              <div class="card border-0">
+                <div class="name-loc mt-2">
+                  <h5>{{d.companyName}}</h5>
+                </div>
+                <div class="location-icon">
+                  <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                </div>
+              </div>
+              <div class="jobs-img">
+                <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="i==6">
+          <div class="col-lg-3 col-md-6 cool-sm-12">
+            <div class="card my-3">
+              <div class="apply-btn ps-3 py-3">
+                <button class="btn px-5"><a class="text-white" routerLink="/jobDetails/{{d.jobPostID}}" (click)="scrollToTop()">Apply Now</a></button>
+              </div>
+              <div class="job-name ps-3">
+                <h6>{{d.jobPostTitle}}</h6>
+              </div>
+              <div class="job-cont ps-3">
+                <ul>
+                  <li>₹{{d.jobSalaryStart}} - ₹{{d.jobSalaryEnd}}/Month </li>
+                  <li>{{ mapstatustotext(d.workingType) }} </li>
+                  <li>{{MapStatusText (d.shiftType) }} </li>
+                  <li>{{d.daysOfWork}} Day Working </li>
+                </ul>
+              </div>
+              <div class="job-location">
+                <div class="card border-0">
+                  <div class="name-loc mt-2">
+                    <h5>{{d.companyName}}</h5>
+                  </div>
+                  <div class="location-icon">
+                    <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                  </div>
+                </div>
+                <div class="jobs-img">
+                  <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+          </ng-container>
+
+
+          <ng-container *ngIf="i==7">
+            <div class="col-lg-3 col-md-6 cool-sm-12">
+              <div class="card my-3">
+                <div class="apply-btn ps-3 py-3">
+                  <button class="btn px-5"><a class="text-white" routerLink="/jobDetails/{{d.jobPostID}}" (click)="scrollToTop()">Apply Now</a></button>
+                </div>
+                <div class="job-name ps-3">
+                  <h6>{{d.jobPostTitle}}</h6>
+                </div>
+                <div class="job-cont ps-3">
+                  <ul>
+                    <li>₹{{d.jobSalaryStart}} - ₹{{d.jobSalaryEnd}}/Month </li>
+                    <li>{{ mapstatustotext(d.workingType) }} </li>
+                    <li>{{MapStatusText (d.shiftType) }}</li>
+                    <li>{{d.daysOfWork}} Day Working </li>
+                  </ul>
+                </div>
+                <div class="job-location">
+                  <div class="card border-0">
+                    <div class="name-loc mt-2">
+                      <h5>{{d.companyName}}</h5>
+                    </div>
+                    <div class="location-icon">
+                      <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                    </div>
+                  </div>
+                  <div class="jobs-img">
+                    <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </ng-container>
+    </ng-container>
     </div>
   </div>
 </section>

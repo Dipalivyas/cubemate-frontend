@@ -17,6 +17,7 @@ import { JobapplyComponent } from './jobApply/view/jobapply/jobapply.component';
 import { SuccessComponent } from './Success/view/success/success.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorTokenService } from './Common/interceptor-token.service';
+import { FormatNumberPipe } from './format-number.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { InterceptorTokenService } from './Common/interceptor-token.service';
     LoginComponent,
     SignupComponent,
     JobapplyComponent,
-    SuccessComponent
+    SuccessComponent,
+    FormatNumberPipe
   ],
   imports: [
     BrowserModule,

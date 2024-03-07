@@ -24,9 +24,11 @@
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <button class=" me-2 btn-div-crl" routerLink="/login">Login</button>
+                <button class=" me-2 btn-div-crl" (click)="logout()">LogOut</button>
                 <button class=" me-2 btn-div-crl-register" routerLink="/signup">Register</button>
+                <h5 class="text-dark">{{title}}</h5>
             </form>
+          
         </div>
     </div>
 </nav>
