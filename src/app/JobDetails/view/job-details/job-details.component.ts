@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { JobdetailsService } from '../../service/jobdetails.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-job-details',

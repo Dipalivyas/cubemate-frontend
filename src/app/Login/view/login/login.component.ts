@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
         } else {
           sessionStorage.setItem('token', resp.data.token);
           sessionStorage.setItem('firstName', resp.data.firstName);
+          sessionStorage.setItem('userid',resp.data.userID);
           console.log('Login successful:', resp);
           this.route.navigate(['/home']);
         }

@@ -1,0 +1,193 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="app text-center my-3">
+                <h2>My Applies</h2>
+            </div>
+        </div>
+
+
+        <ng-container *ngFor="let d of job">
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card my-2">
+                <img src="{{imgurl + d.companyLogo}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{d.companyName}}</h5>
+                  <p class="card-text">{{d.jobPostTitle}}</p>
+                    <div class="post-loc d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="location d-flex flex-wrap align-items-center">
+                            <i class="bi bi-geo-alt-fill fs-5"></i>
+                            <h5>Location</h5>
+                        </div>
+                        <div class="rating d-flex flex-wrap align-items-center">
+                            <i class="bi bi-star-fill fs-5"></i>
+                            <h5>3.5</h5>
+                        </div>
+                    </div>
+                    <div class="post-btn  d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="process">
+                            <button class="btn px-4">In Proccess</button>
+                        </div>
+                        <div class="view-btn">
+                            <button class="btn px-4">View app</button>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+            </div>
+        </ng-container>
+
+
+
+        <!-- <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card my-2">
+                <img src="../../../../assets/img/Companies-1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">The Healing Limited</h5>
+                  <p class="card-text">Customer Care Representative-
+                    Contractual Role</p>
+                    <div class="post-loc d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="location d-flex flex-wrap align-items-center">
+                            <i class="bi bi-geo-alt-fill fs-5"></i>
+                            <h5>Location</h5>
+                        </div>
+                        <div class="rating d-flex flex-wrap align-items-center">
+                            <i class="bi bi-star-fill fs-5"></i>
+                            <h5>3.5</h5>
+                        </div>
+                    </div>
+                    <div class="post-btn  d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="processe">
+                            <button class="btn px-4">Delivered</button>
+                        </div>
+                        <div class="view-btn">
+                            <button class="btn px-4">View app</button>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card my-2">
+                <img src="../../../../assets/img/Companies-1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">The Healing Limited</h5>
+                  <p class="card-text">Customer Care Representative-
+                    Contractual Role</p>
+                    <div class="post-loc d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="location d-flex flex-wrap align-items-center">
+                            <i class="bi bi-geo-alt-fill fs-5"></i>
+                            <h5>Location</h5>
+                        </div>
+                        <div class="rating d-flex flex-wrap align-items-center">
+                            <i class="bi bi-star-fill fs-5"></i>
+                            <h5>3.5</h5>
+                        </div>
+                    </div>
+                    <div class="post-btn  d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="processs">
+                            <button class="btn px-4">Cancled</button>
+                        </div>
+                        <div class="view-btn">
+                            <button class="btn px-4">View app</button>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card my-2">
+                <img src="../../../../assets/img/Companies-1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">The Healing Limited</h5>
+                  <p class="card-text">Customer Care Representative-
+                    Contractual Role</p>
+                    <div class="post-loc d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="location d-flex flex-wrap align-items-center">
+                            <i class="bi bi-geo-alt-fill fs-5"></i>
+                            <h5>Location</h5>
+                        </div>
+                        <div class="rating d-flex flex-wrap align-items-center">
+                            <i class="bi bi-star-fill fs-5"></i>
+                            <h5>3.5</h5>
+                        </div>
+                    </div>
+                    <div class="post-btn  d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="process">
+                            <button class="btn px-4">In Proccess</button>
+                        </div>
+                        <div class="view-btn">
+                            <button class="btn px-4">View app</button>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card my-2">
+                <img src="../../../../assets/img/Companies-1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">The Healing Limited</h5>
+                  <p class="card-text">Customer Care Representative-
+                    Contractual Role</p>
+                    <div class="post-loc d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="location d-flex flex-wrap align-items-center">
+                            <i class="bi bi-geo-alt-fill fs-5"></i>
+                            <h5>Location</h5>
+                        </div>
+                        <div class="rating d-flex flex-wrap align-items-center">
+                            <i class="bi bi-star-fill fs-5"></i>
+                            <h5>3.5</h5>
+                        </div>
+                    </div>
+                    <div class="post-btn  d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="processs">
+                            <button class="btn px-4">Cancled</button>
+                        </div>
+                        <div class="view-btn">
+                            <button class="btn px-4">View app</button>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="card my-2">
+                <img src="../../../../assets/img/Companies-1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">The Healing Limited</h5>
+                  <p class="card-text">Customer Care Representative-
+                    Contractual Role</p>
+                    <div class="post-loc d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="location d-flex flex-wrap align-items-center">
+                            <i class="bi bi-geo-alt-fill fs-5"></i>
+                            <h5>Location</h5>
+                        </div>
+                        <div class="rating d-flex flex-wrap align-items-center">
+                            <i class="bi bi-star-fill fs-5"></i>
+                            <h5>3.5</h5>
+                        </div>
+                    </div>
+                    <div class="post-btn  d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="process">
+                            <button class="btn px-4">In Proccess</button>
+                        </div>
+                        <div class="view-btn">
+                            <button class="btn px-4">View app</button>
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+        </div> -->
+
+
+    </div>
+</div>
+<app-footer></app-footer>

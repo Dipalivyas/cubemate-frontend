@@ -30,6 +30,21 @@ ul li a {
 .Home-div {
   color: #6d9277 !important;
 }
+.compnay-logo img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.noti-title h5{
+  color: rgba(109, 146, 119, 1);
+}
+.noti-title h6{
+  color: rgba(55, 79, 89, 1);
+  font-weight: 700;
+}
+.noti-time h6{
+  color: rgba(109, 146, 119, 1);
+}
 
 .BG {
   background-color: rgb(165 232 211 / 20%);

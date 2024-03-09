@@ -1,0 +1,45 @@
+.process{
+    background-color: rgba(115, 140, 150, 1);
+    border-radius: 7px;
+}
+.process .btn{
+    color: #fff;
+}
+.view-btn {
+    background-color: rgba(55, 79, 89, 1);
+    border-radius: 7px;
+}
+.view-btn .btn{
+    color: #fff;
+}
+.card-title{
+    color: rgba(55, 79, 89, 1);
+    font-weight: 600;
+}
+.card-text{
+    color: rgba(109, 146, 119, 1);
+}
+.location i{
+    color: rgba(55, 79, 89, 1);
+}
+.location h5{
+    color: rgba(55, 79, 89, 1);
+    font-weight: 600;
+}
+.rating i{
+    color: yellow;
+}
+.processs {
+    background-color: rgba(239, 34, 34, 1);
+    border-radius: 7px;
+}
+.processs .btn{
+    color: #fff;
+}
+.processe{
+    background-color: rgba(108, 144, 118, 1);
+    border-radius: 7px;
+}
+.processe .btn{
+    color: #fff;
+}

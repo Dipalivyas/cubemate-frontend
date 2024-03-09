@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HomeService } from '../../service/home.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -26,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.jobpost = ['Active' , 'InActive' ,'Blocked']
   }
 
-  constructor(private service:HomeService){}
+  constructor(private service:HomeService,private router: Router){}
 
   getdata(){
     this.service.getdashboard().subscribe(
@@ -68,6 +70,11 @@ export class HomeComponent implements OnInit {
       }
     },
     nav: false
+  }
+
+  navigateToJobDetails(jobPostID: string) {
+    this.router.navigate(['/jobDetails/',jobPostID], {queryParams:filter, skipLocationChange: true});
+    this.scrollToTop();
   }
   
   scrollToTop() {
