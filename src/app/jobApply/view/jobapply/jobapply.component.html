@@ -20,27 +20,27 @@
                                     <div class="progress-bar w-50"></div>
                                   </div>
                             </div>
-
+                            <ng-container *ngIf="details">
                                 <div class="company my-4 d-flex flex-wrap align-items-center">
                                     <div class="company-logo">
-                                        <img src="../../../../assets/img/jobs-fedd.png" alt="">
+                                        <img src="{{imgurl + details.companyLogo}}" alt="" class="img-fluid" style="width: 120px; height: 45px ;">
                                     </div>
                                     <div class="compnay-name ms-4">
-                                        <h4>Ui/Ux designer</h4>
-                                        <h5>Agency Business Lead</h5>
+                                        <h5>{{details.jobPostTitle}}</h5>
+                                        <p>{{details.jobDescription}}</p>
                                     </div>
                                 </div>
-
+                            </ng-container>
                                 <div class="cover">
                                     <div class="title">
                                         <h3>Cover Letter*</h3>
                                     </div>
                                     <div class="cover-letter">
-                                        <form action="">
+                                        
                                             <div class="mb-3">
-                                                <textarea type="text" class="form-control"></textarea>
+                                                <textarea type="text" class="form-control"  [(ngModel)]="JobData.applicationBrief" id="applicationBrief" name="applicationBrief"></textarea>
                                             </div>
-                                        </form>
+                                     
                                     </div>
                                 </div>
 
@@ -51,20 +51,34 @@
                                     <div class="cv">
                                         <form action="">
                                             <div class="mb-3">
-                                                <input type="file" class="form-control">
+                                                <!-- <input type="file" id="attachmentFileBase64" class="form-control" [(ngModel)]="JobData.attachmentFileBase64"
+                                                name="attachmentFileBase64"  attachmentFileBase64="ngModel" (change)="base($event)" required> -->
                                             </div>
+
+                                            <input type="file" name="attachmentFileBase64" id="file" (change)="onFileSelected($event)"
+                                            #attachmentFileBase64="ngModel" [(ngModel)]="JobData.attachmentFileBase64" required>
                                         </form>
                                     </div>
                                 </div>
 
-                                <div class="media d-flex flex-wrap align-items-center justify-content-between">
+                                <!-- <div class="media d-flex flex-wrap align-items-center justify-content-between">
                                     <h5>Select From Your Media</h5>
                                     <i class="bi bi-chevron-compact-right"></i>
+                                </div> -->
+                                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                    <label for="mediaSelect">Select From Your Media</label>
+                                    <select class="select mt-2" id="mediaSelect" style="width: 100%; border-radius:5px; border: 2px solid black;" (change)="onMediaSelect($event)">
+                                        <!-- If isOptionSelected is true, disable the default selection -->
+                                        <option [selected]="!isOptionSelected" [disabled]="isOptionSelected">Select an option</option>
+                                        <!-- Iterate over userMediaOptions to display selectable options -->
+                                        <option *ngFor="let media of userMediaOptions" [value]="media.userMediaUrl">{{ media.userMediaTitle }}</option>
+                                    </select>
                                 </div>
-
+                                    
                                 <div class="conti-btn text-center my-4">
-                                    <button class="btn py-2" routerLink="/success">Continue</button>
+                                    <button class="btn py-2" (click)="JobApplyData()">Continue</button>
                                 </div>
+                                <!-- routerLink="/success" -->
                         </div>
                     </div>
                     

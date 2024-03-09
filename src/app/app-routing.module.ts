@@ -54,7 +54,7 @@ const routes: Routes = [
     canActivate:[AuthGuard]
   },
   {
-    path:"jobapply",
+    path:"jobapply/:id",
     component:JobapplyComponent,
     canActivate:[AuthGuard]
   },
