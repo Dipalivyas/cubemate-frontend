@@ -10,6 +10,8 @@ import { SignupComponent } from './signup/view/signup/signup.component';
 import { AuthGuard } from './Common/auth.guard';
 import { JobapplyComponent } from './jobApply/view/jobapply/jobapply.component';
 import { SuccessComponent } from './Success/view/success/success.component';
+import { ProfileComponent } from './Profile/view/profile/profile.component';
+import { MyapplyComponent } from './myapply/view/myapply/myapply.component';
 
 const routes: Routes = [
   {
@@ -61,6 +63,16 @@ const routes: Routes = [
   {
     path:"success",
     component:SuccessComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"profile",
+    component:ProfileComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"myapply",
+    component:MyapplyComponent,
     canActivate:[AuthGuard]
   }
 ];
