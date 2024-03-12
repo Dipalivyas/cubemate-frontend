@@ -154,37 +154,22 @@ export class ProfileComponent implements OnInit{
   }
 
   uploadImg(element: any) {
-    // Get the file from the input
     const file = element.target.files[0];
     const reader = new FileReader();
-  
+    
     reader.onload = (e: any) => {
-      // e.target.result contains the Base64 DataURL
-      const dataURL: string = e.target.result;
-  
-      // Extract the Base64 encoded data, discard the DataURL metadata
+      const dataURL: string = e.target.result; 
       const base64Data = dataURL.split(',')[1];
-  
-      // Optionally, extract MIME type as well
-      const mimeType = dataURL.split(',')[0].split(':')[1].split(';')[0];
-  
-      // Store the base64 encoded data in your model, assuming you want to use it for saving or display purposes
-      this.med.mediaFileBase64 = base64Data;
-  
-      // If needed, store the MIME type as well for future reference or use
-      // this.med.mediaType = mimeType;
-  
-      // Handling multiple files, if 'this.file' is an array intended to store multiple files' Base64 strings
-      this.file.push(base64Data); // Storing the base64 encoded data
-      // this.mimeTypes.push(mimeType); // If you're keeping track of MIME types as well
-  
-      // Debug or verify the file's MIME type and base64 data
+      const mimeType = dataURL.split(',')[0].split(':')[1].split(';')[0]; 
+      
+      
+      this.med.mediaFileBase64 = base64Data; 
+      this.file.push(base64Data); 
       console.log('File MIME type:', mimeType);
       console.log('Base64 Data:', base64Data);
     };
-  
-    // Read the file as a DataURL, works for any file type
-    reader.readAsDataURL(file);
+    
+    reader.readAsDataURL(file); 
   }
   
 
