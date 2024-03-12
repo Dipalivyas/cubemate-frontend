@@ -129,6 +129,19 @@ export class ProfileComponent implements OnInit{
   //   reader.readAsDataURL(file);
   // }
 
+
+  isImage(mediaType: string): boolean {
+    return mediaType.startsWith('image');
+  }
+  
+  isVideo(mediaType: string): boolean {
+    return mediaType.startsWith('video');
+  }
+  
+  isPDF(mediaType: string): boolean {
+    return mediaType === 'application/pdf';
+  }
+
   uploadImg(element: any) {
     // Get the file from the input
     const file = element.target.files[0];

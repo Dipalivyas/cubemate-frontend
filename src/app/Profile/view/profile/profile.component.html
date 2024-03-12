@@ -228,10 +228,14 @@
                           </h2>
                           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <div class="degree  d-flex flex-wrap align-items-center">
-                                        <ng-container *ngFor="let d of media">
-                                        <button type="button" class="btn my-2 mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal4" (click)="loadmediaDetails(d.userMediaID)">{{d.userMediaTitle}}</button>
-                                    </ng-container>
+                                <div class="degree">
+                                       <ul>
+                                        <li>
+                                          <ng-container *ngFor="let d of media">
+                                            <a (click)="loadmediaDetails(d.userMediaID)" href="{{imgurl + d.userMediaUrl }}" target="_blank">{{d.userMediaTitle}}</a>
+                                        </ng-container>
+                                    </li>
+                                       </ul>
                                     </div>
 
 
@@ -436,7 +440,7 @@
                                             <h4>{{curretnmediadetails.userMediaTitle}}</h4>
                                         </div>
                                         <div class="type">
-                                            <img src="{{imgurl + curretnmediadetails.userMediaUrl}}" alt="" class="img-fluid">
+                                            <a href="{{imgurl + curretnmediadetails.userMediaUrl }}" target="_blank">{{curretnmediadetails.userMediaTitle}}</a>
                                         </div>
                                     </div>
                             </ng-container>
