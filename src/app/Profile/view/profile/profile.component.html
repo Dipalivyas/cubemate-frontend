@@ -229,13 +229,18 @@
                           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="degree">
+                                  <ng-container *ngFor="let d of media">
                                        <ul>
                                         <li>
-                                          <ng-container *ngFor="let d of media">
                                             <a (click)="loadmediaDetails(d.userMediaID)" href="{{imgurl + d.userMediaUrl }}" target="_blank">{{d.userMediaTitle}}</a>
-                                        </ng-container>
-                                    </li>
-                                       </ul>
+                                          </li>
+                                          <li class="del">
+                                            <button class="btn" (click)="deletemedia(d.userMediaID)">
+                                              <i class="bi bi-trash"></i>
+                                            </button>
+                                          </li>
+                                        </ul>
+                                      </ng-container>
                                     </div>
 
 
@@ -374,7 +379,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="media-upload" class="form-label">Media Type</label>
-                                    <input type="file" [(ngModel)]="med.mediaFileBase64" #mediaFileBase64="ngModel" (change)="uploadImg($event)" name="mediaFileBase64" class="form-control" id="media-upload" accept=".jpg,.jpeg,.png,.svg,video/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/*">
+                                    <input type="file" [(ngModel)]="med.mediaFileBase64" #mediaFileBase64="ngModel" (change)="uploadImg($event)" name="mediaFileBase64" class="form-control" id="media-upload" accept=".jpg,.jpeg,.png,.svg,.mp4/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/*">
                                 </div>
                                 
                               </form>

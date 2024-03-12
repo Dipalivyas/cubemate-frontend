@@ -31,4 +31,9 @@ export class ProfileService {
   addmedia(data:media){
     return this.http.post(this.baseurl + "User/AddUserMedia",data)
   }
+
+
+  deletemdeia(id:any){
+    return this.http.post(this.baseurl + "User/DeleteUserMedia?MediaID=id/" + id)
+  }
 }

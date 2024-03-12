@@ -92,6 +92,17 @@ export class ProfileComponent implements OnInit{
     )
   }
 
+  deletemedia(id:any){
+    this.service.deletemdeia(id).subscribe(
+      (resp:any)=>{
+        this.ngOnInit();
+        alert("Delete Sucessfull")
+      },(err:any)=>{
+        console.log(err);
+      }
+    )
+  }
+
 
   file: any = [];
   public files: any[];
