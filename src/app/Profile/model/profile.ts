@@ -24,3 +24,11 @@ export class media{
     mediaTitle!:string;
     mediaFileBase64!:string;
 }
+
+export class experience{
+    companyName!:string;
+    joiningDate!:Date;
+    leavingDate!:Date;
+    isWorking!:boolean;
+    designation!:string;
+}

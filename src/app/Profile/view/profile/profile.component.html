@@ -203,20 +203,25 @@
                           </h2>
                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                              <div class="education-details">
-                                <div class="row">
+                              <div class="edu mt-4">
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add Educatioin</button>
+                            </div>
+                              <div class="degree">
                                     <ng-container *ngFor="let d of education">
-                                        <div class="degree">
-                                            <button type="button" class="btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModal3" (click)="loadEducationDetails(d.userEducationID)">{{d.grade}}</button>
-                                        </div>
+                                      <ul>
+                                        <li>
+                                          <button type="button" class="btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModal3" (click)="loadEducationDetails(d.userEducationID)">{{d.grade}}</button>
+                                        </li>
+                                        <li class="del">
+                                          <button class="btn" (click)="deleteedu(d.userEducationID)">
+                                            <i class="bi bi-trash"></i>
+                                          </button>
+                                        </li>
+                                      </ul>
                                     </ng-container>
-                                </div>
 
                               </div>
-                                <div class="edu mt-4">
-                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add Educatioin</button>
-                                </div>
-                               
+                              
                             </div>
                           </div>
                         </div>
@@ -228,6 +233,9 @@
                           </h2>
                           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+                              <div class="edu mt-4">
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal5">Add Media</button>
+                            </div>
                                 <div class="degree">
                                   <ng-container *ngFor="let d of media">
                                        <ul>
@@ -242,12 +250,6 @@
                                         </ul>
                                       </ng-container>
                                     </div>
-
-
-
-                                <div class="edu mt-4">
-                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal5">Add Media</button>
-                                </div>
                             </div>
                           </div>
                         </div>
@@ -259,41 +261,25 @@
                           </h2>
                           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                
-                              <form>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="" class="form-label">Company Name*</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="" class="form-label">Designation*</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="" class="form-label">Join Date</label>
-                                            <input type="date" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="" class="form-label">Currently Working</label>
-                                            <mat-slide-toggle></mat-slide-toggle>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label for="" class="form-label">Leaving Date</label>
-                                            <input type="date" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                              </form>
+                              <div class="edu mt-4">
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal7">Add Experience</button>
+                            </div>
+
+                              <div class="degree">
+                                <ng-container *ngFor="let d of experience">
+                                  <ul>
+                                    <li>
+                                      <button type="button" class="btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModal6" (click)="loadexperienceDetails(d.userExperienceID)">{{d.companyName}}</button>
+                                    </li>
+                                    <li class="del">
+                                      <button class="btn" (click)="deletexpe(d.userExperienceID)">
+                                        <i class="bi bi-trash"></i>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </ng-container>
+                          </div>
+                         
                             </div>
                           </div>
                         </div>
@@ -312,42 +298,43 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form name="educationForm" action="javascript:{}" #educationForm="ngForm" novalidate autocomplete="off">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Institue*</label>
-                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                                <input type="text" class="form-control" [(ngModel)]="edu.institudeName" #institudeName="ngModel" name="institudeName" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Study Field*</label>
-                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                                <input type="text" class="form-control" [(ngModel)]="edu.educationField" #educationField="ngModel" name="educationField" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Grade*</label>
-                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                                <input type="text" class="form-control" [(ngModel)]="edu.grade" #grade="ngModel" name="grade" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Degree*</label>
-                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                                <input type="text" class="form-control" [(ngModel)]="edu.courseName" #courseName="ngModel" name="courseName" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Currently Studying*</label>
-                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                                <mat-slide-toggle name="isCurrentlyRunning" #isCurrentlyRunning="ngModel" [(ngModel)]="edu.isCurrentlyRunning"
+                                                  style="margin: 6px 12px;"></mat-slide-toggle>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Description*</label>
-                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                                <input type="text" class="form-control" [(ngModel)]="edu.courseDescription" #courseDescription="ngModel" name="courseDescription" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
                                             </div>
                                         </div>
                                     </div>
@@ -355,7 +342,7 @@
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
+                              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="educationForm.invalid" (click)="addeducation()">Save changes</button>
                             </div>
                           </div>
                         </div>
@@ -372,26 +359,81 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                              <form name="educationForm" action="javascript:{}" #educationForm="ngForm" novalidate autocomplete="off">
+                              <form name="mediaForm" action="javascript:{}" #mediaForm="ngForm" novalidate autocomplete="off">
                                 <div class="mb-3">
                                     <label for="" class="form-lable">Media Title</label>
                                     <input type="text" class="form-control" [(ngModel)]="med.mediaTitle" #mediaTitle="ngModel" name="mediaTitle" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="media-upload" class="form-label">Media Type</label>
-                                    <input type="file" [(ngModel)]="med.mediaFileBase64" #mediaFileBase64="ngModel" (change)="uploadImg($event)" name="mediaFileBase64" class="form-control" id="media-upload" accept=".jpg,.jpeg,.png,.svg,.mp4/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/*">
+                                    <input type="file" [(ngModel)]="med.mediaFileBase64" #mediaFileBase64="ngModel" (change)="uploadImg($event)" name="mediaFileBase64" class="form-control" id="media-upload" accept=".jpg,.jpeg,.png,.svg,.mp4,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/*">
                                 </div>
                                 
                               </form>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary" (click)="addusermedia()" [disabled]="educationForm.invalid" data-bs-dismiss="modal">Save changes</button>
+                              <button type="button" class="btn btn-primary" (click)="addusermedia()" [disabled]="mediaForm.invalid" data-bs-dismiss="modal">Save changes</button>
                             </div>
                           </div>
                         </div>
                       </div>
                     <!-- add media modal end -->
+
+                    <!-- add experience model start -->
+                    <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Education</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <form name="experienceForm" action="javascript:{}" #experienceForm="ngForm" novalidate autocomplete="off">
+                                  <div class="row">
+                                      <div class="col-lg-6 col-md-6 col-sm-12">
+                                          <div class="mb-3">
+                                              <label for="" class="form-label">companyName*</label>
+                                              <input type="text" class="form-control" [(ngModel)]="exp.companyName" #companyName="ngModel" name="companyName" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-6 col-md-6 col-sm-12">
+                                          <div class="mb-3">
+                                              <label for="" class="form-label">joiningDate*</label>
+                                              <input type="date" class="form-control" [(ngModel)]="exp.joiningDate" #joiningDate="ngModel" name="joiningDate" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-6 col-md-6 col-sm-12">
+                                          <div class="mb-3">
+                                              <label for="" class="form-label">isWorking*</label>
+                                              <mat-slide-toggle name="isWorking" #isWorking="ngModel" [(ngModel)]="exp.isWorking"
+                                                style="margin: 6px 12px;"></mat-slide-toggle>
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-6 col-md-6 col-sm-12">
+                                          <div class="mb-3">
+                                              <label for="" class="form-label">leavingDate*</label>
+                                              <input type="date" class="form-control" [(ngModel)]="exp.leavingDate" #leavingDate="ngModel" name="leavingDate"
+                                              [disabled]="exp.isWorking" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">designation*</label>
+                                            <input type="text" class="form-control" [(ngModel)]="exp.designation" #designation="ngModel" name="designation" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                        </div>
+                                    </div>
+                                  </div>
+                              </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="educationForm.invalid" (click)="addexperience()">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- add experience model End -->
 
 
                     <!-- view education details start -->
@@ -459,6 +501,42 @@
                         </div>
                       </div>
                     <!-- view media details modal End -->
+
+
+
+                    <!-- view experience model start -->
+                    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">View Education</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                             <div class="education">
+                              <ng-container *ngIf="currentexperience">
+                                  <div class="education-details">
+                                      <h4><span class="me-2">companyName:-</span>{{currentexperience.companyName}}</h4>
+                                      <hr>
+                                      <h4><span class="me-2">joiningDate:-</span>{{currentexperience.joiningDate}}</h4>
+                                      <hr>
+                                      <h4><span class="me-2">leavingDate:-</span>{{currentexperience.leavingDate}}</h4>
+                                      <hr>
+                                      <h4><span class="me-2">isWorking:-</span> <mat-slide-toggle></mat-slide-toggle></h4>
+                                      <hr>
+                                      <h4><span class="me-2">designation:-</span>{{currentexperience.designation}}</h4>
+                                  </div>
+                          </ng-container>
+                             </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- view experience model End -->
 
                 </div>
             </div>

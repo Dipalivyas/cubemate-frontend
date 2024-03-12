@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import {  education, media, profile, skills } from '../model/profile';
+import {  education, experience, media, profile, skills } from '../model/profile';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +33,21 @@ export class ProfileService {
     return this.http.post(this.baseurl + "User/AddUserMedia",data)
   }
 
-
-  deletemdeia(id:any){
-    return this.http.post(this.baseurl + "User/DeleteUserMedia?MediaID=id/" + id)
+  addexperience(data:experience){
+    return this.http.post(this.baseurl + "User/AddUserExperience",data)
   }
+
+
+  deletemdeia(id:any):Observable<any>{
+    return this.http.post(this.baseurl + "User/DeleteUserMedia?MediaID="+id,null);
+  }
+
+  deleteeducation(id:any):Observable<any>{
+    return this.http.post(this.baseurl + "User/DeleteUserEducation?UserEducationID="+id,null);
+  }
+  deleteexperience(id:any):Observable<any>{
+    return this.http.post(this.baseurl + "User/DeleteUserExperience?ExpId="+id,null)
+  }
+
+
 }

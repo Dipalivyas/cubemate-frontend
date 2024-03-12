@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ProfileService } from '../../service/profile.service';
-import { education, media, profile, skills } from '../../model/profile';
+import { education, experience, media, profile, skills } from '../../model/profile';
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile',
@@ -17,10 +18,15 @@ export class ProfileComponent implements OnInit{
   prof = new profile();
   edu = new education();
   med = new media();
+  exp = new experience();
   @ViewChild("skillform")
   skillform!: NgForm;
-  @ViewChild("CategoryForm")
-  CategoryForm!: NgForm;
+  @ViewChild("mediaForm")
+  mediaForm!: NgForm;
+  @ViewChild("educationForm")
+  educationForm!: NgForm;
+  @ViewChild("experienceForm")
+  experienceForm!: NgForm;
 
   constructor(private service:ProfileService,private route:ActivatedRoute){
     this.files=[];
@@ -46,7 +52,8 @@ export class ProfileComponent implements OnInit{
   activites:any;
   users:any
   education:any;
-  media:any
+  media:any;
+  experience:any
   getalldata(){
     this.service.getuserprofiledata().subscribe(
       (resp:any)=>{
@@ -55,6 +62,28 @@ export class ProfileComponent implements OnInit{
         this.activites = resp.data.userActivities;
         this.education = resp.data.userEducations;
         this.media = resp.data.userMedias
+        this.experience = resp.data.userExperience;
+      }
+    )
+  }
+
+
+  addeducation(){
+    this.service.addeducation(this.edu).subscribe(
+      (resp:any)=>{
+        alert("Education Successfully");
+        this.ngOnInit();
+        this.educationForm.reset();
+      }
+    )
+  }
+
+  addexperience(){
+    this.service.addexperience(this.exp).subscribe(
+      (resp:any)=>{
+        alert("Experience Add Successfully");
+        this.ngOnInit();
+        this.experienceForm.reset();
       }
     )
   }
@@ -82,6 +111,10 @@ export class ProfileComponent implements OnInit{
   loadmediaDetails(userMediaID:number):void{
     this.curretnmediadetails = this.media.find((e:{userMediaID:number;})=> e.userMediaID === userMediaID)
   }
+  currentexperience:any
+  loadexperienceDetails(userExperienceID:number):void{
+    this.currentexperience = this.experience.find((e:{userExperienceID:number;})=> e.userExperienceID === userExperienceID)
+  }
 
   addusermedia(){
     this.service.addmedia(this.med).subscribe(
@@ -93,14 +126,138 @@ export class ProfileComponent implements OnInit{
   }
 
   deletemedia(id:any){
-    this.service.deletemdeia(id).subscribe(
-      (resp:any)=>{
-        this.ngOnInit();
-        alert("Delete Sucessfull")
-      },(err:any)=>{
-        console.log(err);
+    Swal.fire({
+      title:'Are You Sure?',
+      text:'You want to delete this data',
+      icon:'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this.service.deletemdeia(id).subscribe(
+          (resp:any)=>{
+           if(resp){
+            this.ngOnInit();
+            Swal.fire({
+              icon: 'success',
+              title: 'Deleted!',
+              text: 'Data deleted successfully',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-success'
+              },
+              buttonsStyling: false
+            });
+           }
+          },
+          (error: any) => {
+            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Error!',
+              text: 'An error occurred while deleting the data',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-danger'
+              },
+              buttonsStyling: false
+            });
+          }
+        )
       }
-    )
+    })
+  }
+
+  deleteedu(id:any){
+    Swal.fire({
+      title:'Are You Sure?',
+      text:'You want to delete this data',
+      icon:'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this.service.deleteeducation(id).subscribe(
+          (resp:any)=>{
+           if(resp){
+            this.ngOnInit();
+            Swal.fire({
+              icon: 'success',
+              title: 'Deleted!',
+              text: 'Data deleted successfully',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-success'
+              },
+              buttonsStyling: false
+            });
+           }
+          },
+          (error: any) => {
+            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Error!',
+              text: 'An error occurred while deleting the data',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-danger'
+              },
+              buttonsStyling: false
+            });
+          }
+        )
+      }
+    })
+  }
+
+  deletexpe(id:any){
+    Swal.fire({
+      title:'Are You Sure?',
+      text:'You want to delete this data',
+      icon:'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this.service.deleteexperience(id).subscribe(
+          (resp:any)=>{
+           if(resp){
+            this.ngOnInit();
+            Swal.fire({
+              icon: 'success',
+              title: 'Deleted!',
+              text: 'Data deleted successfully',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-success'
+              },
+              buttonsStyling: false
+            });
+           }
+          },
+          (error: any) => {
+            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Error!',
+              text: 'An error occurred while deleting the data',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-danger'
+              },
+              buttonsStyling: false
+            });
+          }
+        )
+      }
+    })
   }
 
 
@@ -122,23 +279,7 @@ export class ProfileComponent implements OnInit{
 
   image:any;
 
-  // uploadImg(element: any) {
 
-  //   var file = element.target.files[0];
-  //   const reader = new FileReader();
-  //   reader.onload = (e: any) => {      
-  //     this.image=e.target.result;
-  //     let data: string = e.target.result;
-  //     //let extension:string=data.substring("data:image/".length, data.indexOf(";base64"))
-  //     let data2: string = data.substring(data.indexOf('|') + 1);
-  //     let base64 = data2.substring(data2.indexOf(',') + 1);
-  //     this.med.mediaFileBase64 = base64;
-  //     // this.themes.imageextention = extension;
-  //     this.file.push(this.med.mediaFileBase64);
-  //     // this.ext.push(this.themes.imageextention);
-  //   };
-  //   reader.readAsDataURL(file);
-  // }
 
 
   isImage(mediaType: string): boolean {
