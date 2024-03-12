@@ -260,6 +260,96 @@ export class ProfileComponent implements OnInit{
     })
   }
 
+  deletskill(id:any){
+    Swal.fire({
+      title:'Are You Sure?',
+      text:'You want to delete this data',
+      icon:'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this.service.deleteskill(id).subscribe(
+          (resp:any)=>{
+           if(resp){
+            this.ngOnInit();
+            Swal.fire({
+              icon: 'success',
+              title: 'Deleted!',
+              text: 'Data deleted successfully',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-success'
+              },
+              buttonsStyling: false
+            });
+           }
+          },
+          (error: any) => {
+            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Error!',
+              text: 'An error occurred while deleting the data',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-danger'
+              },
+              buttonsStyling: false
+            });
+          }
+        )
+      }
+    })
+  }
+
+  deletactivite(id:any){
+    Swal.fire({
+      title:'Are You Sure?',
+      text:'You want to delete this data',
+      icon:'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this.service.deleteactivite(id).subscribe(
+          (resp:any)=>{
+           if(resp){
+            this.ngOnInit();
+            Swal.fire({
+              icon: 'success',
+              title: 'Deleted!',
+              text: 'Data deleted successfully',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-success'
+              },
+              buttonsStyling: false
+            });
+           }
+          },
+          (error: any) => {
+            console.error(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Error!',
+              text: 'An error occurred while deleting the data',
+              confirmButtonText: 'OK',
+              customClass: {
+                confirmButton: 'btn btn-danger'
+              },
+              buttonsStyling: false
+            });
+          }
+        )
+      }
+    })
+  }
+
 
   file: any = [];
   public files: any[];

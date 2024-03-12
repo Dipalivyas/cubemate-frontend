@@ -49,5 +49,15 @@ export class ProfileService {
     return this.http.post(this.baseurl + "User/DeleteUserExperience?ExpId="+id,null)
   }
 
+  deleteskill(id:any):Observable<any>{
+    return this.http.post(this.baseurl + "User/DeleteUserSkill?skillID="+id,null)
+  }
+
+  deleteactivite(id:any):Observable<any>{
+    return this.http.post(this.baseurl + "User/DeleteUserActivity?ActivityID="+id,null)
+  }
+
+  
+
 
 }

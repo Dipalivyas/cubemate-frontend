@@ -15,12 +15,13 @@
     font-size: 18px;
 }
 .add-skill{
-    background-color: rgba(55, 79, 89, 1);
+    background-color: rgba(165, 232, 211, 1);
     border-radius: 10px;
     margin: 10px 0px;
+   
 }
 .add-skill .btn{
-    color: #fff;
+    color: rgba(55, 79, 89, 1);;
 }
 .social-title h5{
     color: rgba(55, 79, 89, 1);

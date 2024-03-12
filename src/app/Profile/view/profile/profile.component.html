@@ -6,7 +6,7 @@
                 <h2>My Profile</h2>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="col-lg-5 col-md-5 col-sm-12">
             <div class="profile">
                 <div class="card px-3 m-2">
                     <ng-container *ngIf="users">
@@ -28,20 +28,22 @@
                           </h2>
                           <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+                              <div class="add-skill text-center">
+                                <button  type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Add Skills</button>
+                            </div>
                                 <ng-container *ngFor="let d of profile">
-                                    <div class="skil d-flex flex-wrap align-items-center justify-content-center">
-                                        <div class="profile-skil me-3">
-                                            <h6>{{d.skillTag}}</h6>
-                                        </div>
-                                        <div class="profile-skil">
-                                            <h6>{{d.skillTag}}</h6>
-                                        </div>
+                                    <div class="skil">
+                                      <ul class="d-flex flex-wrap align-items-center justify-content-between">
+                                        <li>{{d.skillTag}}</li>
+                                        <li class="del">
+                                          <button class="btn" (click)="deletskill(d.userSkillID)">
+                                            <i class="bi bi-trash"></i>
+                                          </button>
+                                        </li>
+                                      </ul>
+                                       
                                     </div>
                                 </ng-container>
-
-                                <div class="add-skill text-center">
-                                    <button  type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Add Skills</button>
-                                </div>
                             </div>
                           </div>
                         </div>
@@ -58,17 +60,24 @@
                           </h2>
                           <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
+                              
+                              <div class="add-media text-center mb-3">
+                                <button class="btn">+ Add Other Activities</button>
+                            </div>
+                            
                                 <div class="social-list">
                                     <ng-container *ngFor="let d of activites">
-                                    <ul>
+                                    <ul class="d-flex flex-wrap align-items-center justify-content-between">
                                         <li>{{d.activityTitle}}</li>
+                                        <li class="del">
+                                          <button class="btn" (click)="deletactivite(d.userActivityID)">
+                                            <i class="bi bi-trash"></i>
+                                          </button>
+                                        </li>
                                     </ul>
                                 </ng-container>
                                 </div>
 
-                                <div class="add-media text-center mb-3">
-                                    <button class="btn">+ Add Other Activities</button>
-                                </div>
                             </div>
                           </div>
                         </div>
@@ -80,59 +89,9 @@
 
         </div>
 
-        <!-- add skill modal start -->
-        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Skill</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form name="skillform" #skillform="ngForm">
-                    <div class="mb-3">
-                        <label for="" class="form-label">Skills</label>
-                        <input type="text" name="skill" id="skill" class="form-control" #skillTag="ngModel" [(ngModel)]="skil.skillTag">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="skill()">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        <!-- add skill modal End -->
+       
 
-
-
-         <!-- add skill modal start -->
-         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Skill</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form name="skillform" #skillform="ngForm">
-                    <div class="mb-3">
-                        <label for="" class="form-label">Skills</label>
-                        <input type="text" name="skill" id="skill" class="form-control" #skillTag="ngModel" [(ngModel)]="skil.skillTag">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="skill()">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        <!-- add skill modal End -->
-
-        <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="col-lg-7 col-md-7 col-sm-12">
             <div class="profile-basic">
                 <div class="card m-2 p-3">
                     <div class="basic-title text-center">
@@ -454,7 +413,10 @@
                                         <hr>
                                         <h4><span class="me-2">courseName:-</span>{{currentEducationDetails.courseName}}</h4>
                                         <hr>
-                                        <h4><span class="me-2">isCurrentlyRunning:-</span> <mat-slide-toggle></mat-slide-toggle></h4>
+                                        <h4>
+                                          <span class="me-2">isWorking:-</span>
+                                          {{ currentEducationDetails.isCurrentlyRunning ? 'Yes' : 'No' }}
+                                        </h4>
                                         <hr>
                                         <h4><span class="me-2">courseDescription:-</span>{{currentEducationDetails.courseDescription}}</h4>
                                     </div>
@@ -476,7 +438,7 @@
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="exampleModalLabel">View Education</h1>
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">View Media</h1>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -509,7 +471,7 @@
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">View Education</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">View Experience</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
@@ -522,7 +484,10 @@
                                       <hr>
                                       <h4><span class="me-2">leavingDate:-</span>{{currentexperience.leavingDate}}</h4>
                                       <hr>
-                                      <h4><span class="me-2">isWorking:-</span> <mat-slide-toggle></mat-slide-toggle></h4>
+                                      <h4>
+                                        <span class="me-2">isWorking:-</span>
+                                        {{ currentexperience.isWorking ? 'Yes' : 'No' }}
+                                      </h4>
                                       <hr>
                                       <h4><span class="me-2">designation:-</span>{{currentexperience.designation}}</h4>
                                   </div>
@@ -541,5 +506,61 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+         <!-- add skill modal start -->
+         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Skill</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form name="skillform" #skillform="ngForm">
+                  <div class="mb-3">
+                      <label for="" class="form-label">Skills</label>
+                      <input type="text" name="skill" id="skill" class="form-control" #skillTag="ngModel" [(ngModel)]="skil.skillTag">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="skill()">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- add skill modal End -->
+
+
+
+       <!-- add Activites modal start -->
+       <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Skill</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form name="skillform" #skillform="ngForm">
+                  <div class="mb-3">
+                      <label for="" class="form-label">Skills</label>
+                      <input type="text" name="skill" id="skill" class="form-control" #skillTag="ngModel" [(ngModel)]="skil.skillTag">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="skill()">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- add Activites modal End -->
     </div>
 </div>
