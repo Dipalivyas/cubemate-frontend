@@ -28,7 +28,7 @@ export class JobDetailsComponent implements OnInit {
     this.jobpost = ['Active' , 'InActive' ,'Blocked']
   }
 
-  constructor(private service:JobdetailsService,private route: ActivatedRoute){}
+  constructor(private service:JobdetailsService,private route: ActivatedRoute,private router: Router){}
 
 
   details:any;
@@ -48,6 +48,10 @@ export class JobDetailsComponent implements OnInit {
     )
   }
 
+  navigateToJobDetails(jobPostID: string) {
+    this.router.navigate(['/jobapply/',jobPostID], {queryParams:filter, skipLocationChange: true});
+    this.scrollToTop();
+  }
 
 
 

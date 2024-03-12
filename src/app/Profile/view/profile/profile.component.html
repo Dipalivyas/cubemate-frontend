@@ -9,68 +9,448 @@
         <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="profile">
                 <div class="card px-3 m-2">
-                    <div class="user-img text-center">
-                        <img src="../../../../assets/img/profile.jpeg" alt="">
-                        <div class="user-name">
-                            <h4>Cristal Crizzal</h4>
+                    <ng-container *ngIf="users">
+                    <div class="user-img text-center my-3">
+                        <img src="{{imgurl + users.profilePhoto}}" alt="">
+                        <div class="user-name d-flex flex-wrap align-items-center justify-content-center my-3">
+                            <h4 class="me-2">{{users.firstName}}</h4>
+                            <h4>{{users.lastName}}</h4>
                         </div>
                     </div>
-                    <div class="skills my-4">
-                        <div class="skill-title">
-                            <h5>Skills</h5>
-                        </div>
-                        <div class="skil d-flex flex-wrap align-items-center justify-content-center">
-                            <div class="profile-skil me-3">
-                                <h6>Ui/Ux design</h6>
+                </ng-container>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour"style="background-color: rgba(55, 79, 89, 1); color:#fff;">
+                              Skills
+                            </button>
+                          </h2>
+                          <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ng-container *ngFor="let d of profile">
+                                    <div class="skil d-flex flex-wrap align-items-center justify-content-center">
+                                        <div class="profile-skil me-3">
+                                            <h6>{{d.skillTag}}</h6>
+                                        </div>
+                                        <div class="profile-skil">
+                                            <h6>{{d.skillTag}}</h6>
+                                        </div>
+                                    </div>
+                                </ng-container>
+
+                                <div class="add-skill text-center">
+                                    <button  type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Add Skills</button>
+                                </div>
                             </div>
-                            <div class="profile-skil">
-                                <h6>Graphics</h6>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- skills End -->
+
+                    <!-- other activites start -->
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive"style="background-color: rgba(55, 79, 89, 1); color:#fff;">
+                              Other Activities
+                            </button>
+                          </h2>
+                          <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="social-list">
+                                    <ng-container *ngFor="let d of activites">
+                                    <ul>
+                                        <li>{{d.activityTitle}}</li>
+                                    </ul>
+                                </ng-container>
+                                </div>
+
+                                <div class="add-media text-center mb-3">
+                                    <button class="btn">+ Add Other Activities</button>
+                                </div>
                             </div>
+                          </div>
                         </div>
-                        <div class="skil d-flex flex-wrap align-items-center justify-content-center">
-                            <div class="profile-skil me-3">
-                                <h6>Mobile App</h6>
-                            </div>
-                            <div class="profile-skil">
-                                <h6>Website Design</h6>
-                            </div>
-                        </div>
-                        <div class="add-skill text-center">
-                            <button class="btn">+ Add Skills</button>
-                        </div>
-                    </div>
-                    <div class="social-media">
-                        <div class="social-title">
-                            <h5>Social Media</h5>
-                        </div>
-                        <div class="social-list">
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                                <li>Lorem ipsum dolor sit amet.</li>
-                            </ul>
-                        </div>
-                        <div class="add-media text-center mb-3">
-                            <button class="btn">+ Add Social Media</button>
-                        </div>
-                    </div>
-                    
-                  </div>
+                      </div>
+                    <!-- other activites End -->
+
+                </div>
             </div>
-          
+
         </div>
+
+        <!-- add skill modal start -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Skill</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form name="skillform" #skillform="ngForm">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Skills</label>
+                        <input type="text" name="skill" id="skill" class="form-control" #skillTag="ngModel" [(ngModel)]="skil.skillTag">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="skill()">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- add skill modal End -->
+
+
+
+         <!-- add skill modal start -->
+         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add Skill</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form name="skillform" #skillform="ngForm">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Skills</label>
+                        <input type="text" name="skill" id="skill" class="form-control" #skillTag="ngModel" [(ngModel)]="skil.skillTag">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="skill()">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- add skill modal End -->
 
         <div class="col-lg-8 col-md-8 col-sm-12">
             <div class="profile-basic">
-                <div class="card m-2">
+                <div class="card m-2 p-3">
                     <div class="basic-title text-center">
                         <h4>Basic Information</h4>
                     </div>
-                    <form action="">
-                        <div class="form-group">
-                            <label for="" class="form-label">Email*</label>
-                            <input type="email" class="form-contorl">
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <ng-container *ngIf="users">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">First Name*</label>
+                                    <input type="text" class="form-control" [(ngModel)]="users.firstName" name="firstName" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                    
+
+                                </div>
+                            </ng-container>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <ng-container *ngIf="users">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Last Name*</label>
+                                    <input type="text" class="form-control" [(ngModel)]="users.lastName" name="lastName" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                </div>
+                            </ng-container>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <ng-container *ngIf="users">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Email*</label>
+                                    <input type="email" class="form-control" [(ngModel)]="users.userEmail" name="userEmail" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);" disabled>
+                                </div>
+                            </ng-container>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <ng-container *ngIf="users">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Mobile Number*</label>
+                                    <input type="number" class="form-control" [(ngModel)]="users.phoneNumber" name="phoneNumber" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);" disabled>
+                                </div>
+                            </ng-container>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <ng-container *ngIf="users">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Address*</label>
+                                    <textarea type="text" class="form-control" [(ngModel)]="users.userAddress" name="userAddress" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);"></textarea>
+                                </div>
+                            </ng-container>
+                            </div>
                         </div>
                     </form>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="save text-center my-3">
+                            <button class="btn px-5" (click)="updatedata()">Save</button>
+                        </div>
+                    </div>
+
+
+
+                    <!----------------------------------- accordion start ------------------------------------------------------------>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: rgba(55, 79, 89, 1); color:#fff;">
+                              Education
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <div class="education-details">
+                                <div class="row">
+                                    <ng-container *ngFor="let d of education">
+                                        <div class="degree">
+                                            <button type="button" class="btn my-2" data-bs-toggle="modal" data-bs-target="#exampleModal3" (click)="loadEducationDetails(d.userEducationID)">{{d.grade}}</button>
+                                        </div>
+                                    </ng-container>
+                                </div>
+
+                              </div>
+                                <div class="edu mt-4">
+                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add Educatioin</button>
+                                </div>
+                               
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color: rgba(55, 79, 89, 1); color:#fff;">
+                              Media
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="degree  d-flex flex-wrap align-items-center">
+                                        <ng-container *ngFor="let d of media">
+                                        <button type="button" class="btn my-2 mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal4" (click)="loadmediaDetails(d.userMediaID)">{{d.userMediaTitle}}</button>
+                                    </ng-container>
+                                    </div>
+
+
+
+                                <div class="edu mt-4">
+                                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal5">Add Media</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color: rgba(55, 79, 89, 1); color:#fff;">
+                              Experience
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                
+                              <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Company Name*</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Designation*</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Join Date</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Currently Working</label>
+                                            <mat-slide-toggle></mat-slide-toggle>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Leaving Date</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!------------------------------------ accordion End ------------------------------------------------------------->
+
+
+
+
+                    <!-- add education modal start -->
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Add Education</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Institue*</label>
+                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Study Field*</label>
+                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Grade*</label>
+                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Degree*</label>
+                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Currently Studying*</label>
+                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Description*</label>
+                                                <input type="text" class="form-control" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- add education modal End -->
+
+
+                    <!-- add media modal start -->
+                    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">View Education</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form name="educationForm" action="javascript:{}" #educationForm="ngForm" novalidate autocomplete="off">
+                                <div class="mb-3">
+                                    <label for="" class="form-lable">Media Title</label>
+                                    <input type="text" class="form-control" [(ngModel)]="med.mediaTitle" #mediaTitle="ngModel" name="mediaTitle" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="media-upload" class="form-label">Media Type</label>
+                                    <input type="file" [(ngModel)]="med.mediaFileBase64" #mediaFileBase64="ngModel" (change)="uploadImg($event)" name="mediaFileBase64" class="form-control" id="media-upload" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff,.svg,video/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,audio/*">
+                                </div>
+                                
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary" (click)="addusermedia()" [disabled]="educationForm.invalid" data-bs-dismiss="modal">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- add media modal end -->
+
+
+                    <!-- view education details start -->
+                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">View Education</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                               <div class="education">
+                                <ng-container *ngIf="currentEducationDetails">
+                                    <div class="education-details">
+                                        <h4><span class="me-2">institudeName:-</span>{{currentEducationDetails.institudeName}}</h4>
+                                        <hr>
+                                        <h4><span class="me-2">educationField:-</span>{{currentEducationDetails.educationField}}</h4>
+                                        <hr>
+                                        <h4><span class="me-2">courseName:-</span>{{currentEducationDetails.courseName}}</h4>
+                                        <hr>
+                                        <h4><span class="me-2">isCurrentlyRunning:-</span> <mat-slide-toggle></mat-slide-toggle></h4>
+                                        <hr>
+                                        <h4><span class="me-2">courseDescription:-</span>{{currentEducationDetails.courseDescription}}</h4>
+                                    </div>
+                            </ng-container>
+                               </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- view education details End -->
+
+
+                    <!-- view media details modal start -->
+                    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">View Education</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                               <div class="education">
+                                <ng-container *ngIf="curretnmediadetails">
+                                    <div class="media-details">
+                                        <div class="title">
+                                            <h4>{{curretnmediadetails.userMediaTitle}}</h4>
+                                        </div>
+                                        <div class="type">
+                                            <img src="{{imgurl + curretnmediadetails.userMediaUrl}}" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                            </ng-container>
+                               </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- view media details modal End -->
+
                 </div>
             </div>
         </div>

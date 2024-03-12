@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { NgModule }      from '@angular/core';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,7 +43,8 @@ import { MyapplyComponent } from './myapply/view/myapply/myapply.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSlideToggleModule
   ],
   providers: [
     { provide:HTTP_INTERCEPTORS,useClass:InterceptorTokenService,multi:true },

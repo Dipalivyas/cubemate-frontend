@@ -35,3 +35,24 @@
 .basic-title h4{
     color: rgba(69, 90, 100, 1);
 }
+.save .btn{
+    background-color: rgba(55, 79, 89, 1);
+    color: #fff;
+}
+.edu .btn{
+    background-color: rgba(55, 79, 89, 1);
+    color: #fff;
+}
+.degree .btn{
+    background-color: rgba(55, 79, 89, 1);
+    color: #fff;
+}
+.education ul li{
+    list-style: none;
+}
+.education-details h4{
+    color:rgba(55, 79, 89, 1);
+}
+.education-details span{
+    color: rgb(71, 123, 107);
+}
