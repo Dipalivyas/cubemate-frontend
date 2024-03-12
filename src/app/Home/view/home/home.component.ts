@@ -7,42 +7,40 @@ import { filter } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
   imgurl = environment.imgurl;
-  jobs:any;
-  company:any;
-  counter:any
-  workingtype:string[] = [];
-  shifttype:string[] = [];
-  jobpost:string[] = [];
-
-
+  jobs: any;
+  company: any;
+  counter: any;
+  workingtype: string[] = [];
+  shifttype: string[] = [];
+  jobpost: string[] = [];
 
   ngOnInit(): void {
     this.getdata();
-    this.workingtype = ['FullTime','PartTime','Freelance'];
-    this.shifttype = ['DayTime' , 'NightTime'];
-    this.jobpost = ['Active' , 'InActive' ,'Blocked']
+    this.workingtype = ['FullTime', 'PartTime', 'Freelance'];
+    this.shifttype = ['DayTime', 'NightTime'];
+    this.jobpost = ['Active', 'InActive', 'Blocked'];
   }
 
-  constructor(private service:HomeService,private router: Router){}
+  constructor(private service: HomeService, private router: Router) {}
 
-  getdata(){
+  getdata() {
     this.service.getdashboard().subscribe(
-      (resp:any) => {
+      (resp: any) => {
         this.jobs = resp.data.jobPostData;
-        this.company = resp.data.companyProfileData
+        console.log('jobs>', this.jobs);
+
+        this.company = resp.data.companyProfileData;
         this.counter = resp.data;
       },
       (error: any) => {
         console.error('Error fetching data:', error);
       }
-    )
+    );
   }
-
 
   isClicked: boolean = false;
   customOptions3: OwlOptions = {
@@ -57,50 +55,50 @@ export class HomeComponent implements OnInit {
     navText: ['&#8249', '&#8250;'],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
-        items: 1
+        items: 1,
       },
       760: {
-        items: 2
+        items: 2,
       },
       1000: {
-        items: 3
-      }
+        items: 3,
+      },
     },
-    nav: false
-  }
+    nav: false,
+  };
 
   navigateToJobDetails(jobPostID: string) {
-    this.router.navigate(['/jobDetails/',jobPostID], {queryParams:filter, skipLocationChange: true});
+    this.router.navigate(['/jobDetails/', jobPostID], {
+      queryParams: filter,
+      skipLocationChange: true,
+    });
     this.scrollToTop();
   }
-  
+
   scrollToTop() {
     this.isClicked = true;
     console.log('Scrolling to top');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-
-
-  mapstatustotext(status:number):string{
-    switch(status){
+  mapstatustotext(status: number): string {
+    switch (status) {
       case 0:
         return 'FullTime';
       case 1:
-          return 'PartTime';
+        return 'PartTime';
       case 2:
-          return 'Freelancer';
+        return 'Freelancer';
       default:
-          return 'Unknown';
-
+        return 'Unknown';
     }
   }
 
-  MapStatusText(status:number):string{
-    switch(status){
+  MapStatusText(status: number): string {
+    switch (status) {
       case 0:
         return 'DayTime';
       case 1:
@@ -110,8 +108,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  Mapsstatustext(status:number):string{
-    switch(status){
+  Mapsstatustext(status: number): string {
+    switch (status) {
       case 0:
         return 'Active';
       case 1:
@@ -122,16 +120,14 @@ export class HomeComponent implements OnInit {
         return 'Unknown';
     }
   }
-
   AddressShow: boolean = true;
 
-  AddressShowClick() {
-      this.AddressShow = !this.AddressShow;
-      console.log("AddressShow>", this.AddressShow);
+  AddressShowClick(companyID: number) {
+      if (companyID !== undefined) {
+          this.AddressShow = !this.AddressShow;
+      } else {
+          this.AddressShow = false; // Corrected to use this.AddressShow
+      }
   }
-
-
-
-
-
+  
 }

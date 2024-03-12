@@ -145,15 +145,16 @@
                 <h5>{{d.companyName}}</h5>
               </div>
               <div class="location-icon">
-                <button style="background: none;border: none;" (click)="AddressShowClick()">
-                    <div style="display: flex;">
-                        <h6><i class="bi bi-geo-alt"></i></h6>
-                    </div>
-                    <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
-                        <h6>{{d.companyAddress}}</h6>
-                    </div>
+                <button style="background: none;border: none;" (click)="AddressShowClick(d.companyID)">
+                  <div style="display: flex;">
+                    <h6><i class="bi bi-geo-alt"></i></h6>
+                  </div>
+                  <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
+                    <h6>{{d.companyAddress}}</h6>
+                  </div>
                 </button>
-            </div>
+              </div>
+              
             
             </div>
             <div class="jobs-img">
@@ -188,15 +189,18 @@
                   <h5>{{d.companyName}}</h5>
                 </div>
                 <div class="location-icon">
-                  <button style="background: none;border: none;" (click)="AddressShowClick()">
-                      <div style="display: flex;">
-                          <h6><i class="bi bi-geo-alt"></i></h6>
-                      </div>
-                      <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
-                          <h6>{{d.companyAddress}}</h6>
-                      </div>
+                  <button style="background: none;border: none;" (click)="AddressShowClick(d.companyID)">
+                    <div style="display: flex;">
+                      <h6><i class="bi bi-geo-alt"></i></h6>
+                    </div>
+                    <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
+                      <h6>{{d.companyAddress}}</h6>
+                    </div>
                   </button>
-              </div>
+                </div>
+                
+                
+                
               </div>
               <div class="jobs-img">
                 <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
@@ -230,15 +234,8 @@
                     <h5>{{d.companyName}}</h5>
                   </div>
                   <div class="location-icon">
-                    <button style="background: none;border: none;" (click)="AddressShowClick()">
-                        <div style="display: flex;">
-                            <h6><i class="bi bi-geo-alt"></i></h6>
-                        </div>
-                        <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
-                            <h6>{{d.companyAddress}}</h6>
-                        </div>
-                    </button>
-                </div>
+                    <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                  </div>
                 </div>
                 <div class="jobs-img">
                   <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
@@ -272,15 +269,8 @@
                       <h5>{{d.companyName}}</h5>
                     </div>
                     <div class="location-icon">
-                      <button style="background: none;border: none;" (click)="AddressShowClick()">
-                          <div style="display: flex;">
-                              <h6><i class="bi bi-geo-alt"></i></h6>
-                          </div>
-                          <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
-                              <h6>{{d.companyAddress}}</h6>
-                          </div>
-                      </button>
-                  </div>
+                      <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                    </div>
                   </div>
                   <div class="jobs-img">
                     <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
@@ -468,15 +458,8 @@
                 <h5>{{d.companyName}}</h5>
               </div>
               <div class="location-icon">
-                <button style="background: none;border: none;" (click)="AddressShowClick()">
-                    <div style="display: flex;">
-                        <h6><i class="bi bi-geo-alt"></i></h6>
-                    </div>
-                    <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
-                        <h6>{{d.companyAddress}}</h6>
-                    </div>
-                </button>
-            </div>
+                <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+              </div>
             </div>
             <div class="jobs-img">
               <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
@@ -510,15 +493,8 @@
                   <h5>{{d.companyName}}</h5>
                 </div>
                 <div class="location-icon">
-                  <button style="background: none;border: none;" (click)="AddressShowClick()">
-                      <div style="display: flex;">
-                          <h6><i class="bi bi-geo-alt"></i></h6>
-                      </div>
-                      <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
-                          <h6>{{d.companyAddress}}</h6>
-                      </div>
-                  </button>
-              </div>
+                  <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                </div>
               </div>
               <div class="jobs-img">
                 <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
@@ -552,15 +528,8 @@
                     <h5>{{d.companyName}}</h5>
                   </div>
                   <div class="location-icon">
-                    <button style="background: none;border: none;" (click)="AddressShowClick()">
-                        <div style="display: flex;">
-                            <h6><i class="bi bi-geo-alt"></i></h6>
-                        </div>
-                        <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
-                            <h6>{{d.companyAddress}}</h6>
-                        </div>
-                    </button>
-                </div>
+                    <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                  </div>
                 </div>
                 <div class="jobs-img">
                   <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
@@ -594,15 +563,8 @@
                       <h5>{{d.companyName}}</h5>
                     </div>
                     <div class="location-icon">
-                      <button style="background: none;border: none;" (click)="AddressShowClick()">
-                          <div style="display: flex;">
-                              <h6><i class="bi bi-geo-alt"></i></h6>
-                          </div>
-                          <div [ngClass]="{'ellipsis': AddressShow, 'newclass': !AddressShow}">
-                              <h6>{{d.companyAddress}}</h6>
-                          </div>
-                      </button>
-                  </div>
+                      <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
+                    </div>
                   </div>
                   <div class="jobs-img">
                     <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
