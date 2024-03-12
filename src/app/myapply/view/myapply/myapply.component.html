@@ -27,10 +27,10 @@
                     </div>
                     <div class="post-btn  d-flex flex-wrap align-items-center justify-content-between">
                         <div class="process">
-                            <button class="btn px-4">In Proccess</button>
+                            <button class="btn px-4" [ngClass]="mapStatusToClass(d.jobApplicationStatus)">{{ mapstatustotext(d.jobApplicationStatus) }}</button>
                         </div>
                         <div class="view-btn">
-                            <button class="btn px-4">View app</button>
+                            <button class="btn px-4" (click)="navigateToJobDetails(d.jobPostID)">View application</button>
                         </div>
                     </div>
                     

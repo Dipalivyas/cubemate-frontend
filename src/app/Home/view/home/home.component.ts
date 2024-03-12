@@ -42,6 +42,19 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  addressToggleStates: {[key: string]: boolean} = {};
+  isAddressShown(jobPostID: string): boolean {
+    return !!this.addressToggleStates[jobPostID];
+  }
+
+  toggleAddress(jobPostID: string): void {
+    if (this.addressToggleStates[jobPostID] === undefined) {
+      this.addressToggleStates[jobPostID] = true; // Initialize with true when first clicked
+    } else {
+      this.addressToggleStates[jobPostID] = !this.addressToggleStates[jobPostID];
+    }
+  }
+
   isClicked: boolean = false;
   customOptions3: OwlOptions = {
     loop: true,
