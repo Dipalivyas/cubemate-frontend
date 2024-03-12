@@ -70,7 +70,7 @@ a{
 }
 .job-location .card{
     background-color: rgba(245, 245, 245, 1);
-    padding: 20px 30px;
+    padding: 20px 14px;
 }
 .job-location{
     position: relative;
@@ -190,6 +190,25 @@ a{
 .view-all .btn{
     background-color: rgba(109, 146, 119, 1);
     color: #fff;
+}
+
+
+.ellipsis {
+
+    line-height: 1.3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    margin-top: -29px; 
+}
+.newclass{
+    margin-top: -28px;
+}
+.location-icon{
+    display: flex;
+    gap: 5px;
 }
  /* top compins End */
 

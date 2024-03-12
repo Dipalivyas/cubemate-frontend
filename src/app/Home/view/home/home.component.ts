@@ -123,11 +123,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  AddressShow: boolean = true;
 
-
-
-
- 
+  AddressShowClick() {
+      this.AddressShow = !this.AddressShow;
+      console.log("AddressShow>", this.AddressShow);
+  }
 
 
 
