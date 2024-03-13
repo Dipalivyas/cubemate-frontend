@@ -57,12 +57,9 @@ export class SignupComponent implements OnInit {
   SingData = new User();
 
   signData() {
-
-
     this.service.signup(this.SingData).subscribe((res: any) => {
       this.SingData = res.data;
       console.log('add', res);
-      alert('update');
       this.route.navigate(['/home']);
     })
   }
