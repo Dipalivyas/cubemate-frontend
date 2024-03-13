@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { forgetpass } from '../model/foeget';
+import { otp } from '../model/otp';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmailService {
+export class OtpverifyService {
 
   baseurl = environment.baseurl
   constructor(private http:HttpClient) { }
 
 
-  forgetpassword(data:forgetpass){
-    return this.http.post(this.baseurl + "Auth/ForgetPassword",data)
+  verifyotp(data:otp){
+    return this.http.post(this.baseurl + "Auth/VerifyOTP",data)
   }
 }

@@ -24,7 +24,7 @@
                                     <label class="text-white">Password</label>
                                     <input type="password" class="form-control" name="password"   #password="ngModel"  [(ngModel)]="user.password" >
                                 </div>
-                                <div class="forget mt-2">
+                                <div class="forget mt-2" routerLink="/email" style="cursor: pointer;">
                                     <h6>Forget Password ?</h6>
                                 </div>
                                 <div class="login-btn text-center my-3" (click)="OnLogin()">

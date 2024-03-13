@@ -14,11 +14,11 @@
 
                             <form action="">
                                 <div class="mb-3">
-                                    <label for="" class="from-label text-white">Email:</label>
-                                    <input type="text" class="form-control" [(ngModel)]="pass.emailID" #emailID="ngModel" name="emailID">
+                                    <label for="" class="from-label text-white">Otp:</label>
+                                    <input type="text" class="form-control" [(ngModel)]="ot.otp" #otp="ngModel" name="otp">
                                 </div>
-                                <div class="verifi-btn text-center" (click)="forget()">
-                                    <button class="btn">Generate Otp</button>
+                                <div class="verifi-btn text-center" (click)="verifyotp()">
+                                    <button class="btn">Verify Otp</button>
                                 </div>
                             </form>
                         </div>
