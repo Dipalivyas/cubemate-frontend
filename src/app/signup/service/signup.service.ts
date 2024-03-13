@@ -12,7 +12,10 @@ export class SignupService {
   constructor(private http:HttpClient) { }
 
 
-  signup(data:User){
+  signup(data:any){
     return this.http.post(this.baseurl + "Web/WebSignUp",data)
+  }
+  GetAllCategory(){
+    return this.http.get(this.baseurl+"App/GetAllCategories")
   }
 }

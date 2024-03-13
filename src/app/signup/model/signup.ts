@@ -4,4 +4,6 @@ export class  User {
     password!:string;
     phoneNo!:string;
     email!:string;
+    userType!:number;
+    mainCategoryID!:number
 }

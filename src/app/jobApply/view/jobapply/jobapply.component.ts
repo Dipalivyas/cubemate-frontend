@@ -98,7 +98,7 @@ export class JobapplyComponent implements OnInit {
   applicationBrief: string = '';
 // attachmentFileBase64: string = 'demo IMg show';
 JobApplyData() {
-  // Submit JobData using the service
+  
   this.JobData.isAttachmentSelected = this.isOptionSelected;
   
   this.service.JobApply(this.JobData).subscribe((res: any) => {
