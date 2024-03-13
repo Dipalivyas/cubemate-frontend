@@ -21,6 +21,7 @@ import { InterceptorTokenService } from './Common/interceptor-token.service';
 import { FormatNumberPipe } from './format-number.pipe';
 import { ProfileComponent } from './Profile/view/profile/profile.component';
 import { MyapplyComponent } from './myapply/view/myapply/myapply.component';
+import { JobsComponent } from './JOBS/view/jobs/jobs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { MyapplyComponent } from './myapply/view/myapply/myapply.component';
     SuccessComponent,
     FormatNumberPipe,
     ProfileComponent,
-    MyapplyComponent
+    MyapplyComponent,
+    JobsComponent
   ],
   imports: [
     BrowserModule,
