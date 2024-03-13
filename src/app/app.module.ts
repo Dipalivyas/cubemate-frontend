@@ -22,6 +22,7 @@ import { FormatNumberPipe } from './format-number.pipe';
 import { ProfileComponent } from './Profile/view/profile/profile.component';
 import { MyapplyComponent } from './myapply/view/myapply/myapply.component';
 import { JobsComponent } from './JOBS/view/jobs/jobs.component';
+import { EmailComponent } from './email/view/email/email.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { JobsComponent } from './JOBS/view/jobs/jobs.component';
     FormatNumberPipe,
     ProfileComponent,
     MyapplyComponent,
-    JobsComponent
+    JobsComponent,
+    EmailComponent
   ],
   imports: [
     BrowserModule,

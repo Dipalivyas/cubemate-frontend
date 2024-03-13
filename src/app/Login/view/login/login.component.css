@@ -2,7 +2,17 @@
 /* .content-wrapper{
     height: 100%;
 } */
-
+.forget{
+    text-align: end;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.title-signup .btn{
+    color: #fff;
+}
 .form-control{
     /* color: black; */
     background-color: white;

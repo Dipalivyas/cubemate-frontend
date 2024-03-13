@@ -54,8 +54,11 @@
                                       
                                     <div class="login-btn text-center my-3">
                                         <button type="submit" class="btn btn-block enter-btn text-dark"
-                                            >Login</button>
+                                            >SignUp</button>
                                     </div>
+                                    <div class="title-signup text-center">
+                                      <a routerLink="/login"><h5>You Have Login ? <button class="btn">Login</button></h5></a>
+                                  </div>
                                 </form>
                                 <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
                                     {{ errorMessage }}

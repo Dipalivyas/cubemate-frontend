@@ -13,6 +13,7 @@ import { SuccessComponent } from './Success/view/success/success.component';
 import { ProfileComponent } from './Profile/view/profile/profile.component';
 import { MyapplyComponent } from './myapply/view/myapply/myapply.component';
 import { JobsComponent } from './JOBS/view/jobs/jobs.component';
+import { EmailComponent } from './email/view/email/email.component';
 
 const routes: Routes = [
   {
@@ -52,9 +53,12 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
+    path:"email",
+    component:EmailComponent
+  },
+  {
     path:"signup",
     component:SignupComponent,
-    canActivate:[AuthGuard]
   },
   {
     path:"jobapply/:id",

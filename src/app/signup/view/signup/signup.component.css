@@ -1,3 +1,10 @@
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.title-signup .btn{
+    color: #fff;
+}
 .logi{
     background-color: #374F59;
     padding: 50px 0;
