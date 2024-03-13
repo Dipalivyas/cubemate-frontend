@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HomeService } from '../../service/home.service';
 import { environment } from 'src/environments/environment';
@@ -13,16 +13,17 @@ export class HomeComponent implements OnInit {
   imgurl = environment.imgurl;
   jobs: any;
   company: any;
-  counter: any;
   workingtype: string[] = [];
   shifttype: string[] = [];
   jobpost: string[] = [];
+  @Input() counter: any;
 
   ngOnInit(): void {
     this.getdata();
     this.workingtype = ['FullTime', 'PartTime', 'Freelance'];
     this.shifttype = ['DayTime', 'NightTime'];
     this.jobpost = ['Active', 'InActive', 'Blocked'];
+    // this.animateCounters();
   }
 
   constructor(private service: HomeService, private router: Router) {}
@@ -31,18 +32,44 @@ export class HomeComponent implements OnInit {
     this.service.getdashboard().subscribe(
       (resp: any) => {
         this.jobs = resp.data.jobPostData;
-        console.log('jobs>', this.jobs);
 
         this.company = resp.data.companyProfileData;
-        console.log(">>>>>>>>>",this.company);
         
         this.counter = resp.data;
+        this.animateCounters();
       },
       (error: any) => {
         console.error('Error fetching data:', error);
       }
     );
   }
+
+
+
+  animateCounters() {
+    this.animateValue("jobcount", 0, this.counter.jobcount, 1000);
+    this.animateValue("companycount", 0, this.counter.companycount, 1000);
+    this.animateValue("usercount", 0, this.counter.usercount, 1000);
+    this.animateValue("livejobcount", 0, this.counter.livejobcount, 1000);
+  }
+
+
+  animateValue(id: string, start: number, end: number, duration: number) {
+    if (start === end) return;
+    let range = end - start;
+    let current = start;
+    let increment = end > start? 1 : -1;
+    let stepTime = Math.abs(Math.floor(duration / range));
+    let obj = this.counter;
+    let timer = setInterval(() => {
+      current += increment;
+      obj[id] = current;
+      if (current == end) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+  }
+
 
   addressToggleStates: {[key: string]: boolean} = {};
   isAddressShown(jobPostID: string): boolean {
@@ -59,15 +86,6 @@ export class HomeComponent implements OnInit {
 
   isClicked: boolean = false;
 
-  // toggleJob(companyProfileID: string): void {
-  //   if (this.addressToggleStates[companyProfileID] === undefined) {
-  //     this.addressToggleStates[companyProfileID] = true; 
-  //     console.log("cdcdc",this.addressToggleStates);
-      
-  //   } else {
-  //     this.addressToggleStates[companyProfileID] = !this.addressToggleStates[companyProfileID];
-  //   }
-  // }
 
   customOptions3: OwlOptions = {
     loop: true,

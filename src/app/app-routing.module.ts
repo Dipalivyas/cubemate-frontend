@@ -12,6 +12,7 @@ import { JobapplyComponent } from './jobApply/view/jobapply/jobapply.component';
 import { SuccessComponent } from './Success/view/success/success.component';
 import { ProfileComponent } from './Profile/view/profile/profile.component';
 import { MyapplyComponent } from './myapply/view/myapply/myapply.component';
+import { JobsComponent } from './JOBS/view/jobs/jobs.component';
 
 const routes: Routes = [
   {
@@ -73,6 +74,11 @@ const routes: Routes = [
   {
     path:"myapply",
     component:MyapplyComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"jobs",
+    component:JobsComponent,
     canActivate:[AuthGuard]
   }
 ];

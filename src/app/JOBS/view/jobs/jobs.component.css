@@ -1,0 +1,28 @@
+.title{
+    color: rgba(69, 90, 100, 1);
+    font-weight: 700;
+}
+.apply-btn .btn{
+    background-color: rgba(55, 79, 89, 1);
+    color: #fff;
+}
+.job .card{
+    border-radius: 30px;
+}
+.job-location .card{
+    background-color: rgba(245, 245, 245, 1);
+    padding: 20px 14px;
+}
+.job-location{
+    position: relative;
+    margin-top: 50px;
+}
+.jobs-img img{
+    position: absolute;
+    top: -17px;
+    left: 15px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
