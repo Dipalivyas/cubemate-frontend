@@ -34,6 +34,8 @@ export class HomeComponent implements OnInit {
         console.log('jobs>', this.jobs);
 
         this.company = resp.data.companyProfileData;
+        console.log(">>>>>>>>>",this.company);
+        
         this.counter = resp.data;
       },
       (error: any) => {
@@ -56,6 +58,17 @@ export class HomeComponent implements OnInit {
   }
 
   isClicked: boolean = false;
+
+  // toggleJob(companyProfileID: string): void {
+  //   if (this.addressToggleStates[companyProfileID] === undefined) {
+  //     this.addressToggleStates[companyProfileID] = true; 
+  //     console.log("cdcdc",this.addressToggleStates);
+      
+  //   } else {
+  //     this.addressToggleStates[companyProfileID] = !this.addressToggleStates[companyProfileID];
+  //   }
+  // }
+
   customOptions3: OwlOptions = {
     loop: true,
     mouseDrag: true,

@@ -391,7 +391,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="title text-center mb-3">
+        <div class="title text-center " style="margin-bottom: 80px;">
           <h2>Get Hired by Popular Startup</h2>
         </div>
       </div>
@@ -450,12 +450,17 @@
               <div class="name-loc mt-2">
                 <h5>{{d.companyName}}</h5>
               </div>
+
+              
               <div class="location-icon">
                 <h6><i class="bi bi-geo-alt"></i>{{isAddressShown(d.jobPostID) ? d.companyAddress : (d.companyAddress | slice:0:23)}}</h6>
                 <button class="btn" (click)="toggleAddress(d.jobPostID)">
                   <i class="bi bi-three-dots"></i>
                 </button>
               </div>
+
+
+
             </div>
             <div class="jobs-img">
               <img src="{{imgurl + d.companyLogo}}" alt="" class="img-fluid">
@@ -603,8 +608,13 @@
             <h5>{{d.companyName}}</h5>
           </div>
           <div class="top-comp-star">
-            <h5>{{d.companyAddress}}</h5>
-          </div>
+            <button style="border: none;background: none;" >
+              <div>
+                {{d.companyAddress}}
+              </div>
+            </button>
+          </div> 
+          
           <div class="top-comp-star">
             <h6>{{d.companyDescription}}</h6>
           </div>
