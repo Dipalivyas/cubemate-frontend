@@ -24,6 +24,7 @@ import { MyapplyComponent } from './myapply/view/myapply/myapply.component';
 import { JobsComponent } from './JOBS/view/jobs/jobs.component';
 import { EmailComponent } from './email/view/email/email.component';
 import { OtpverifyComponent } from './otpverify/view/otpverify/otpverify.component';
+import { PasswordComponent } from './Password/view/password/password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { OtpverifyComponent } from './otpverify/view/otpverify/otpverify.compone
     MyapplyComponent,
     JobsComponent,
     EmailComponent,
-    OtpverifyComponent
+    OtpverifyComponent,
+    PasswordComponent
   ],
   imports: [
     BrowserModule,

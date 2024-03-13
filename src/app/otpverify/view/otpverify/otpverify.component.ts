@@ -39,7 +39,7 @@ export class OtpverifyComponent implements OnInit {
   }
   this.service.verifyotp(this.ot).subscribe(
     (resp:any)=>{
-      this.route.navigate(['/login'])
+      this.route.navigate(['/password'])
       this.ngOnInit();
       
     },(error: any) => {
