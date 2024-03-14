@@ -608,33 +608,24 @@
       </div>
       <ng-container *ngFor="let d of company">
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card topsss text-center">
-            <div class="companys-logo">
-              <img src="{{ imgurl + d.companyLogo }}" alt class="img-fluid" />
+          <div class="card topsss text-center p-3">
+            <div class="companys d-flex flex-wrap align-items-center">
+              <div class="logo me-3">
+                <img src="{{ imgurl + d.companyLogo }}" alt class="img-fluid" />
+              </div>
+              <div class="tops-comp">
+                <h5>{{ d.companyName }}</h5>
+              </div>
             </div>
-            <div class="tops-comp">
-              <h5>{{ d.companyName }}</h5>
-            </div>
-            <div class="top-comp-star">
-              <button style="border: none; background: none">
-                <div>
-                  {{ d.companyAddress }}
-                </div>
-              </button>
-            </div>
-
-            <div class="top-comp-star">
-              <h6>{{ d.companyDescription }}</h6>
-            </div>
-            <div class="view-btn">
+            <div class="view-btn" routerLink="/{{d.companyID}}">
               <button class="btn">View jobs</button>
             </div>
           </div>
         </div>
       </ng-container>
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <div class="view-all text-center">
-          <button class="btn px-5">View All Companies</button>
+        <div class="view-all text-center mt-4">
+          <button class="btn px-5" routerLink="/companies">View All Companies</button>
         </div>
       </div>
     </div>

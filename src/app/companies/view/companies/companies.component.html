@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<section class="top-comp">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="title text-center">
+            <h2>Top Companies</h2>
+          </div>
+        </div>
+        <ng-container *ngFor="let d of company">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card topsss text-center p-3 my-2">
+              <div class="companys d-flex flex-wrap align-items-center">
+                <div class="logo me-3">
+                  <img src="{{ imgurl + d.companyLogo }}" alt class="img-fluid" />
+                </div>
+                <div class="tops-comp">
+                  <h5>{{ d.companyName }}</h5>
+                </div>
+              </div>
+              <div class="view-btn" routerLink="/{{d.companyID}}">
+                <button class="btn">View jobs</button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>

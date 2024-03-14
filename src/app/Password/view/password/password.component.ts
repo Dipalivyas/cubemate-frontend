@@ -22,11 +22,13 @@ export class PasswordComponent implements OnInit {
 
 
 
+
   change(){
+    
     this.service.newpass(this.pass).subscribe(
       (resp:any)=>{
         this.route.navigate(['/login']);
-        this.ngOnInit
+        this.ngOnInit();
       }
     )
   }

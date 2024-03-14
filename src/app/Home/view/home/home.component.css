@@ -158,21 +158,10 @@ a{
     margin: 70px 0;
     padding: 50px 0;
  }
- .top-comp .card{
-    margin: 25% 0;
-    padding: 25% 0 0 0
- }
- .topss{
-    position: relative;
- }
-.companys-logo img{
+.logo img{
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: -2%;
-    left: 49%;
-    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 100px;
 }
 .top-btn .btn{
     background-color: rgba(55, 79, 89, 1);

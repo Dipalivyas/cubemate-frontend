@@ -1,0 +1,28 @@
+.top-comp{
+    background-color: rgba(250, 250, 250, 1);
+    margin: 70px 0;
+    padding: 50px 0;
+ }
+.logo img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.top-btn .btn{
+    background-color: rgba(55, 79, 89, 1);
+    color: #fff;
+}
+.view-btn .btn{
+    color: rgba(109, 146, 119, 1);
+    font-weight: 800;
+}
+.tops-comp h5{
+    color: rgba(55, 79, 89, 1);
+}
+.top-comp-star i{
+    color: yellow;
+}
+.view-all .btn{
+    background-color: rgba(109, 146, 119, 1);
+    color: #fff;
+}
