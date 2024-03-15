@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Import FormBuilder, FormGroup, and Validators
 import { SignupService } from '../../service/signup.service';
 import { User } from '../../model/signup';
 import { Router } from '@angular/router';
@@ -8,19 +9,23 @@ import { Router } from '@angular/router';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
+  SingData = new User();
   errorMessage: string = '';
   showPassword = false;
   password: string = '';
-
   showConfirmPassword = false;
   confirmPassword: string = '';
-  // categories: any;
+  categories: any[] = [];
+  signupForm: FormGroup; // Declare signupForm as FormGroup
 
-  ngOnInit(): void {
-    this.GetAllCategoryRequest();
+  constructor(private formBuilder: FormBuilder, private service: SignupService, private route: Router) {
+    this.signupForm = this.formBuilder.group({
+      selectedUserType: ['', Validators.required], // Define selectedUserType control
+      // Define other form controls here...
+    });
   }
-  constructor(private service: SignupService, private route: Router) {}
+
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
@@ -28,7 +33,11 @@ export class SignupComponent implements OnInit {
   toggleConfirmPasswordVisibility() {
     this.showConfirmPassword = !this.showConfirmPassword;
   }
-  categories: any[] = [];
+
+  ngOnInit(): void {
+    this.GetAllCategoryRequest();
+  }
+
   GetAllCategoryRequest() {
     this.service.GetAllCategory().subscribe(
       (resp: any) => {
@@ -41,26 +50,27 @@ export class SignupComponent implements OnInit {
     );
   }
 
-  
   selectUserType(event: any): void {
-    const selectedUserType = parseInt(event.target.value, 10); // Convert string to number
+    const selectedUserType = parseInt(event.target.value, 10); 
     console.log('Selected User Type:', selectedUserType);
     this.SingData.userType = selectedUserType;
   }
-  
+
   onCategorySelect(event: any) {
-    const mainCategoryID = parseInt(event.target.value, 10); // Convert string to number
+    const mainCategoryID = parseInt(event.target.value, 10); 
     console.log('Selected mainCategoryID:', mainCategoryID);
     this.SingData.mainCategoryID = mainCategoryID;
   }
-  
-  SingData = new User();
 
   signData() {
+    if (this.signupForm.invalid) {
+      return;
+    }
+    
     this.service.signup(this.SingData).subscribe((res: any) => {
       this.SingData = res.data;
       console.log('add', res);
       this.route.navigate(['/home']);
-    })
+    });
   }
 }
