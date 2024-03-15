@@ -1,18 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { password } from '../model/password';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PasswordService {
+export class CompaniesService {
 
   baseurl = environment.baseurl
   constructor(private http:HttpClient) { }
 
 
-  newpass(data:password){
-    return this.http.post(this.baseurl + "Web/WebNewPassword",data)
+  getallcompanies(){
+    return this.http.get(this.baseurl + "Web/GetAllWebCompanyProfile")
   }
 }

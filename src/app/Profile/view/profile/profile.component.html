@@ -11,12 +11,21 @@
                 <div class="card px-3 m-2">
                     <ng-container *ngIf="users">
                     <div class="user-img text-center my-3">
+                      <div class="profile-img">
                         <img src="{{imgurl + users.profilePhoto}}" alt="">
+                      </div>
+                      <div class="edit-btn">
+                        <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal8">
+                          <i class="bi bi-pencil"></i>
+                        </button>
+                      </div>
+                        
                         <div class="user-name d-flex flex-wrap align-items-center justify-content-center my-3">
                             <h4 class="me-2">{{users.firstName}}</h4>
                             <h4>{{users.lastName}}</h4>
                         </div>
                     </div>
+                    
                 </ng-container>
 
                     <div class="accordion" id="accordionExample">
@@ -114,7 +123,7 @@
                                 <div class="mb-3">
                                     <label for="" class="form-label">Last Name*</label>
                                     <input type="text" class="form-control" [(ngModel)]="users.lastName" name="lastName" style="background-color: rgba(165, 232, 211, 1); color: rgba(69, 90, 100, 1);">
-                                </div>
+                                  </div>
                             </ng-container>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -509,6 +518,30 @@
 
 
 
+        <!-- update profile image modal start -->
+        <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Image</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form name="ProfileimageForm" #ProfileimageForm="ngForm">
+                  <div class="mb-3">
+                    <label for="" class="form-lable">Profile Image</label>
+                    <input type="file" class="form-controle" [(ngModel)]="prof.profilePhoto" #profilePhoto="ngModel" name="profilePhoto" (change)="ImageFileAsURL($event)">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateimage()">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- update profile image modal end -->
 
 
          <!-- add skill modal start -->

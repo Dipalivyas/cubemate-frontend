@@ -16,6 +16,7 @@ import { JobsComponent } from './JOBS/view/jobs/jobs.component';
 import { EmailComponent } from './email/view/email/email.component';
 import { OtpverifyComponent } from './otpverify/view/otpverify/otpverify.component';
 import { PasswordComponent } from './Password/view/password/password.component';
+import { CompaniesComponent } from './companies/view/companies/companies.component';
 
 const routes: Routes = [
   {
@@ -73,6 +74,11 @@ const routes: Routes = [
   {
     path:"jobapply/:id",
     component:JobapplyComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"companies",
+    component:CompaniesComponent,
     canActivate:[AuthGuard]
   },
   {

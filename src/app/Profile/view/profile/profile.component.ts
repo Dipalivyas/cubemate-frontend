@@ -27,6 +27,8 @@ export class ProfileComponent implements OnInit{
   educationForm!: NgForm;
   @ViewChild("experienceForm")
   experienceForm!: NgForm;
+  @ViewChild("ProfileimageForm")
+  ProfileimageForm!: NgForm;
 
   constructor(private service:ProfileService,private route:ActivatedRoute){
     this.files=[];
@@ -100,6 +102,20 @@ export class ProfileComponent implements OnInit{
       }
     )
   }
+
+  updateimage(){
+    this.prof.profilePhoto = this.updimagetobase64()
+    this.service.updateprofile(this.prof).subscribe(
+      (resp:any)=>{
+        alert("Profile image updated")
+        this.ProfileimageForm.reset();
+        this.ngOnInit();
+      }
+    )
+  }
+
+
+
 
   currentEducationDetails:any
   loadEducationDetails(userEducationID:number):void{
@@ -351,6 +367,8 @@ export class ProfileComponent implements OnInit{
   }
 
 
+
+
   file: any = [];
   public files: any[];
   reader: any;
@@ -402,8 +420,19 @@ export class ProfileComponent implements OnInit{
     
     reader.readAsDataURL(file); 
   }
-  
 
+  newfile: any;
+
+  ImageFileAsURL(element: any) {
+    var file = element.target.files[0];
+    this.reader = new FileReader();
+    this.reader.onload = (e:any)=> {
+      this.newfile=e.target.result;
+      console.log('RESULT', this.reader.result)
+    }
+
+    this.reader.readAsDataURL(file);
+  }
 
 
 
