@@ -15,117 +15,88 @@
             <div class="card-body px-5 py-5">
               <h3 class="card-title text-left mb-3 text-white">SignUp</h3>
               <h6 class="text-white">Empowering Careers,Building Fatures.</h6>
-              <form #signupForm="ngForm" (ngSubmit)="signData()">
+              <form #signupForm="ngForm">
                 <div class="form-group mb-3">
                   <label class="text-white">First Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="firstName"
-                    [(ngModel)]="SingData['firstName']" 
-                    required
-                  />
-                  <div *ngIf="signupForm.submitted && !signupForm.controls['firstName'].valid" class="text-danger"> <!-- Adjusted here -->
+                  <input type="text" class="form-control" name="firstName" [(ngModel)]="SingData['firstName']"
+                    required />
+                  <div *ngIf="signupForm.submitted && !signupForm.controls['firstName'].valid" class="text-danger">
+                    <!-- Adjusted here -->
                     First Name is required
                   </div>
                 </div>
                 <div class="form-group mb-3">
                   <label class="text-white">LastName</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="lastName"
-                    [(ngModel)]="SingData['lastName']"
-                    required
-
-                  />
+                  <input type="text" class="form-control" name="lastName" [(ngModel)]="SingData['lastName']" required />
                   <div *ngIf="signupForm.submitted && !signupForm.controls['lastName'].valid" class="text-danger">
                     lastName Name is required
                   </div>
                 </div>
 
-               <div class="form-group mb-3">
-  <label class="text-white">phoneNo</label>
-  <input
-    type="text"
-    class="form-control"
-    name="phoneNo"
-    [(ngModel)]="SingData['phoneNo']"
-    required
-    pattern="[0-9]{10}"
-    #phoneInput="ngModel"
-  />
-  <div *ngIf="signupForm.submitted && phoneInput.invalid" class="text-danger">
-    <div *ngIf="phoneInput.errors && phoneInput.errors['required']">Phone number is required</div>
-    <div *ngIf="phoneInput.errors && phoneInput.errors['pattern']">Please enter a 10-digit phone number</div>
-  </div>
-</div>
+                <div class="form-group mb-3">
+                  <label class="text-white">phoneNo</label>
+                  <input type="text" class="form-control" name="phoneNo" [(ngModel)]="SingData['phoneNo']" required
+                    pattern="[0-9]{10}" #phoneInput="ngModel" />
+                  <div *ngIf="signupForm.submitted && phoneInput.invalid" class="text-danger">
+                    <div *ngIf="phoneInput.errors && phoneInput.errors['required']">Phone number is required</div>
+                    <div *ngIf="phoneInput.errors && phoneInput.errors['pattern']">Please enter a 10-digit phone number
+                    </div>
+                  </div>
+                </div>
 
-                
-                
 
-<div class="form-group mb-3">
-  <label class="text-white">Email</label>
-  <input
-    type="email" 
-    class="form-control"
-    name="email"
-    [(ngModel)]="SingData['email']"
-    required
-  />
-  <div *ngIf="signupForm.submitted && !signupForm.controls['email'].valid" class="text-danger"> <!-- Adjusted here -->
-    email is required
-  </div>
-  <div *ngIf="signupForm.submitted && signupForm.controls['email'].valid" class="text-danger">
-    Please enter a valid email address
-  </div>
-</div>
+
+
+                <!-- <div class="form-group mb-3">
+                  <label class="text-white">Email</label>
+                  <input type="email" class="form-control" name="email" [(ngModel)]="SingData['email']" required />
+                  <div *ngIf="signupForm.submitted && !signupForm.controls['email'].valid" class="text-danger">
+                    email is required
+                  </div>
+                  <div *ngIf="signupForm.submitted && signupForm.controls['email'].valid" class="text-danger">
+                    Please enter a valid email address
+                  </div>
+                </div> -->
+
+                <div class="form-group mb-3">
+                  <label class="text-white">Email</label>
+                  <input type="email" class="form-control" name="email" [(ngModel)]="SingData.email" #email="ngModel" required email />
+                  <div *ngIf="email.invalid && (email.dirty || email.touched || signupForm.submitted)" class="text-danger">
+                    <div *ngIf="email.errors?.['required']">
+                      Email is required.
+                    </div>
+                    <div *ngIf="email.errors?.['email']">
+                      Please enter a valid email address.
+                    </div>
+                  </div>
+                </div>
 
 
                 <div class="form-group position-relative">
                   <label class="text-white">Password</label>
                   <div class="input-group">
-                    <input
-                      type="{{ showPassword ? 'text' : 'password' }}"
-                      class="form-control"
-                      name="password"
-                      [(ngModel)]="SingData['password']"
-                      required
-                    />
-                   
+                    <input type="{{ showPassword ? 'text' : 'password' }}" class="form-control" name="password"
+                      [(ngModel)]="SingData['password']" required />
+
                     <div class="input-group-append eye-btn">
-                      <button
-                        class="btn"
-                        type="button"
-                        (click)="togglePasswordVisibility()"
-                      >
-                        <i
-                          *ngIf="showPassword; else hideIcon"
-                          class="bi bi-eye"
-                        ></i>
-                        <ng-template #hideIcon
-                          ><i class="bi bi-eye-slash"></i
-                        ></ng-template>
+                      <button class="btn" type="button" (click)="togglePasswordVisibility()">
+                        <i *ngIf="showPassword; else hideIcon" class="bi bi-eye"></i>
+                        <ng-template #hideIcon><i class="bi bi-eye-slash"></i></ng-template>
                       </button>
                     </div>
-                    
+
                   </div>
-                  <div *ngIf="signupForm.submitted && !signupForm.controls['password'].valid" class="text-danger"> 
+                  <div *ngIf="signupForm.submitted && !signupForm.controls['password'].valid" class="text-danger">
                     password is required
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="text-white mt-3">Selected User Type</label>
-                  <select
-                    class="form-select mb-3"
-                    aria-label="Default select example"
-                    (change)="selectUserType($event)"
-                    name="userType"
-                    [(ngModel)]="SingData.userType"
-                    required
-                  >
-                    <option disabled [ngValue]="null" selected>User Type</option> <!-- Add disabled and null value option -->
+                  <select class="form-select mb-3" aria-label="Default select example" (change)="selectUserType($event)"
+                    name="userType" [(ngModel)]="SingData.userType" required>
+                    <option disabled [ngValue]="null" selected>User Type</option>
+                    <!-- Add disabled and null value option -->
                     <option value="0">Default</option>
                     <option value="1">Admin</option>
                     <option value="2">Company</option>
@@ -135,45 +106,39 @@
                     Please select a user type
                   </div>
                 </div>
-                
 
-                
+
+
                 <div class="form-group">
                   <label class="text-white mt-3">Selected Category</label>
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                    (change)="onCategorySelect($event)"
-                  >
+                  <select class="form-select" aria-label="Default select example" (change)="onCategorySelect($event)">
                     <option disabled [ngValue]="null" selected>Selected Category</option>
-                    <option *ngFor="let category of categories" [value]="category.mainCategoryID">{{ category.mainCategoryName }}</option>
+                    <option *ngFor="let category of categories" [value]="category.mainCategoryID">{{
+                      category.mainCategoryName }}</option>
                   </select>
-                  <div *ngIf="signupForm.submitted && (signupForm.controls['userType'].invalid || !SelectedCategory)" class="text-danger">
+                  <div *ngIf="signupForm.submitted && (signupForm.controls['userType'].invalid || !SelectedCategory)"
+                    class="text-danger">
                     Please select a user type and a category
                   </div>
-                  
+
                 </div>
-                
-                
-                
-                
-                
+
+
+
+
+
 
                 <div class="login-btn text-center my-3">
-                  <button
-                    type="submit"
-                    class="btn btn-block enter-btn text-dark"
-                    
-                  >
+                  <button type="submit" class="btn btn-block enter-btn text-dark" (click)="signData()"  >
                     SignUp
                   </button>
                 </div>
                 <div class="title-signup text-center">
-                  <a routerLink="/login"
-                    ><h5>
+                  <a routerLink="/login">
+                    <h5>
                       You Have Login ? <button class="btn">Login</button>
-                    </h5></a
-                  >
+                    </h5>
+                  </a>
                 </div>
               </form>
               <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
