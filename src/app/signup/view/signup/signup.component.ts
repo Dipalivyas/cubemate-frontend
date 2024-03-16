@@ -18,7 +18,7 @@ export class SignupComponent {
   confirmPassword: string = '';
   categories: any[] = [];
   signupForm: FormGroup; // Declare signupForm as FormGroup
-
+  SelectedCategory=false;
   constructor(private formBuilder: FormBuilder, private service: SignupService, private route: Router) {
     this.signupForm = this.formBuilder.group({
       selectedUserType: ['', Validators.required], // Define selectedUserType control
@@ -57,9 +57,11 @@ export class SignupComponent {
   }
 
   onCategorySelect(event: any) {
-    const mainCategoryID = parseInt(event.target.value, 10); 
+    const mainCategoryID = parseInt(event.target.value, 10);
     console.log('Selected mainCategoryID:', mainCategoryID);
     this.SingData.mainCategoryID = mainCategoryID;
+    
+    this.SelectedCategory = !!mainCategoryID; // Set SelectedCategory to true if mainCategoryID is truthy
   }
 
   signData() {
