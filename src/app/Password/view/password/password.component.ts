@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { password } from '../../model/password';
 import { PasswordService } from '../../service/password.service';
 import { Route, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-password',
@@ -10,7 +11,7 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./password.component.css']
 })
 export class PasswordComponent implements OnInit {
-
+  PassWForm!:NgForm
   imgurl = environment.imgurl;
   pass = new password();
 
