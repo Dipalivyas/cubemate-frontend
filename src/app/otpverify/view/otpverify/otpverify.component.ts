@@ -8,51 +8,59 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-otpverify',
   templateUrl: './otpverify.component.html',
-  styleUrls: ['./otpverify.component.css']
+  styleUrls: ['./otpverify.component.css'],
 })
 export class OtpverifyComponent implements OnInit {
   imgurl = environment.imgurl;
   ot = new otp();
   otpid = sessionStorage.getItem('id');
-  otpForm!:NgForm;
-  isOtpValid:boolean = false;
-  correctOtp:string='';
-  otp:string='';
+  otpForm!: NgForm;
+  isOtpValid: boolean = false;
+  correctOtp: string = '';
+  otp: string = '';
 
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
+  constructor(private service: OtpverifyService, private route: Router) {}
 
-  constructor(private service:OtpverifyService,private route:Router) {}
-
-  checkOtp():void{
+  checkOtp(): void {
     this.isOtpValid = this.otp === this.correctOtp;
   }
-  
-  verifyotp(){
+  errorMessage: string = '';
 
+  verifyotp() {
     const otpid = sessionStorage.getItem('id');
 
-    if(otpid !== null){
+    if (otpid !== null) {
       const numericOtpid = Number(otpid);
 
-      if(!isNaN(numericOtpid)){
-        this.ot.otpid = numericOtpid
-    }else{
-      console.error("otpid is not a valid number");
-      return;
+      if (!isNaN(numericOtpid)) {
+        this.ot.otpid = numericOtpid;
+      } else {
+        console.error('otpid is not a valid number');
+        return;
+      }
+    } else {
+      console.error('otpid is full');
     }
-  }else{
-    console.error('otpid is full');
-  }
-  this.service.verifyotp(this.ot).subscribe(
-    (resp:any)=>{
-      this.route.navigate(['/password'])
-      this.ngOnInit();
+    this.service.verifyotp(this.ot).subscribe(
+      (resp: any) => {
+        if (resp.status) {
+          // OTP verified successfully
+          console.log("otp>>", resp.message);
+          this.route.navigate(['/password']);
+          this.ngOnInit(); // Consider if ngOnInit() needs to be called here
+        } else {
+       
+         this.errorMessage = resp.message; 
+          
+        }
+      },
+      (error: any) => {
+        console.error('Error fetching data:', error);
       
-    },(error: any) => {
-      console.error('Error fetching data:', error);
-    }
-  )
+      }
+    );
+    
   }
 }
