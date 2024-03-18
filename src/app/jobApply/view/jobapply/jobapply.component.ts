@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobapplyService } from '../../service/jobapply.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { JobApplyData } from '../../model/jobApply';
 
@@ -26,7 +26,8 @@ export class JobapplyComponent implements OnInit {
 
   constructor(
     private service: JobapplyService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -97,6 +98,7 @@ export class JobapplyComponent implements OnInit {
     this.service.JobApply(this.JobData).subscribe((res: any) => {
       this.JobData = res.data;
       alert('successfully');
+      this.router.navigate(['/success'])
     });
   }
 }
