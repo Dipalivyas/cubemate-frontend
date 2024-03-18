@@ -18,11 +18,23 @@
                             <form LoginForm="ngForm" name="LoginForm">
                                 <div class="form-group mb-3">
                                     <label class="text-white">Email</label>
-                                    <input type="text" class="form-control" name="email"  [(ngModel)]="user.email" email="ngModel">
-                                </div>
+                                    <input type="email" class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel" required email />
+                                    <div *ngIf="email.invalid && (email.dirty || email.touched || LoginForm.submitted)" class="text-danger">
+                                      <div *ngIf="email.errors?.['required']">
+                                        Email is required.
+                                      </div>
+                                      <div *ngIf="email.errors?.['email']">
+                                        Please enter a valid email address.
+                                      </div>
+                                    </div>
+                                  </div>
                                 <div class="form-group">
                                     <label class="text-white">Password</label>
-                                    <input type="password" class="form-control" name="password"   #password="ngModel"  [(ngModel)]="user.password" >
+                                    <input type="password" class="form-control" name="password"   #password="ngModel"  [(ngModel)]="user.password" required password>
+                                    <div *ngIf="password.invalid && (password.dirty || password.touched || LoginForm.submitted)" class="text-danger">
+                                        <div *ngIf="password.errors?.['required']">Password is required.</div>
+                                        <div *ngIf="password.errors?.['minlength']">Password must be at least 8 characters long.</div>
+                                      </div>
                                 </div>
                                 <div class="forget mt-2" routerLink="/email" style="cursor: pointer;">
                                     <h6>Forget Password ?</h6>

@@ -12,13 +12,21 @@
                         <div class="card-body px-5 py-5">
                             <h3 class="card-title text-left mb-3 text-white">Otp Verification</h3>
 
-                            <form action="">
+                            <form #forgetForm="ngForm" name="forgetForm">
                                 <div class="mb-3">
                                     <label for="" class="from-label text-white">Email:</label>
-                                    <input type="text" class="form-control" [(ngModel)]="pass.emailID" #emailID="ngModel" name="emailID">
+                                    <input type="text" class="form-control" [(ngModel)]="pass.emailID" #emailID="ngModel" name="emailID" required emailID/>
+                                    <div *ngIf="emailID.invalid && (emailID.dirty || emailID.touched || forgetForm.submitted)" class="text-danger">
+                                        <div *ngIf="emailID.errors?.['required']">
+                                          emailID is required.
+                                        </div>
+                                        <div *ngIf="emailID.errors?.['emailID']">
+                                          Please enter a valid emailID address.
+                                        </div>
+                                      </div>
                                 </div>
-                                <div class="verifi-btn text-center" (click)="forget()">
-                                    <button class="btn">Generate Otp</button>
+                                <div class="verifi-btn text-center">
+                                    <button class="btn" (click)="forget()" [disabled]="!forgetForm.form.valid" >Generate Otp</button>
                                 </div>
                             </form>
                         </div>

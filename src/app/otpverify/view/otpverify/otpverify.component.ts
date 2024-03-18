@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { otp } from '../../model/otp';
 import { OtpverifyService } from '../../service/otpverify.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-otpverify',
@@ -13,6 +14,10 @@ export class OtpverifyComponent implements OnInit {
   imgurl = environment.imgurl;
   ot = new otp();
   otpid = sessionStorage.getItem('id');
+  otpForm!:NgForm;
+  isOtpValid:boolean = false;
+  correctOtp:string='';
+  otp:string='';
 
 
   ngOnInit(): void {
@@ -20,7 +25,10 @@ export class OtpverifyComponent implements OnInit {
 
   constructor(private service:OtpverifyService,private route:Router) {}
 
-
+  checkOtp():void{
+    this.isOtpValid = this.otp === this.correctOtp;
+  }
+  
   verifyotp(){
 
     const otpid = sessionStorage.getItem('id');

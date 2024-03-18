@@ -3,6 +3,7 @@ import { LoginService } from '../../service/login.service';
 import { User } from '../../model/user';
 import { Router } from '@angular/router';
 import * as CryptoJs from 'crypto-js';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   user = new User();
   errorMessage: string = '';
+  LoginForm!:NgForm
 
   constructor(private service: LoginService, private route: Router) {}
 

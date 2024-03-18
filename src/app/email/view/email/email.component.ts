@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { forgetpass } from '../../model/foeget';
 import { EmailService } from '../../servcie/email.service';
 import { Route, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-email',
@@ -13,6 +14,7 @@ export class EmailComponent implements OnInit {
 
   imgurl = environment.imgurl;
   pass = new forgetpass();
+  forgetForm!:NgForm
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }

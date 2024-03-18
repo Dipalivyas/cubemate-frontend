@@ -12,13 +12,13 @@
                         <div class="card-body px-5 py-5">
                             <h3 class="card-title text-left mb-3 text-white">Otp Verification</h3>
 
-                            <form action="">
+                            <form #otpForm="ngForm" name="otpForm">
                                 <div class="mb-3">
                                     <label for="" class="from-label text-white">Otp:</label>
-                                    <input type="text" class="form-control" [(ngModel)]="ot.otp" #otp="ngModel" name="otp">
+                                    <input type="text" class="form-control" [(ngModel)]="ot.otp" #otp="ngModel" name="otp" (ngModelChanges)="checkOtp()" required otp/>
                                 </div>
-                                <div class="verifi-btn text-center" (click)="verifyotp()">
-                                    <button class="btn">Verify Otp</button>
+                                <div class="verifi-btn text-center">
+                                    <button class="btn" [disabled]="!otpForm.form.valid" (click)="verifyotp()">Verify Otp</button>
                                 </div>
                             </form>
                         </div>
