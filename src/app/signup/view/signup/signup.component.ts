@@ -63,26 +63,24 @@ export class SignupComponent {
     
     this.SelectedCategory = !!mainCategoryID; // Set SelectedCategory to true if mainCategoryID is truthy
   }
+
   signData() {
-    if (this.signupForm.valid) {
-      // Assuming `this.service.signup` is your method to send data to your backend
       this.service.signup(this.SingData).subscribe({
         next: (res: any) => {
-          // Optionally, handle the response data if needed. You might want to reset the form here as well.
-          console.log('Registration successful', res);
-          
-          // Navigate to the login page upon successful registration
-          this.route.navigate(['/login']);
+          if(this.signupForm.valid){
+            console.log('Registration successful', res);
+            this.route.navigate(['/login']).catch(err => console.error('Navigation Error:', err));
+
+          }else{
+            console.log(res.error);
+            
+          }
+       
         },
         error: (error) => {
-          // Handle any errors that occur during the HTTP request.
           console.error('Registration failed', error);
         }
       });
-    } else {
-      // Trigger form validation
-      // this.signupForm.form.markAllAsTouched();
-    }
   }
   
 }

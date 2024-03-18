@@ -70,7 +70,7 @@
                           <div id="collapseFive" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                               
-                              <div class="add-media text-center mb-3">
+                              <div class="add-media text-center mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal9">
                                 <button class="btn">+ Add Other Activities</button>
                             </div>
                             
@@ -572,7 +572,7 @@
 
 
        <!-- add Activites modal start -->
-       <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -582,7 +582,7 @@
               <div class="modal-body">
                 <form name="skillform" #skillform="ngForm">
                   <div class="mb-3">
-                      <label for="" class="form-label">Skills</label>
+                      <label for="" class="form-label">Add Activites</label>
                       <input type="text" name="skill" id="skill" class="form-control" #skillTag="ngModel" [(ngModel)]="skil.skillTag">
                   </div>
                 </form>
