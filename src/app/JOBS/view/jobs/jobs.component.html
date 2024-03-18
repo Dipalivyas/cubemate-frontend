@@ -6,7 +6,7 @@
                 <h1>All Jobs</h1>
             </div>
         </div>
-        <ng-container *ngFor="let d of job">
+        <!-- <ng-container *ngFor="let d of job">
         <div class="col-lg-3 col-md-6 cool-sm-12">
             <div class="card my-3">
               <div class="apply-btn ps-3 py-3">
@@ -30,9 +30,7 @@
                   </div>
                   <div class="location-icon">
                     <h6><i class="bi bi-geo-alt"></i>{{d.companyAddress}}</h6>
-                    <!-- <button class="btn">
-                      <i class="bi bi-three-dots"></i>
-                    </button> -->
+                    
                   </div>
                 </div>
                 <div class="jobs-img">
@@ -41,7 +39,55 @@
               </div>
             </div>
           </div>
+        </ng-container> -->
+
+
+
+
+        <ng-container *ngFor="let d of job" >
+          <div class="col-lg-3 col-md-6 cool-sm-12">
+            <div class="card my-3">
+              <div class="apply-btn ps-3 py-3">
+                <button class="btn px-5">
+                  <a class="text-white" (click)="navigateToJobDetails(d.jobPostID)">Apply Now</a>
+                </button>
+              </div>
+              <div class="job-name ps-3">
+                <h6>{{ d.jobPostTitle }}</h6>
+              </div>
+              <div class="job-cont ps-3">
+                <ul>
+                  <li>₹{{ d.jobSalaryStart }} - ₹{{ d.jobSalaryEnd }}/Month</li>
+                  <li>{{ mapstatustotext(d.workingType) }}</li>
+                  <li>{{ MapStatusText(d.shiftType) }}</li>
+                  <li>{{ d.daysOfWork }} Day Working</li>
+                </ul>
+              </div>
+              <div class="job-location">
+                <div class="card border-0">
+                  <div class="name-loc mt-2">
+                    <h5>{{ d.companyName }}</h5>
+                  </div>
+                  <div class="location-icon">
+                    <div>
+                      <h6><i class="bi bi-geo-alt"></i></h6>
+                    </div>
+                    <div class="ellipsis">{{ d.companyAddress }}</div>
+                  </div>
+                </div>
+               
+
+                <div class="jobs-img">
+                  <img src="{{ imgurl + d.companyLogo }}" alt class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
         </ng-container>
+
+
+
+
     </div>
 </div>
 <app-footer></app-footer>

@@ -149,6 +149,7 @@ export class ProfileComponent implements OnInit{
     this.service.addmedia(this.med).subscribe(
       (resp:any)=>{
         alert("UserMedia Successfully");
+        this.mediaForm.reset();
         this.ngOnInit()
       }
     )

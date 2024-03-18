@@ -6,8 +6,8 @@
     background-color: rgba(55, 79, 89, 1);
     color: #fff;
 }
-.job .card{
-    border-radius: 30px;
+.card{
+    border-radius: 30px !important;
 }
 .job-location .card{
     background-color: rgba(245, 245, 245, 1);
@@ -25,4 +25,24 @@
     height: 70px;
     border-radius: 50%;
     transform: translateY(-50%);
+}
+.apply-btn .btn{
+    border-radius: 30px;
+ }
+ .ellipsis {
+    line-height: 1.3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    /* margin-top: -29px; */
+    margin-bottom: 19px;
+}
+a{
+    text-decoration: none;
+}
+.location-icon{
+    display: flex;
+    gap: 5px;
 }
