@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ProfileService } from '../../service/profile.service';
-import { education, experience, media, profile, skills } from '../../model/profile';
+import { activite, education, experience, media, profile, skills } from '../../model/profile';
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit{
   edu = new education();
   med = new media();
   exp = new experience();
+  acti = new activite();
   @ViewChild("skillform")
   skillform!: NgForm;
   @ViewChild("mediaForm")
@@ -29,6 +30,9 @@ export class ProfileComponent implements OnInit{
   experienceForm!: NgForm;
   @ViewChild("ProfileimageForm")
   ProfileimageForm!: NgForm;
+  @ViewChild("activitesform")
+  activitesform!: NgForm;
+
 
   constructor(private service:ProfileService,private route:ActivatedRoute){
     this.files=[];
@@ -50,8 +54,17 @@ export class ProfileComponent implements OnInit{
     )
   }
 
+  activites(){
+    this.service.addactivites(this.acti).subscribe(
+      (resp:any)=>{
+        this.ngOnInit();
+        this.activitesform.reset();
+      }
+    )
+  }
+
   profile:any;
-  activites:any;
+  activ:any;
   users:any
   education:any;
   media:any;
@@ -61,7 +74,7 @@ export class ProfileComponent implements OnInit{
       (resp:any)=>{
         this.users = resp.data.userData;
         this.profile = resp.data.userSkills;
-        this.activites = resp.data.userActivities;
+        this.activ = resp.data.userActivities;
         this.education = resp.data.userEducations;
         this.media = resp.data.userMedias
         this.experience = resp.data.userExperience;

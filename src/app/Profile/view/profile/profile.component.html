@@ -75,7 +75,7 @@
                             </div>
                             
                                 <div class="social-list">
-                                    <ng-container *ngFor="let d of activites">
+                                    <ng-container *ngFor="let d of activ">
                                     <ul class="d-flex flex-wrap align-items-center justify-content-between">
                                         <li>{{d.activityTitle}}</li>
                                         <li class="del">
@@ -580,16 +580,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form name="skillform" #skillform="ngForm">
+                <form name="activitesform" #activitesform="ngForm">
                   <div class="mb-3">
                       <label for="" class="form-label">Add Activites</label>
-                      <input type="text" name="skill" id="skill" class="form-control" #skillTag="ngModel" [(ngModel)]="skil.skillTag">
+                      <input type="text" name="acti" id="acti" class="form-control" #activityTitle="ngModel" [(ngModel)]="acti.activityTitle">
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="skill()">Save changes</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="activites()">Save changes</button>
               </div>
             </div>
           </div>

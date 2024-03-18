@@ -32,3 +32,10 @@ export class experience{
     isWorking!:boolean;
     designation!:string;
 }
+
+export class activite{
+    activityTitle!:string;
+    activityDescription!:string;
+    activityAttachment!:string;
+    mediaType!:string
+}

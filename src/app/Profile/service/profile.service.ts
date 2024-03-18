@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import {  education, experience, media, profile, skills } from '../model/profile';
+import {  activite, education, experience, media, profile, skills } from '../model/profile';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,6 +17,9 @@ export class ProfileService {
     return this.http.post(this.baseurl + "User/AddUserSkill",data)
   }
 
+  addactivites(data:activite){
+    return this.http.post(this.baseurl + "User/AddUserActivity",data);
+  }
   getuserprofiledata(){
     return this.http.post(this.baseurl + "User/GetUserProfileData",null)
   }
