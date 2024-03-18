@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Import FormBuilder, FormGroup, and Validators
 import { SignupService } from '../../service/signup.service';
 import { User } from '../../model/signup';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +19,7 @@ export class SignupComponent {
   categories: any[] = [];
   signupForm: FormGroup; // Declare signupForm as FormGroup
   SelectedCategory=false;
-  constructor(private formBuilder: FormBuilder, private service: SignupService, private route: Router) {
+  constructor(private formBuilder: FormBuilder, private service: SignupService, private route: Router,private router: ActivatedRoute) {
     this.signupForm = this.formBuilder.group({
       selectedUserType: ['', Validators.required], // Define selectedUserType control
       // Define other form controls here...
@@ -64,23 +64,13 @@ export class SignupComponent {
     this.SelectedCategory = !!mainCategoryID; // Set SelectedCategory to true if mainCategoryID is truthy
   }
 
-  signData() {
-      this.service.signup(this.SingData).subscribe({
-        next: (res: any) => {
-          if(this.signupForm.valid){
-            console.log('Registration successful', res);
-            this.route.navigate(['/login']).catch(err => console.error('Navigation Error:', err));
-
-          }else{
-            console.log(res.error);
-            
-          }
-       
-        },
-        error: (error) => {
-          console.error('Registration failed', error);
+  sign() {
+      this.service.signup(this.SingData).subscribe(
+        (resp:any)=>{
+          this.route.navigate(['/login'])
+          this.ngOnInit();
         }
-      });
-  }
-  
+      )
+    }
 }
+  

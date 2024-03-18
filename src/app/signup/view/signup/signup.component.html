@@ -1,9 +1,6 @@
 <div class="logi">
   <div class="container-fluid">
     <div class="row">
-      <!-- <div class="logo">
-                    <img src="../../../../assets/img/footer-logo.png" alt="" class="img-fluid">
-                </div> -->
       <div class="col-lg-7 col-md-6 col-sm-12">
         <div class="login-img">
           <img src="../../../../assets/img/login.png" alt class="img-fluid" />
@@ -43,21 +40,6 @@
                     </div>
                   </div>
                 </div>
-
-
-
-
-                <!-- <div class="form-group mb-3">
-                  <label class="text-white">Email</label>
-                  <input type="email" class="form-control" name="email" [(ngModel)]="SingData['email']" required />
-                  <div *ngIf="signupForm.submitted && !signupForm.controls['email'].valid" class="text-danger">
-                    email is required
-                  </div>
-                  <div *ngIf="signupForm.submitted && signupForm.controls['email'].valid" class="text-danger">
-                    Please enter a valid email address
-                  </div>
-                </div> -->
-
                 <div class="form-group mb-3">
                   <label class="text-white">Email</label>
                   <input type="email" class="form-control" name="email" [(ngModel)]="SingData.email" #email="ngModel" required email />
@@ -70,8 +52,6 @@
                     </div>
                   </div>
                 </div>
-
-
                 <div class="form-group position-relative">
                   <label class="text-white">Password</label>
                   <div class="input-group">
@@ -106,9 +86,6 @@
                     Please select a user type
                   </div>
                 </div>
-
-
-
                 <div class="form-group">
                   <label class="text-white mt-3">Selected Category</label>
                   <select class="form-select" aria-label="Default select example" (change)="onCategorySelect($event)">
@@ -120,16 +97,9 @@
                     class="text-danger">
                     Please select a user type and a category
                   </div>
-
                 </div>
-
-
-
-
-
-
                 <div class="login-btn text-center my-3">
-                  <button type="submit" class="btn btn-block enter-btn text-dark" (click)="signData()">
+                  <button type="submit" class="btn btn-block enter-btn text-dark" (click)="sign()" [disabled]="!signupForm.form.valid">
                     SignUp
                   </button>
                 </div>
