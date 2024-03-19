@@ -17,6 +17,7 @@ import { EmailComponent } from './email/view/email/email.component';
 import { OtpverifyComponent } from './otpverify/view/otpverify/otpverify.component';
 import { PasswordComponent } from './Password/view/password/password.component';
 import { CompaniesComponent } from './companies/view/companies/companies.component';
+import { ContactComponent } from './Contact US/view/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -99,6 +100,11 @@ const routes: Routes = [
   {
     path:"jobs",
     component:JobsComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"contact",
+    component:ContactComponent,
     canActivate:[AuthGuard]
   }
 ];

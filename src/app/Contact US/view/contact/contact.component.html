@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="contact-img">
+                <img src="../../../../assets/img/Messaging-bro 1.png" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="card px-3 py-4 mt-5">
+                <div class="text-center title my-3">
+                    <h3>I Nedd Support</h3>
+                </div>
+                <form action="">
+                  <div class="row">
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label for="supportType" class="text-dark">Select Support Type</label>
+                            <select class="form-select" aria-label="Default select example" id="supportType" name="supportType" (change)="getStateIdbySelect($event)">
+                                <option selected>Open this select menu</option>
+                                <option *ngFor="let type of types" [value]="type.supportTypeId">{{type?.supportType}}</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label for="" class="form-label text-dark">Subject</label>
+                            <input type="text" class="form-control" [(ngModel)]="suppo.supportTitle" #supportTitle="ngModel" name="supportTitle" [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label for="" class="form-label text-dark">Description</label>
+                            <textarea name="supportDescription" class="form-control" [(ngModel)]="suppo.supportDescription" #supportDescription="ngModel" [ngModelOptions]="{standalone: true}"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label for="" class="form-label text-dark">Attach Image</label>
+                            <input type="file" class="form-control" (change)="uploadImg($event)" [(ngModel)]="suppo.attachement" #attachement="ngModel" [ngModelOptions]="{standalone: true}">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="sub-btn text-center mt-4" (click)="adddata()">
+                            <button class="btn px-5">Submit</button>
+                        </div>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

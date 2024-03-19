@@ -1,0 +1,12 @@
+.card{
+    box-shadow: 2px 1px 11px 0px rgba(0,0,0,0.25);
+    color: #ffff;
+}
+.title h3{
+    color: rgba(55, 79, 89, 1);
+    font-size: 32px;
+}
+.sub-btn .btn{
+    background-color: rgba(55, 79, 89, 1);
+    color: #ffff;
+}
