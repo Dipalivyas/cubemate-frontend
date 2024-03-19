@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { support } from '../../model/support';
 import { ContactService } from '../../service/contact.service';
 import { subscribeOn } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,8 @@ export class ContactComponent implements OnInit{
 
   suppo = new support();
   types: any[] = [];
+  SelectedCategory=false;
+  supportForm!:NgForm
 
   image: any;
   file: any = [];
@@ -23,10 +26,10 @@ export class ContactComponent implements OnInit{
 
 
   adddata(){
-    this.suppo.supportTypeId = this.testnewstateID;
     this.service.addsupport(this.suppo).subscribe(
       (resp:any)=>{
-        alert("support type add successfully")
+        alert("support type add successfully");
+        this.supportForm.reset();
         this.ngOnInit();
       }
     )
@@ -36,15 +39,23 @@ export class ContactComponent implements OnInit{
     this.service.getallsupport().subscribe(
       (resp:any)=>{
         this.types = resp.data;
+        console.log("types>>",this.types);
+        
       }
     )
   }
 
   testnewstateID!:number
-  getStateIdbySelect(event: any) {
-    const selectedsupportTypeId = event.target.value;
-    this.testnewstateID = selectedsupportTypeId;
+
+  onCategorySelect(event: any) {
+    const supportTypeId = parseInt(event.target.value, 10);
+    console.log('Selected supportTypeId:', supportTypeId);
+    this.suppo.supportTypeId = supportTypeId;
+    
+    this.SelectedCategory = !!supportTypeId; // Set SelectedCategory to true if mainCategoryID is truthy
   }
+
+
 
 
 

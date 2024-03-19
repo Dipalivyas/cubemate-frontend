@@ -11,14 +11,14 @@
                 <div class="text-center title my-3">
                     <h3>I Nedd Support</h3>
                 </div>
-                <form action="">
+                <form #supportForm="ngForm">
                   <div class="row">
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label for="supportType" class="text-dark">Select Support Type</label>
-                            <select class="form-select" aria-label="Default select example" id="supportType" name="supportType" (change)="getStateIdbySelect($event)">
+                            <select class="form-select" aria-label="Default select example" id="supportType" name="supportType" (change)="onCategorySelect($event)">
                                 <option selected>Open this select menu</option>
-                                <option *ngFor="let type of types" [value]="type.supportTypeId">{{type?.supportType}}</option>
+                                <option *ngFor="let type of types" [value]="type.supportTypeID">{{type?.supportType}}</option>
                               </select>
                         </div>
                     </div>
